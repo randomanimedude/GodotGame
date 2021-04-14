@@ -73,7 +73,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\godot-cpp\include\gen;..\godot-cpp\godot-headers;..\godot-cpp\include\core;$(IncludePath)</IncludePath>
+    <IncludePath>\godot-cpp\include\gen;\godot-cpp\godot_headers;\godot-cpp\include\core;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
