@@ -11,32 +11,29 @@ using namespace godot;
 class Player : public KinematicBody2D
 {
 	//godot structure
-private:
 	GODOT_CLASS(Player, KinematicBody2D);
+
+	//exposed vars
+	int max_speed = 300;
+	int gravity = 20;
+	int max_fall_speed = 400;
+	int jump_force = 500;
+	int acceleration = 20;
 
 public:
 	static void _register_methods();
 	void _init();
+
 	void _ready();
 	void _physics_process(float delta);
-
-	Player();
-	~Player();
 
 
 	//gayplay vars
 public:
 	Node* node;
 	AnimationPlayer* animator;
-	
 
 	const Vector2 UP = Vector2(0, -1);
-
-	const int MAXSPEED = 300;
-	const int GRAVITY = 20;
-	const int MAXFALLSPEED = 400;
-	const int JUMPFORCE = 500;
-	const int ACCELERATION = 20;
 
 	bool facing_right = true;
 
