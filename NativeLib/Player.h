@@ -3,6 +3,8 @@
 #include <Godot.hpp>
 #include <KinematicBody2D.hpp>
 #include <Input.hpp>
+#include <AnimationPlayer.hpp>
+#include <Node.hpp>
 
 using namespace godot;
 
@@ -15,6 +17,7 @@ private:
 public:
 	static void _register_methods();
 	void _init();
+	void _ready();
 	void _physics_process(float delta);
 
 	Player();
@@ -23,13 +26,19 @@ public:
 
 	//gayplay vars
 public:
+	Node* node;
+	AnimationPlayer* animator;
+	
+
 	const Vector2 UP = Vector2(0, -1);
 
 	const int MAXSPEED = 300;
 	const int GRAVITY = 20;
 	const int MAXFALLSPEED = 400;
-	const int JUMPFORCE = 800;
+	const int JUMPFORCE = 500;
 	const int ACCELERATION = 20;
+
+	bool facing_right = true;
 
 private:
 	Vector2 motion;
