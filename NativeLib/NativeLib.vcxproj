@@ -72,25 +72,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\CPP DLL Exports</OutDir>
+    <OutDir>..\Godot</OutDir>
     <IncludePath>..\..\GodotBindings\godot-headers;..\..\GodotBindings\include\gen;..\..\GodotBindings\include\core;..\..\GodotBindings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\CPP DLL Exports</OutDir>
+    <OutDir>..\Godot</OutDir>
     <IncludePath>..\..\GodotBindings\godot-headers;..\..\GodotBindings\include\gen;..\..\GodotBindings\include\core;..\..\GodotBindings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\CPP DLL Exports</OutDir>
+    <OutDir>..\Godot</OutDir>
     <IncludePath>..\..\GodotBindings\godot-headers;..\..\GodotBindings\include\gen;..\..\GodotBindings\include\core;..\..\GodotBindings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\CPP DLL Exports</OutDir>
+    <OutDir>..\Godot</OutDir>
     <IncludePath>..\..\GodotBindings\godot-headers;..\..\GodotBindings\include\gen;..\..\GodotBindings\include\core;..\..\GodotBindings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -100,6 +100,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +132,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,6 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

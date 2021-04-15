@@ -15,7 +15,7 @@ private:
 public:
 	static void _register_methods();
 	void _init();
-	void _process(float delta);
+	void _physics_process(float delta);
 
 	Player();
 	~Player();
@@ -23,7 +23,13 @@ public:
 
 	//gayplay vars
 public:
-	const int speed = 300;
+	const Vector2 UP = Vector2(0, -1);
+
+	const int MAXSPEED = 300;
+	const int GRAVITY = 20;
+	const int MAXFALLSPEED = 400;
+	const int JUMPFORCE = 800;
+	const int ACCELERATION = 20;
 
 private:
 	Vector2 motion;
@@ -34,7 +40,7 @@ public:
 	void UpdateMotionFromInput();
 
 private:
-
+	int clamp(int x, int min, int max);
 
 };
 
