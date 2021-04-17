@@ -5,7 +5,7 @@ using namespace godot;
 
 void Player::_register_methods()
 {
-	register_method("_physics_process", &Player::_physics_process);
+	register_method("_process", &Player::_process);
 	register_method("_ready", &Player::_ready);
 
 	register_property("max_speed", &Player::max_speed, 300);
@@ -26,7 +26,7 @@ void Player::_ready()
 	animator = Node::cast_to<AnimationPlayer>(node);
 }
 
-void Player::_physics_process(float delta)
+void Player::_process(float delta)
 {
 	UpdateMotionFromInput();
 }
@@ -52,7 +52,7 @@ void Player::UpdateMotionFromInput()
 		animator->play("RunRight");
 	}
 	else
-		motion.x = 0;// std::lerp((float)motion.x, (float)0, (float)0.2);
+		motion.x = std::lerp((float)motion.x, (float)0, (float)0.3);
 	motion.x = clamp(motion.x, -max_speed, max_speed);
 
 	if (is_on_floor() && inp->is_action_pressed("jump"))

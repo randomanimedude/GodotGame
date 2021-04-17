@@ -25,7 +25,7 @@ public:
 	void _init();
 
 	void _ready();
-	void _physics_process(float delta);
+	void _process(float delta);
 
 
 	//gayplay vars

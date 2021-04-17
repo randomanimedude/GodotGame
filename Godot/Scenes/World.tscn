@@ -1,13 +1,11 @@
 [gd_scene load_steps=15 format=2]
 
-
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.gdns" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 9.0
-height = 14.0
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 23.4224, 45.1163 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "DeathLeft"
@@ -167,19 +165,26 @@ position = Vector2( -3.3674, -57.8067 )
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 1.49832, -50.9425 )
 script = ExtResource( 3 )
+max_speed = 800
+gravity = 70
+max_fall_speed = 1200
+jump_force = 1600
+acceleration = 50
 
 [node name="Sprite" type="Sprite" parent="Player"]
+scale = Vector2( 2.89111, 2.89111 )
 texture = ExtResource( 1 )
 vframes = 8
 hframes = 8
 frame = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
+position = Vector2( 0.353447, 1.17754 )
+shape = SubResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 1.2, 1.2 )
 smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
