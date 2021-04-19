@@ -9,6 +9,7 @@ void Bullet::_register_methods()
 
 void Bullet::_init()
 {
+	motion = Vector2(0, 0);
 	motion.x = facing_right ? bullet_speed : -bullet_speed;
 }
 

@@ -119,6 +119,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( -3.3674, -57.8067 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+zanos = 0.4
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 5.67374, -34.3295 )

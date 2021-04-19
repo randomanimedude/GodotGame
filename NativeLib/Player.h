@@ -20,6 +20,7 @@ class Player : public KinematicBody2D
 	int max_fall_speed = 400;
 	int jump_force = 500;
 	int acceleration = 20;
+	float zanos = 0.2;
 
 public:
 	static void _register_methods();
@@ -27,6 +28,7 @@ public:
 
 	void _ready();
 	void _process(float delta);
+	void _physics_process(float delta);
 
 
 	//gayplay vars
@@ -40,6 +42,9 @@ private:
 	Node* nodeFinder;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
+	Input* inp;
+
+	bool onFloor = false;
 
 
 	//gayplay methods
