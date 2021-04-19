@@ -19,7 +19,7 @@ void Player::_register_methods()
 
 void Player::_init()
 {
-	motion = Vector2(0, 0);
+	oldMotion = motion = Vector2(0, 0);
 
 	inp = Input::get_singleton();
 }
@@ -34,16 +34,12 @@ void Player::_ready()
 
 void Player::_process(float delta)
 {
-	motion = move_and_slide(motion, UP);
-	if (is_on_floor())
-		onFloor = true;
-	std::cout << "_" << is_on_floor() << std::endl;
 }
 
 void Player::_physics_process(float delta)
 {
 	UpdateMotionFromInput();
-	std::cout << "__" << onFloor << std::endl;
+	motion = move_and_slide(motion, UP);
 }
 
 void Player::UpdateMotionFromInput()
@@ -54,13 +50,10 @@ void Player::UpdateMotionFromInput()
 
 	if (animator->get_current_animation().find("Shoot") == -1)
 	{
-		if (onFloor)
+		if (is_on_floor())
 		{
 			if (inp->is_action_just_pressed("jump"))
-			{
 				motion.y = -jump_force;
-				onFloor = false;
-			}
 
 			if (motion.x == 0)
 				animator->play((godot::String)"Idle" + (godot::String)(facing_right ? "Right" : "Left"));
@@ -89,7 +82,7 @@ void Player::UpdateMotionFromInput()
 			bulletManager->SpawnNewBullet();
 		}
 	}
-	else if (onFloor)
+	else if (is_on_floor())
 		motion.x = 0;
 }
 

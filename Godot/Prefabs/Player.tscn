@@ -143,6 +143,7 @@ library = ExtResource( 3 )
 position = Vector2( 1.49832, -50.9425 )
 script = ExtResource( 1 )
 max_speed = 800
+zanos = null
 gravity = 70
 max_fall_speed = 1200
 jump_force = 1600
@@ -162,6 +163,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 1.2, 1.2 )
+process_mode = 0
 smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
