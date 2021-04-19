@@ -28,7 +28,7 @@ void Player::_ready()
 {
 	nodeFinder = get_node("AnimationPlayer");
 	animator = Node::cast_to<AnimationPlayer>(nodeFinder);
-	nodeFinder = get_node("BulletManager");
+	nodeFinder = get_node("../BulletManager");
 	bulletManager = Node::cast_to<BulletManager>(nodeFinder);
 }
 
@@ -79,7 +79,7 @@ void Player::UpdateMotionFromInput()
 		if (inp->is_action_just_pressed("shoot"))
 		{
 			animator->play((godot::String)"Shoot" + (godot::String)(facing_right ? "Right" : "Left"));
-			bulletManager->SpawnNewBullet();
+			bulletManager->SpawnNewBullet(get_global_position(), facing_right);
 		}
 	}
 	else if (is_on_floor())

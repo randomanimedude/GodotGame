@@ -4,8 +4,8 @@
 [ext_resource path="res://ClipartKey_736468.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 15.775
-height = 107.121
+radius = 3.16643
+height = 18.2174
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,13 +14,11 @@ script = ExtResource( 1 )
 bullet_speed = null
 
 [node name="Sprite" type="Sprite" parent="Bullet"]
-
-[node name="ClipartKey_736468" type="Sprite" parent="Bullet/Sprite"]
-position = Vector2( 70.1599, 16.6335 )
-scale = Vector2( 0.109566, 0.109566 )
+position = Vector2( 14.1374, 3.13556 )
+scale = Vector2( 0.0215955, 0.0215955 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
-position = Vector2( 72.1691, 16.7116 )
+position = Vector2( 16.0371, 3.13875 )
 rotation = 1.5708
 shape = SubResource( 1 )

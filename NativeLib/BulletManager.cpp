@@ -18,7 +18,9 @@ BulletManager::~BulletManager()
 	Bullets.clear();
 }
 
-void BulletManager::SpawnNewBullet()
+void BulletManager::SpawnNewBullet(Vector2 position, bool fasingRight)
 {
-	Bullets.push_back(bullet_prefab->instance());
+	Bullets.push_back(Node::cast_to<Node2D>(bullet_prefab->instance()));
+	Bullets.back()->set_global_position(position);
+	add_child(Bullets.back());
 }

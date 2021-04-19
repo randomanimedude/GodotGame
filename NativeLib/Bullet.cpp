@@ -2,9 +2,9 @@
 
 void Bullet::_register_methods()
 {
-	register_method("_process", &Bullet::_process);
+	register_method("_physics_process", &Bullet::_physics_process);
 
-	register_property("bullet_speed", &Bullet::bullet_speed, 1000);
+	register_property("bullet_speed", &Bullet::bullet_speed, 1);
 }
 
 void Bullet::_init()
@@ -13,12 +13,12 @@ void Bullet::_init()
 	motion.x = facing_right ? bullet_speed : -bullet_speed;
 }
 
-void Bullet::_process(float delta)
+void Bullet::_physics_process(float delta)
 {
 	UpdateMotion();
 }
 
 void Bullet::UpdateMotion()
 {
-	move_and_collide(motion);
+	move_and_slide(motion);
 }

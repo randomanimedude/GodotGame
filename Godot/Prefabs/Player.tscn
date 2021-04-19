@@ -1,9 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://NativeScripts/Player.gdns" type="Script" id=1]
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=2]
-[ext_resource path="res://NativeScripts/CPP_lib.gdnlib" type="GDNativeLibrary" id=3]
-[ext_resource path="res://Prefabs/BulletPrefab.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.4224, 45.1163 )
@@ -134,11 +132,6 @@ tracks/0/keys = {
 "values": [ 40, 41, 42, 43, 44 ]
 }
 
-[sub_resource type="NativeScript" id=10]
-resource_name = "BulletManager"
-class_name = "BulletManager"
-library = ExtResource( 3 )
-
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1.49832, -50.9425 )
 script = ExtResource( 1 )
@@ -175,7 +168,3 @@ anims/RunLeft = SubResource( 6 )
 anims/RunRight = SubResource( 7 )
 anims/ShootLeft = SubResource( 8 )
 anims/ShootRight = SubResource( 9 )
-
-[node name="BulletManager" type="Node2D" parent="."]
-script = SubResource( 10 )
-bullet_prefab = ExtResource( 4 )

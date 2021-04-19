@@ -30,11 +30,11 @@ public:
 public:
 
 private:
-	std::vector<Node*> Bullets;
+	std::vector<Node2D*> Bullets;
 
 	//gayplay methods
 public:
-	void SpawnNewBullet();
+	void SpawnNewBullet(Vector2, bool);
 
 private:
 
