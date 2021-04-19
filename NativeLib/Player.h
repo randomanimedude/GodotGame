@@ -4,7 +4,8 @@
 #include <KinematicBody2D.hpp>
 #include <Input.hpp>
 #include <AnimationPlayer.hpp>
-#include <Node.hpp>
+
+#include "BulletManager.h"
 
 using namespace godot;
 
@@ -30,15 +31,15 @@ public:
 
 	//gayplay vars
 public:
-	Node* node;
-	AnimationPlayer* animator;
-
 	const Vector2 UP = Vector2(0, -1);
 
 	bool facing_right = true;
 
 private:
 	Vector2 motion;
+	Node* nodeFinder;
+	AnimationPlayer* animator;
+	BulletManager* bulletManager;
 
 
 	//gayplay methods
