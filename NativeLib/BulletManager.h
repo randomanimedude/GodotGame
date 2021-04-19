@@ -24,6 +24,8 @@ public:
 	static void _register_methods();
 	void _init();
 
+	~BulletManager();
+
 	//gayplay vars
 public:
 
