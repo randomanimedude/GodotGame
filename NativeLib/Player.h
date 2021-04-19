@@ -39,6 +39,7 @@ public:
 
 private:
 	Vector2 motion;
+	Vector2 oldMotion;
 	Node* nodeFinder;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
