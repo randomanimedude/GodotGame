@@ -1,4 +1,6 @@
 #include "Player.h"
+#include "Bullet.h"
+#include "BulletManager.h"
 
 using namespace godot;
 
@@ -14,4 +16,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	godot::Godot::nativescript_init(handle);
 
 	godot::register_class<Player>();
+	godot::register_class<Bullet>();
+	godot::register_class<BulletManager>();
 }
