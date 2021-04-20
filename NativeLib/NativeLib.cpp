@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "BulletManager.h"
+#include "Menu_buttons.h"
 
 using namespace godot;
 
@@ -18,4 +19,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	godot::register_class<Player>();
 	godot::register_class<Bullet>();
 	godot::register_class<BulletManager>();
+	godot::register_class<Menu_buttons>();
 }
