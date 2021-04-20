@@ -134,13 +134,8 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1.49832, -50.9425 )
+collision_layer = 2
 script = ExtResource( 1 )
-max_speed = 800
-zanos = null
-gravity = 70
-max_fall_speed = 1200
-jump_force = 1600
-acceleration = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2.89111, 2.89111 )

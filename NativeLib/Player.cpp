@@ -9,12 +9,12 @@ void Player::_register_methods()
 	register_method("_physics_process", &Player::_physics_process);
 	register_method("_ready", &Player::_ready);
 
-	register_property("max_speed", &Player::max_speed, 300);
+	register_property("max_speed", &Player::max_speed, 800);
 	register_property("zanos", &Player::zanos, 0.2f);
-	register_property("gravity", &Player::gravity, 20);
-	register_property("max_fall_speed", &Player::max_fall_speed, 400);
-	register_property("jump_force", &Player::jump_force, 500);
-	register_property("acceleration", &Player::acceleration, 20);
+	register_property("gravity", &Player::gravity, 70);
+	register_property("max_fall_speed", &Player::max_fall_speed, 1200);
+	register_property("jump_force", &Player::jump_force, 1600);
+	register_property("acceleration", &Player::acceleration, 50); 
 }
 
 void Player::_init()

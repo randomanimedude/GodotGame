@@ -25,11 +25,17 @@ void Bullet::UpdatePosition(Vector2 position, bool facingRight)
 {
 	set_global_position(position);
 	motion.x = facingRight ? bullet_speed : -bullet_speed;
-	set_scale(Vector2(facingRight ? 1 : -1, 1));
+	set_global_scale(Vector2(facingRight ? 1 : -1, 1));
 }
 
 
 void Bullet::UpdateMotion()
 {
-	move_and_collide(motion);
+	Ref<KinematicCollision2D> col = move_and_collide(motion);
+
+	if (col != nullptr)
+	{
+		Node* parent = get_parent();
+		parent->get_parent()->remove_child(parent);
+	}
 }

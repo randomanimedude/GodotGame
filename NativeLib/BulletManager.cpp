@@ -24,13 +24,18 @@ BulletManager::~BulletManager()
 void BulletManager::_ready()
 {
 	for (int i = 0; i < size_of_buffer; ++i)
-	{
 		Bullets.push_back(Node::cast_to<Node2D>(bullet_prefab->instance()));
-	}
 }
 
 void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight)
 {
-	add_child(Bullets.back());
-	Node::cast_to<Bullet>(Bullets.back()->get_child(0))->UpdatePosition(position + Vector2(bullet_offset_x, bullet_offset_y), facingRight);
+	for (std::vector<Node2D*>::iterator it = Bullets.begin(); it != Bullets.end(); ++it)
+	{
+		if ((*it)->get_parent() == nullptr)
+		{
+			add_child(*it);
+			Node::cast_to<Bullet>((*it)->get_child(0))->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
+			break; 
+		}
+	}
 }

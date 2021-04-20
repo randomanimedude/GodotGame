@@ -120,6 +120,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 position = Vector2( -3.3674, -57.8067 )
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
+bullet_offset_y = -19
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 zanos = 0.2

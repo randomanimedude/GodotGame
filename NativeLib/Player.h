@@ -15,12 +15,12 @@ class Player : public KinematicBody2D
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	//exposed vars
-	int max_speed = 300;
-	int gravity = 20;
-	int max_fall_speed = 400;
-	int jump_force = 500;
-	int acceleration = 20;
-	float zanos = 0.2;
+	int max_speed = 800;
+	int gravity = 70;
+	int max_fall_speed = 1200;
+	int jump_force = 1600;
+	int acceleration = 50;
+	float zanos = 0.2f;
 
 public:
 	static void _register_methods();
