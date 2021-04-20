@@ -12,29 +12,29 @@ class Bullet : public KinematicBody2D
 	GODOT_CLASS(Bullet, KinematicBody2D);
 
 	//exposed vars
-	int bullet_speed = 1000;
+	int bullet_speed = 1;
 
 public:
 	static void _register_methods();
 	void _init();
+	void _ready();
 
 	void _physics_process(float delta);
-
 
 	//gayplay vars
 public:
 
 private:
-	bool facing_right = true;
 	Vector2 motion;
 
 	
 
 	//gayplay methods
 public:
-	void UpdateMotion();
+	void UpdatePosition(Vector2 position, bool facingRight);
 
 private:
+	void UpdateMotion();
 	
 	
 };

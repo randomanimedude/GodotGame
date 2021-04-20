@@ -122,6 +122,7 @@ position = Vector2( -3.3674, -57.8067 )
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+zanos = 0.2
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 5.67374, -34.3295 )

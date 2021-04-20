@@ -17,12 +17,15 @@ class BulletManager : public Node2D
 	GODOT_CLASS(BulletManager, Node2D);
 
 	//exposed vars
-	//ResourceLoader* loader; 
+	int size_of_buffer = 10;
+	int bullet_offset_x = 0;
+	int bullet_offset_y = 0;
 	Ref<PackedScene> bullet_prefab;
 
 public:
 	static void _register_methods();
 	void _init();
+	void _ready();
 
 	~BulletManager();
 

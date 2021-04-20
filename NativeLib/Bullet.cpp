@@ -10,7 +10,10 @@ void Bullet::_register_methods()
 void Bullet::_init()
 {
 	motion = Vector2(0, 0);
-	motion.x = facing_right ? bullet_speed : -bullet_speed;
+}
+
+void Bullet::_ready()
+{
 }
 
 void Bullet::_physics_process(float delta)
@@ -18,7 +21,15 @@ void Bullet::_physics_process(float delta)
 	UpdateMotion();
 }
 
+void Bullet::UpdatePosition(Vector2 position, bool facingRight)
+{
+	set_global_position(position);
+	motion.x = facingRight ? bullet_speed : -bullet_speed;
+	set_scale(Vector2(facingRight ? 1 : -1, 1));
+}
+
+
 void Bullet::UpdateMotion()
 {
-	move_and_slide(motion);
+	move_and_collide(motion);
 }
