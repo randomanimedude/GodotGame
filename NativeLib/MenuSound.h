@@ -1,13 +1,13 @@
 #pragma once
 #include <Godot.hpp>
-#include <AudioStreamPlayer2D.hpp>
+#include <AudioStreamPlayer.hpp>
 
 using namespace godot;
 
 class MenuSound : 
-    public AudioStreamPlayer2D
+    public AudioStreamPlayer
 {
-	GODOT_CLASS(MenuSound, AudioStreamPlayer2D);
+	GODOT_CLASS(MenuSound, AudioStreamPlayer);
 
 public:
 	static void _register_methods();
