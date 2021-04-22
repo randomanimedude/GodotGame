@@ -25,17 +25,22 @@ public:
 public:
 
 private:
+	Node2D* parent;
 	Vector2 motion;
+	bool enabled;
 
 	
 
 	//gayplay methods
 public:
 	void UpdatePosition(Vector2 position, bool facingRight);
+	void Disable();
+	void Enable();
+	bool IsEnabled();
+
 
 private:
 	void UpdateMotion();
-	
 	
 };
 

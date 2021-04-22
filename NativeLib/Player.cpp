@@ -58,6 +58,9 @@ void Player::UpdateMotionFromInput()
 			if (motion.x == 0)
 				animator->play((godot::String)"Idle" + (godot::String)(facing_right ? "Right" : "Left"));
 		}
+		if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2)
+			motion.y = -jump_force / 2;
+
 
 		if (inp->is_action_pressed("move_left") && !inp->is_action_pressed("move_right"))
 		{
@@ -75,6 +78,12 @@ void Player::UpdateMotionFromInput()
 			motion.x = std::lerp((float)motion.x, (float)0, zanos);
 		motion.x = clamp(motion.x, -max_speed, max_speed);
 
+		if (motion.y > gravity)
+			animator->play("Fall" + (godot::String)(facing_right ? "Right" : "Left"));
+		else if (motion.y < gravity)
+			animator->play("Jump" + (godot::String)(facing_right ? "Right" : "Left"));
+
+		std::cout << motion.y << std::endl;
 
 		if (inp->is_action_just_pressed("shoot"))
 		{

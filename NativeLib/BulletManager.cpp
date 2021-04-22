@@ -8,6 +8,7 @@ void BulletManager::_register_methods()
 	register_property("size_of_buffer", &BulletManager::size_of_buffer, 10);
 	register_property("bullet_offset_x", &BulletManager::bullet_offset_x, 0);
 	register_property("bullet_offset_y", &BulletManager::bullet_offset_y, 0);
+	register_property("allow_expansion", &BulletManager::allow_expansion, true);
 }
 
 void BulletManager::_init()
@@ -24,18 +25,38 @@ BulletManager::~BulletManager()
 void BulletManager::_ready()
 {
 	for (int i = 0; i < size_of_buffer; ++i)
-		Bullets.push_back(Node::cast_to<Node2D>(bullet_prefab->instance()));
+		AddBulletToBuffer();
+}
+
+void BulletManager::AddBulletToBuffer()
+{
+	Node* temp = bullet_prefab->instance();
+	add_child(temp);
+	Bullets.push_back(Node::cast_to<Bullet>(temp->get_child(0)));
 }
 
 void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight)
 {
-	for (std::vector<Node2D*>::iterator it = Bullets.begin(); it != Bullets.end(); ++it)
+	bool succes = false;
+
+	//find and use free bullet
+	for (Bullet* bullet : Bullets)
 	{
-		if ((*it)->get_parent() == nullptr)
+		if (!bullet->IsEnabled())
 		{
-			add_child(*it);
-			Node::cast_to<Bullet>((*it)->get_child(0))->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
+			bullet->Enable();
+			bullet->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
+			succes = true;
 			break; 
 		}
+	}
+
+	//if failed, add new bullet to buffer
+	if (!succes && allow_expansion)
+	{
+		AddBulletToBuffer();
+		Bullet* bullet = Bullets.back();
+		bullet->Enable();
+		bullet->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
 	}
 }

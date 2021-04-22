@@ -18,6 +18,7 @@ class BulletManager : public Node2D
 
 	//exposed vars
 	int size_of_buffer = 10;
+	bool allow_expansion = true;
 	int bullet_offset_x = 0;
 	int bullet_offset_y = 0;
 	Ref<PackedScene> bullet_prefab;
@@ -33,13 +34,14 @@ public:
 public:
 
 private:
-	std::vector<Node2D*> Bullets;
+	std::vector<Bullet*> Bullets;
 
 	//gayplay methods
 public:
 	void SpawnNewBullet(Vector2, bool);
 
 private:
+	void AddBulletToBuffer();
 
 };
 
