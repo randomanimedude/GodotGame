@@ -11,7 +11,9 @@ height = 18.2174
 
 [node name="Bullet" type="KinematicBody2D" parent="."]
 collision_layer = 4
+collision_mask = 9
 script = ExtResource( 1 )
+bullet_speed = 25
 
 [node name="Sprite" type="Sprite" parent="Bullet"]
 position = Vector2( 14.1374, 3.13556 )

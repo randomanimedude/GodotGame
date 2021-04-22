@@ -3,6 +3,7 @@
 #include "BulletManager.h"
 #include "Menu_buttons.h"
 #include "MenuSound.h"
+#include "Robat.h"
 
 using namespace godot;
 
@@ -22,4 +23,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	godot::register_class<BulletManager>();
 	godot::register_class<Menu_buttons>();
 	godot::register_class<MenuSound>();
+	godot::register_class<Robat>();
 }

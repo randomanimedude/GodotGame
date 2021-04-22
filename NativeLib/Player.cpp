@@ -19,8 +19,6 @@ void Player::_register_methods()
 
 void Player::_init()
 {
-	oldMotion = motion = Vector2(0, 0);
-
 	inp = Input::get_singleton();
 }
 
@@ -93,9 +91,4 @@ void Player::UpdateMotionFromInput()
 	}
 	else if (is_on_floor())
 		motion.x = 0;
-}
-
-int Player::clamp(int x, int min, int max)
-{
-	return (x < min) ? min : ((x > max) ? max : x);
 }

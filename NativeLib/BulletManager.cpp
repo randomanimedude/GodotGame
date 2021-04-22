@@ -17,9 +17,9 @@ void BulletManager::_init()
 
 BulletManager::~BulletManager()
 {
-	for (auto bullet : Bullets)
-		bullet->free();
-	Bullets.clear();
+	/*for (auto bullet : Bullets)
+		bullet->queue_free();
+	Bullets.clear();*/
 }
 
 void BulletManager::_ready()

@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include "Robat.h"
 
 void Bullet::_register_methods()
 {
@@ -16,6 +17,7 @@ void Bullet::_init()
 void Bullet::_ready()
 {
 	parent = Node::cast_to<Node2D>(get_parent());
+	collision = Node::cast_to<CollisionShape2D>(get_node("CollisionShape2D"));
 	Disable();
 }
 
@@ -34,6 +36,7 @@ void Bullet::UpdatePosition(Vector2 position, bool facingRight)
 
 void Bullet::Disable()
 {
+	collision->set_disabled(true);
 	parent->hide();
 	parent->set_process(false);
 	parent->set_physics_process(false);
@@ -42,6 +45,7 @@ void Bullet::Disable()
 
 void Bullet::Enable()
 {
+	collision->set_disabled(false);
 	parent->show();
 	parent->set_process(true);
 	parent->set_physics_process(true);
@@ -60,6 +64,14 @@ void Bullet::UpdateMotion()
 
 	if (col != nullptr)
 	{
+		DestroyIfEnemy(col);
 		Disable();
 	}
+}
+
+void Bullet::DestroyIfEnemy(Ref<KinematicCollision2D> collision)
+{
+	Node* node = Node::cast_to<Node>(collision->get_collider());
+	if (node->get_name() == "Robat")
+		Object::cast_to<Robat>(node)->Destroy();
 }

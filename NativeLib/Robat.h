@@ -2,26 +2,23 @@
 
 #include <Godot.hpp>
 #include <KinematicBody2D.hpp>
-#include <Input.hpp>
 #include <AnimationPlayer.hpp>
+#include <KinematicCollision2D.hpp>
 
-#include "BulletManager.h"
 #include "CommonLib.h"
 
 using namespace godot;
 
-class Player : public KinematicBody2D
+class Robat : public KinematicBody2D
 {
 	//godot structure
-	GODOT_CLASS(Player, KinematicBody2D);
+	GODOT_CLASS(Robat, KinematicBody2D);
 
 	//exposed vars
 	int max_speed = 800;
 	int gravity = 70;
 	int max_fall_speed = 1200;
-	int jump_force = 1600;
 	int acceleration = 50;
-	float zanos = 0.2f;
 
 public:
 	static void _register_methods();
@@ -35,6 +32,7 @@ public:
 	//gayplay vars
 public:
 	const Vector2 UP = Vector2(0, -1);
+	Vector2 scale;
 
 	bool facing_right = true;
 
@@ -42,17 +40,11 @@ private:
 	Vector2 motion;
 	Node* nodeFinder;
 	AnimationPlayer* animator;
-	BulletManager* bulletManager;
-	Input* inp;
-
-	bool onFloor = false;
 
 
 	//gayplay methods
 public:
-	void UpdateMotionFromInput();
-
-private:
-
+	void Destroy();
+	void MoveFromWallToWall();
 };
 

@@ -163,17 +163,21 @@
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="CommonLib.cpp" />
     <ClCompile Include="MenuSound.cpp" />
     <ClCompile Include="Menu_buttons.cpp" />
     <ClCompile Include="NativeLib.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Robat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletManager.h" />
+    <ClInclude Include="CommonLib.h" />
     <ClInclude Include="MenuSound.h" />
     <ClInclude Include="Menu_buttons.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Robat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

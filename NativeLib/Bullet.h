@@ -3,6 +3,7 @@
 #include <Godot.hpp>
 #include <KinematicBody2D.hpp>
 #include <KinematicCollision2D.hpp>
+#include <CollisionShape2D.hpp>
 
 using namespace godot;
 
@@ -26,6 +27,7 @@ public:
 
 private:
 	Node2D* parent;
+	CollisionShape2D* collision;
 	Vector2 motion;
 	bool enabled;
 
@@ -40,6 +42,7 @@ public:
 
 
 private:
+	void DestroyIfEnemy(Ref<KinematicCollision2D> collision);
 	void UpdateMotion();
 	
 };
