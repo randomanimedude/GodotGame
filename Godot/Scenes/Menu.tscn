@@ -25,6 +25,8 @@ margin_bottom = 330.0
 focus_neighbour_top = NodePath("../New game")
 focus_neighbour_bottom = NodePath("../Exit")
 text = "Options"
+reference_path = null
+start_focused = null
 
 [node name="Exit" parent="." instance=ExtResource( 1 )]
 margin_left = 443.26
@@ -34,6 +36,8 @@ margin_bottom = 380.0
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../New game")
 text = "Exit"
+reference_path = null
+start_focused = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
