@@ -1,0 +1,5 @@
+[gd_resource type="NativeScript" format=2]
+
+[resource]
+resource_name = "Music_in_menu"
+class_name = "Music_in_menu"
