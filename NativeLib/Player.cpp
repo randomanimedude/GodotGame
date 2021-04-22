@@ -44,12 +44,12 @@ void Player::_physics_process(float delta)
 
 void Player::UpdateMotionFromInput()
 {
-	
 	motion.y += gravity;
 	motion.y = clamp(motion.y, -jump_force, max_fall_speed);
 
 	if (animator->get_current_animation().find("Shoot") == -1)
 	{
+		//jumping part
 		if (is_on_floor())
 		{
 			if (inp->is_action_just_pressed("jump"))
@@ -61,7 +61,7 @@ void Player::UpdateMotionFromInput()
 		if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2)
 			motion.y = -jump_force / 2;
 
-
+		//moving left-right part
 		if (inp->is_action_pressed("move_left") && !inp->is_action_pressed("move_right"))
 		{
 			motion.x -= acceleration;
@@ -78,13 +78,13 @@ void Player::UpdateMotionFromInput()
 			motion.x = std::lerp((float)motion.x, (float)0, zanos);
 		motion.x = clamp(motion.x, -max_speed, max_speed);
 
+		// jump/fall animation 
 		if (motion.y > gravity)
 			animator->play("Fall" + (godot::String)(facing_right ? "Right" : "Left"));
 		else if (motion.y < gravity)
 			animator->play("Jump" + (godot::String)(facing_right ? "Right" : "Left"));
 
-		std::cout << motion.y << std::endl;
-
+		//shooting part
 		if (inp->is_action_just_pressed("shoot"))
 		{
 			animator->play((godot::String)"Shoot" + (godot::String)(facing_right ? "Right" : "Left"));
