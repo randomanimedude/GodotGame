@@ -15,12 +15,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Новый Игровой Проект"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-MusicControler="*res://Autoloads/MusicControler.tscn"
 
 [input]
 
