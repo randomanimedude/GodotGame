@@ -87,12 +87,14 @@ void Player::UpdateMotionFromInput()
 		//moving left-right part
 		if (inp->is_action_pressed("move_left") && !inp->is_action_pressed("move_right"))
 		{
+			if (motion.x > 0) motion.x = lerp((float)motion.x, (float)0, zanos);
 			motion.x -= acceleration;
 			facing_right = false;
 			animator->play("RunLeft");
 		}
 		else if (inp->is_action_pressed("move_right") && !inp->is_action_pressed("move_left"))
 		{
+			if (motion.x < 0) motion.x = lerp((float)motion.x, (float)0, zanos);
 			motion.x += acceleration;
 			facing_right = true;
 			animator->play("RunRight");

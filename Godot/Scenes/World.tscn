@@ -151,6 +151,5 @@ max_speed = 200
 position = Vector2( -779.546, 118.801 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-zanos = 0.5
 hit_impact_x = 3000
 hit_impact_y = -1000
