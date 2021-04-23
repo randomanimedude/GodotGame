@@ -1,11 +1,10 @@
 #pragma once
 
-#include <Godot.hpp>
+#include "CommonLib.h"
+
 #include <KinematicBody2D.hpp>
 #include <KinematicCollision2D.hpp>
 #include <CollisionShape2D.hpp>
-
-using namespace godot;
 
 class Bullet : public KinematicBody2D
 {
@@ -30,12 +29,11 @@ private:
 	CollisionShape2D* collision;
 	Vector2 motion;
 	bool enabled;
-
-	
+	bool byPlayer;
 
 	//gayplay methods
 public:
-	void UpdatePosition(Vector2 position, bool facingRight);
+	void UpdatePosition(Vector2 position, bool facingRight, bool byPlayer);
 	void Disable();
 	void Enable();
 	bool IsEnabled();

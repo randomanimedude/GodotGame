@@ -1,15 +1,14 @@
 #pragma once
 
-#include <Godot.hpp>
+#include "CommonLib.h"
+#include "Bullet.h"
+
 #include <Node2D.hpp>
 #include <PackedScene.hpp>
 #include <ResourceLoader.hpp>
 #include <vector>
 #include <memory>
 
-#include "Bullet.h"
-
-using namespace godot;
 
 class BulletManager : public Node2D
 {
@@ -19,8 +18,6 @@ class BulletManager : public Node2D
 	//exposed vars
 	int size_of_buffer = 10;
 	bool allow_expansion = true;
-	int bullet_offset_x = 0;
-	int bullet_offset_y = 0;
 	Ref<PackedScene> bullet_prefab;
 
 public:
@@ -38,7 +35,7 @@ private:
 
 	//gayplay methods
 public:
-	void SpawnNewBullet(Vector2, bool);
+	void SpawnNewBullet(Vector2, bool, bool);
 
 private:
 	void AddBulletToBuffer();

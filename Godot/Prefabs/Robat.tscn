@@ -25,9 +25,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Shoot"
-length = 0.05
+length = 0.2
 loop = true
-step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -35,10 +34,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.025 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 2 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "ShootLeft"
+}, {
+"args": [  ],
+"method": "ShootRight"
+} ]
 }
 
 [node name="Robat" type="KinematicBody2D"]
@@ -49,6 +65,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.931465, 0.185413 )
@@ -57,3 +74,20 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Move = SubResource( 2 )
 anims/Shoot = SubResource( 3 )
+
+[node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2( -24.25, -33.75 )
+enabled = true
+collide_with_areas = true
+
+[node name="PlayerDetector" type="RayCast2D" parent="."]
+position = Vector2( 0, 7.25 )
+enabled = true
+cast_to = Vector2( -100, 0 )
+collision_mask = 2
+
+[node name="BulletSpawnPositionLeft" type="Node2D" parent="."]
+position = Vector2( -14.7316, 7.41817 )
+
+[node name="BulletSpawnPositionRight" type="Node2D" parent="."]
+position = Vector2( 1.41591, 6.63864 )

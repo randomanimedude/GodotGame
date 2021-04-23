@@ -1,13 +1,12 @@
 #pragma once
 
-#include <Godot.hpp>
+#include "CommonLib.h"
+#include "BulletManager.h"
+
 #include <KinematicBody2D.hpp>
 #include <AnimationPlayer.hpp>
 #include <KinematicCollision2D.hpp>
-
-#include "CommonLib.h"
-
-using namespace godot;
+#include <RayCast2D.hpp>
 
 class Robat : public KinematicBody2D
 {
@@ -19,6 +18,7 @@ class Robat : public KinematicBody2D
 	int gravity = 70;
 	int max_fall_speed = 1200;
 	int acceleration = 50;
+	float zanos = 0.2f;
 
 public:
 	static void _register_methods();
@@ -34,17 +34,27 @@ public:
 	const Vector2 UP = Vector2(0, -1);
 	Vector2 scale;
 
-	bool facing_right = true;
-
 private:
 	Vector2 motion;
+	Node2D* bulletSpawnPositionLeft;
+	Node2D* bulletSpawnPositionRight;
 	Node* nodeFinder;
 	AnimationPlayer* animator;
-
+	BulletManager* bulletManager;
+	RayCast2D* floorDetector;
+	RayCast2D* playerDetector;
+	bool facing_right = false;
+	bool isShooting = false;
 
 	//gayplay methods
 public:
 	void Destroy();
-	void MoveFromWallToWall();
+	void ShootLeft();
+	void ShootRight();
+
+private:
+	void ShootAtSight();
+	void Move();
+	void TurnAroundIfNeeded();
 };
 

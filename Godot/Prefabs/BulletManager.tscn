@@ -11,6 +11,3 @@ library = ExtResource( 1 )
 [node name="BulletManager" type="Node2D"]
 script = SubResource( 1 )
 bullet_prefab = ExtResource( 2 )
-size_of_buffer = null
-bullet_offset_x = 30
-bullet_offset_y = -18

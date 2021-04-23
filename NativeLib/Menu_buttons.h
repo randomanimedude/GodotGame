@@ -1,9 +1,9 @@
 #pragma once
-#include <Godot.hpp>
+
+#include "CommonLib.h"
+
 #include <Button.hpp>
 #include <SceneTree.hpp>
-
-using namespace godot;
 
 class Menu_buttons :
     public Button

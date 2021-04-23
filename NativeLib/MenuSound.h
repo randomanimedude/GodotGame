@@ -1,8 +1,8 @@
 #pragma once
-#include <Godot.hpp>
-#include <AudioStreamPlayer.hpp>
 
-using namespace godot;
+#include "CommonLib.h"
+
+#include <AudioStreamPlayer.hpp>
 
 class MenuSound : 
     public AudioStreamPlayer

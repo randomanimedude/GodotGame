@@ -1,14 +1,12 @@
 #pragma once
 
-#include <Godot.hpp>
+#include "CommonLib.h"
+#include "BulletManager.h"
+
 #include <KinematicBody2D.hpp>
 #include <Input.hpp>
 #include <AnimationPlayer.hpp>
 
-#include "BulletManager.h"
-#include "CommonLib.h"
-
-using namespace godot;
 
 class Player : public KinematicBody2D
 {
@@ -22,6 +20,8 @@ class Player : public KinematicBody2D
 	int jump_force = 1600;
 	int acceleration = 50;
 	float zanos = 0.2f;
+	int hit_impact_x = 300;
+	int hit_impact_y = -300;
 
 public:
 	static void _register_methods();
@@ -44,15 +44,20 @@ private:
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
 	Input* inp;
+	Node2D* bulletSpawnPositionRight;
+	Node2D* bulletSpawnPositionLeft;
 
 	bool onFloor = false;
 
 
 	//gayplay methods
 public:
-	void UpdateMotionFromInput();
+	void DealDamage(Vector2 hitPoint);
+	void ShootRight();
+	void ShootLeft();
 
 private:
+	void UpdateMotionFromInput();
 
 };
 

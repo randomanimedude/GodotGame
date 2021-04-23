@@ -6,8 +6,6 @@ void BulletManager::_register_methods()
 
 	register_property("bullet_prefab", &BulletManager::bullet_prefab, Ref<PackedScene>());
 	register_property("size_of_buffer", &BulletManager::size_of_buffer, 10);
-	register_property("bullet_offset_x", &BulletManager::bullet_offset_x, 0);
-	register_property("bullet_offset_y", &BulletManager::bullet_offset_y, 0);
 	register_property("allow_expansion", &BulletManager::allow_expansion, true);
 }
 
@@ -17,9 +15,6 @@ void BulletManager::_init()
 
 BulletManager::~BulletManager()
 {
-	/*for (auto bullet : Bullets)
-		bullet->queue_free();
-	Bullets.clear();*/
 }
 
 void BulletManager::_ready()
@@ -35,7 +30,7 @@ void BulletManager::AddBulletToBuffer()
 	Bullets.push_back(Node::cast_to<Bullet>(temp->get_child(0)));
 }
 
-void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight)
+void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPlayer)
 {
 	bool succes = false;
 
@@ -45,7 +40,7 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight)
 		if (!bullet->IsEnabled())
 		{
 			bullet->Enable();
-			bullet->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
+			bullet->UpdatePosition(position, facingRight, byPlayer);
 			succes = true;
 			break; 
 		}
@@ -57,6 +52,6 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight)
 		AddBulletToBuffer();
 		Bullet* bullet = Bullets.back();
 		bullet->Enable();
-		bullet->UpdatePosition(position + Vector2(facingRight ? bullet_offset_x : -bullet_offset_x, bullet_offset_y), facingRight);
+		bullet->UpdatePosition(position, facingRight, byPlayer);
 	}
 }
