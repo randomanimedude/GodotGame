@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/BulletManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Texture/background.png" type="Texture" id=4]
 [ext_resource path="res://Prefabs/Robat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/PauseMenu.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 416, 32, 0, 32, 0, 0, 416, 0 )
@@ -150,6 +151,10 @@ max_speed = 200
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 position = Vector2( -779.546, 118.801 )
 
+[node name="Pause" parent="." instance=ExtResource( 6 )]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 hit_impact_x = 3000
 hit_impact_y = -1000
+
+[editable path="Pause"]

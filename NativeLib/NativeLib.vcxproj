@@ -167,7 +167,9 @@
     <ClCompile Include="MenuSound.cpp" />
     <ClCompile Include="Menu_buttons.cpp" />
     <ClCompile Include="NativeLib.cpp" />
+    <ClCompile Include="PauseScreen.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ResumeButton.cpp" />
     <ClCompile Include="Robat.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +178,9 @@
     <ClInclude Include="CommonLib.h" />
     <ClInclude Include="MenuSound.h" />
     <ClInclude Include="Menu_buttons.h" />
+    <ClInclude Include="PauseScreen.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ResumeButton.h" />
     <ClInclude Include="Robat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
