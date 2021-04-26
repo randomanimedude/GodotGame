@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://NativeScripts/Pause.gdns" type="Script" id=1]
 [ext_resource path="res://NativeScripts/Resume.gdns" type="Script" id=2]
+[ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=3]
 
 [node name="Pause" type="CanvasLayer"]
 layer = 10
@@ -36,3 +37,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" parent="Pause" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.8647
+margin_top = 435.082
+margin_right = 74.1353
+margin_bottom = 475.082
+text = "Main menu"
+reference_path = "res://Scenes/Menu.tscn"

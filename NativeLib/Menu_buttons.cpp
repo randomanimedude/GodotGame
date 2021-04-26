@@ -17,6 +17,7 @@ void Menu_buttons::_init()
 
 void Menu_buttons::_ready()
 {
+	get_tree()->set_pause(false);
 	if (start_focused)
 	{
 		grab_focus();
