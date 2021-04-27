@@ -33,7 +33,6 @@ void Menu_buttons::_on_Button_mouse_entered()
 
 void Menu_buttons::_on_Button_Pressed()
 {
-	
 	if (reference_path != "")
 	{
 		get_tree()->change_scene(reference_path);

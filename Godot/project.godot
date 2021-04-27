@@ -18,6 +18,10 @@ config/name="Новый Игровой Проект"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+LevelManager="*res://NativeScripts/LevelManager.gdns"
+
 [display]
 
 window/stretch/mode="viewport"

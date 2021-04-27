@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Texture/background.png" type="Texture" id=4]
 [ext_resource path="res://Prefabs/Robat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/PauseMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/LevelEnd.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 416, 32, 0, 32, 0, 0, 416, 0 )
@@ -156,5 +157,9 @@ position = Vector2( -779.546, 118.801 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 hit_impact_x = 3000
 hit_impact_y = -1000
+
+[node name="LevelEnd" parent="." instance=ExtResource( 7 )]
+position = Vector2( -9564.89, -937.338 )
+next_level_id = -1
 
 [editable path="Pause"]
