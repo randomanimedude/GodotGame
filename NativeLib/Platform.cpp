@@ -5,10 +5,6 @@ void Platform::_register_methods()
 	register_method("_ready", &Platform::_ready);
 	register_method("_physics_process", &Platform::_physics_process);
 
-	//register_property("max_speed_x", &Platform::max_speed_x, 100);
-	//register_property("max_speed_y", &Platform::max_speed_y, 100);
-	//register_property("acceleration_x", &Platform::acceleration_x, 10);
-	//register_property("acceleration_y", &Platform::acceleration_y, 10);
 	register_property("Acceleration(%)", &Platform::acceleration, 1.0f);
 	register_property("Max speed(%)", &Platform::max_speed, 1.0f);
 }
@@ -25,8 +21,8 @@ void Platform::_ready()
 	accelerationVector = (end - start) * acceleration / 100;
 	maxSpeedVector = (end - start) * max_speed / 100;
 	motion = Vector2(0, 0);
-	endIsBelow = motion.y > 0;
-	endIsOnRigh = motion.x > 0;
+	endIsBelow = accelerationVector.y > 0;
+	endIsOnRigh = accelerationVector.x > 0;
 }
 
 void Platform::_physics_process(float delta)
@@ -34,13 +30,6 @@ void Platform::_physics_process(float delta)
 	currentPosition = get_global_position();
 	GoBack();
 	Move();
-
-	//if (toEnd)
-	//{
-	//	motion += Vector2(acceleration_x* ((endIsOnRigh && toEnd )?1:-1), acceleration_y)
-	//	motion.x = clamp(motion.x, -acceleration_x, acceleration_x);
-	//	motion.y = clamp(motion.y, -acceleration_y, acceleration_y);
-	//}
 }
 
 void Platform::Move()
@@ -58,6 +47,7 @@ void Platform::GoBack()
 	if (toEnd)
 	{
 		dif = end - currentPosition;
+		cout << dif.x * (endIsOnRigh ? 1 : -1) << ' ' << dif.y * (endIsBelow ? 1 : -1) << endl;
 		if (dif.x*(endIsOnRigh?1:-1) <= 0 && dif.y * (endIsBelow ? 1 : -1) <= 0)
 			toEnd = !toEnd;
 	}
