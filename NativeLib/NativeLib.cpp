@@ -9,6 +9,7 @@
 #include "ResumeButton.h"
 #include "LevelEnd.h"
 #include "LevelManager.h"
+#include "Platform.h"
 
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o) {
@@ -32,4 +33,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<ResumeButton>();
 	register_class<LevelEnd>();
 	register_class<LevelManager>();
+	register_class<Platform>();
 }

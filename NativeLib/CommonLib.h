@@ -5,4 +5,4 @@
 using namespace godot;
 using namespace std;
 
-int clamp(int x, int min, int max);
+float clamp(float x, float min, float max);

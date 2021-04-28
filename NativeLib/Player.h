@@ -47,7 +47,7 @@ private:
 	Node2D* bulletSpawnPositionRight;
 	Node2D* bulletSpawnPositionLeft;
 
-	bool onFloor = false;
+	bool jumping = true;
 
 
 	//gayplay methods

@@ -46,11 +46,12 @@ void Player::_process(float delta)
 void Player::_physics_process(float delta)
 {
 	UpdateMotionFromInput();
-	motion = move_and_slide(motion, UP);
+	motion = move_and_slide_with_snap(motion, Vector2(0, jumping ? 0 : 32), UP);
 }
 
 void Player::DealDamage(Vector2 hitPoint)
 {
+	jumping = true;
 	motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
 	motion.y = hit_impact_y;
 }
@@ -70,14 +71,19 @@ void Player::UpdateMotionFromInput()
 	motion.y += gravity;
 	motion.y = clamp(motion.y, -jump_force, max_fall_speed);
 
+	if (motion.y > 0)
+		jumping = false;
+
 	if (animator->get_current_animation().find("Shoot") == -1)
 	{
 		//jumping part
 		if (is_on_floor())
 		{
 			if (inp->is_action_just_pressed("jump"))
+			{
 				motion.y = -jump_force;
-
+				jumping = true;
+			}
 			if (motion.x == 0)
 				animator->play((godot::String)"Idle" + (godot::String)(facing_right ? "Right" : "Left"));
 		}
@@ -99,12 +105,15 @@ void Player::UpdateMotionFromInput()
 			facing_right = true;
 			animator->play("RunRight");
 		}
-		else if(is_on_floor())
+		else if (is_on_floor())
+		{
 			motion.x = lerp((float)motion.x, (float)0, zanos);
+			if (motion.x < 1) motion.x = 0;
+		}
 		motion.x = clamp(motion.x, -max_speed, max_speed);
 
 		// jump/fall animation 
-		if (motion.y > gravity)
+		if (motion.y > gravity && !is_on_floor())
 			animator->play("Fall" + (godot::String)(facing_right ? "Right" : "Left"));
 		else if (motion.y < gravity)
 			animator->play("Jump" + (godot::String)(facing_right ? "Right" : "Left"));
