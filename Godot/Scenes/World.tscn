@@ -187,7 +187,5 @@ hit_impact_y = -1000
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5163.33, 395.413 )
 scale = Vector2( 0.500411, 0.521511 )
-this_level_id = 1
-next_level_id = 0
 
 [editable path="Pause"]
