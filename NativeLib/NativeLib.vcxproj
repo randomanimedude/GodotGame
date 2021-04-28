@@ -170,6 +170,7 @@
     <ClCompile Include="Menu_buttons.cpp" />
     <ClCompile Include="NativeLib.cpp" />
     <ClCompile Include="PauseScreen.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResumeButton.cpp" />
     <ClCompile Include="Robat.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="MenuSound.h" />
     <ClInclude Include="Menu_buttons.h" />
     <ClInclude Include="PauseScreen.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResumeButton.h" />
     <ClInclude Include="Robat.h" />
