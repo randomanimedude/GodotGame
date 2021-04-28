@@ -42,12 +42,12 @@ void Robat::_ready()
 
 void Robat::_process(float delta)
 {
-	TurnAroundIfNeeded();
 	ShootAtSight();
 }
 
 void Robat::_physics_process(float delta)
 {
+	TurnAroundIfNeeded(); 
 	Move();
 }
 
