@@ -24,7 +24,7 @@ private:
     ResourceLoader* resourceLoader;
 
     String mainMenuPath = "res://Scenes/Menu.tscn";
-    String levelPath[1] = { "res://Scenes/World.tscn"};
+    String levelPath[2] = { "res://Scenes/World.tscn","res://Scenes/LVL2.tscn"};
 
 public:
     Node* currentScene;
