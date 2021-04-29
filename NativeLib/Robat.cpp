@@ -7,7 +7,7 @@ void Robat::_register_methods()
 	register_method("_ready", &Robat::_ready);
 	register_method("_process", &Robat::_process);
 	register_method("_physics_process", &Robat::_physics_process);
-	register_method("Destroy", &Robat::Destroy);
+	register_method("DealDamage", &Robat::DealDamage);
 	register_method("ShootLeft", &Robat::ShootLeft);
 	register_method("ShootRight", &Robat::ShootRight);
 
@@ -16,6 +16,8 @@ void Robat::_register_methods()
 	register_property("max_fall_speed", &Robat::max_fall_speed, 1200);
 	register_property("acceleration", &Robat::acceleration, 50);
 	register_property("zanos", &Robat::zanos, 0.2f);
+	register_property("HP", &Robat::HP, 15);
+	register_property("damage", &Robat::damage, 10);
 }
 
 void Robat::_init()
@@ -51,19 +53,20 @@ void Robat::_physics_process(float delta)
 	Move();
 }
 
-void Robat::Destroy()
+void Robat::DealDamage(int dmg)
 {
-	queue_free();
+	if ((HP -= dmg) <= 0)
+		Die();
 }
 
 void Robat::ShootLeft()
 {
-	bulletManager->SpawnNewBullet(bulletSpawnPositionLeft->get_global_position(), facing_right, false);
+	bulletManager->SpawnNewBullet(bulletSpawnPositionLeft->get_global_position(), facing_right, false, damage);
 }
 
 void Robat::ShootRight()
 {
-	bulletManager->SpawnNewBullet(bulletSpawnPositionRight->get_global_position(), facing_right, false);
+	bulletManager->SpawnNewBullet(bulletSpawnPositionRight->get_global_position(), facing_right, false, damage);
 }
 
 void Robat::ShootAtSight()
@@ -103,4 +106,9 @@ void Robat::TurnAroundIfNeeded()
 {
 	if((is_on_wall() || !floorDetector->is_colliding()) && is_on_floor())
 		facing_right = !facing_right;
+}
+
+void Robat::Die()
+{
+	queue_free();
 }

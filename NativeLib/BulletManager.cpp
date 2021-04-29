@@ -30,7 +30,7 @@ void BulletManager::AddBulletToBuffer()
 	Bullets.push_back(Node::cast_to<Bullet>(temp->get_child(0)));
 }
 
-void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPlayer)
+void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPlayer, int damage)
 {
 	bool succes = false;
 
@@ -39,6 +39,7 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPl
 	{
 		if (!bullet->IsEnabled())
 		{
+			bullet->damage = damage;
 			bullet->Enable();
 			bullet->UpdatePosition(position, facingRight, byPlayer);
 			succes = true;
@@ -51,6 +52,7 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPl
 	{
 		AddBulletToBuffer();
 		Bullet* bullet = Bullets.back();
+		bullet->damage = damage;
 		bullet->Enable();
 		bullet->UpdatePosition(position, facingRight, byPlayer);
 	}

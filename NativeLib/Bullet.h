@@ -23,6 +23,7 @@ public:
 
 	//gayplay vars
 public:
+	int damage;
 
 private:
 	Node2D* parent;
