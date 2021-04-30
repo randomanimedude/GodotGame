@@ -35,7 +35,7 @@ private:
 
 	//gayplay methods
 public:
-	void SpawnNewBullet(Vector2, bool, bool);
+	void SpawnNewBullet(Vector2, bool, bool, int);
 
 private:
 	void AddBulletToBuffer();

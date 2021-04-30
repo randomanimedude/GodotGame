@@ -20,11 +20,15 @@ void Player::_register_methods()
 	register_property("acceleration", &Player::acceleration, 50); 
 	register_property("hit_impact_x", &Player::hit_impact_x, 300);
 	register_property("hit_impact_y", &Player::hit_impact_y, -300);
+	register_property("max_HP", &Player::max_HP, 100);
+	register_property("starting_damage", &Player::starting_damage, 10);
 }
 
 void Player::_init()
 {
 	inp = Input::get_singleton();
+	HP = max_HP;
+	damage = starting_damage;
 }
 
 void Player::_ready()
@@ -49,21 +53,29 @@ void Player::_physics_process(float delta)
 	motion = move_and_slide_with_snap(motion, Vector2(0, jumping ? 0 : 32), UP);
 }
 
-void Player::DealDamage(Vector2 hitPoint)
+void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 {
-	jumping = true;
-	motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
-	motion.y = hit_impact_y;
+	if (!dead)
+	{
+		if ((HP -= damage) <= 0)
+			Die();
+		else if (commitImpact)
+		{
+			jumping = true;
+			motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
+			motion.y = hit_impact_y;
+		}
+	}
 }
 
 void Player::ShootRight()
 {
-	bulletManager->SpawnNewBullet(bulletSpawnPositionRight->get_global_position(), true, true);
+	bulletManager->SpawnNewBullet(bulletSpawnPositionRight->get_global_position(), true, true, damage);
 }
 
 void Player::ShootLeft()
 {
-	bulletManager->SpawnNewBullet(bulletSpawnPositionLeft->get_global_position(), false, true);
+	bulletManager->SpawnNewBullet(bulletSpawnPositionLeft->get_global_position(), false, true, damage);
 }
 
 void Player::UpdateMotionFromInput()
@@ -74,7 +86,7 @@ void Player::UpdateMotionFromInput()
 	if (motion.y > 0)
 		jumping = false;
 
-	if (animator->get_current_animation().find("Shoot") == -1)
+	if (!dead && animator->get_current_animation().find("Shoot") == -1)
 	{
 		//jumping part
 		if (is_on_floor())
@@ -124,4 +136,10 @@ void Player::UpdateMotionFromInput()
 	}
 	else if (is_on_floor())
 		motion.x = 0;
+}
+
+void Player::Die()
+{
+	dead = true;
+	animator->play((godot::String)"Death" + (godot::String)(facing_right ? "Right" : "Left"));
 }

@@ -19,6 +19,8 @@ class Robat : public KinematicBody2D
 	int max_fall_speed = 1200;
 	int acceleration = 50;
 	float zanos = 0.2f;
+	int HP = 15;
+	int damage = 10;
 
 public:
 	static void _register_methods();
@@ -48,7 +50,7 @@ private:
 
 	//gayplay methods
 public:
-	void Destroy();
+	void DealDamage(int damage);
 	void ShootLeft();
 	void ShootRight();
 
@@ -56,5 +58,6 @@ private:
 	void ShootAtSight();
 	void Move();
 	void TurnAroundIfNeeded();
+	void Die();
 };
 

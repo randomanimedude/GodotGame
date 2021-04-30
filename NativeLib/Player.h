@@ -14,6 +14,8 @@ class Player : public KinematicBody2D
 	GODOT_CLASS(Player, KinematicBody2D);
 
 	//exposed vars
+	int max_HP = 100;
+	int starting_damage = 10;
 	int max_speed = 800;
 	int gravity = 70;
 	int max_fall_speed = 1200;
@@ -48,16 +50,19 @@ private:
 	Node2D* bulletSpawnPositionLeft;
 
 	bool jumping = true;
-
+	bool dead = false;
+	int HP;
+	int damage;
 
 	//gayplay methods
 public:
-	void DealDamage(Vector2 hitPoint);
+	void DealDamage(Vector2 hitPoint, int dmg, bool commitImpact);
 	void ShootRight();
 	void ShootLeft();
 
 private:
 	void UpdateMotionFromInput();
+	void Die();
 
 };
 
