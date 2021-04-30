@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Interface/Font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Interface/Textures/bg.png" type="Texture" id=2]
+[ext_resource path="res://NativeScripts/Counter.gdns" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -30,6 +31,7 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

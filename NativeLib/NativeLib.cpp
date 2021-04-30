@@ -10,6 +10,8 @@
 #include "LevelEnd.h"
 #include "LevelManager.h"
 #include "Platform.h"
+#include "Counter.h"
+#include "InterfaceManager.h"
 
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o) {
@@ -34,4 +36,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<LevelEnd>();
 	register_class<LevelManager>();
 	register_class<Platform>();
+	register_class<Counter>();
+	register_class<InterfaceManager>();
 }

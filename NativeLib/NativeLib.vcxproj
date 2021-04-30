@@ -164,6 +164,8 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="CommonLib.cpp" />
+    <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="LevelEnd.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="MenuSound.cpp" />
@@ -179,6 +181,8 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CommonLib.h" />
+    <ClInclude Include="Counter.h" />
+    <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="LevelEnd.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="MenuSound.h" />

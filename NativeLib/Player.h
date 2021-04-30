@@ -2,6 +2,7 @@
 
 #include "CommonLib.h"
 #include "BulletManager.h"
+#include "InterfaceManager.h"
 
 #include <KinematicBody2D.hpp>
 #include <Input.hpp>
@@ -42,12 +43,12 @@ public:
 
 private:
 	Vector2 motion;
-	Node* nodeFinder;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
 	Input* inp;
 	Node2D* bulletSpawnPositionRight;
 	Node2D* bulletSpawnPositionLeft;
+	InterfaceManager* interfaceManager;
 
 	bool jumping = true;
 	bool dead = false;

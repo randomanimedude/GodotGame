@@ -33,14 +33,15 @@ void Player::_init()
 
 void Player::_ready()
 {
-	nodeFinder = get_node("AnimationPlayer");
-	animator = Node::cast_to<AnimationPlayer>(nodeFinder);
-	nodeFinder = get_node("../BulletManager");
-	bulletManager = Node::cast_to<BulletManager>(nodeFinder);
-	nodeFinder = get_node("BulletSpawnPositionRight");
-	bulletSpawnPositionRight = Node::cast_to<Node2D>(nodeFinder);
-	nodeFinder = get_node("BulletSpawnPositionLeft");
-	bulletSpawnPositionLeft = Node::cast_to<Node2D>(nodeFinder);
+	animator = Node::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
+	bulletManager = Node::cast_to<BulletManager>(get_node("../BulletManager"));
+	bulletSpawnPositionRight = Node::cast_to<Node2D>(get_node("BulletSpawnPositionRight"));
+	bulletSpawnPositionLeft = Node::cast_to<Node2D>(get_node("BulletSpawnPositionLeft"));
+	interfaceManager = Node::cast_to<InterfaceManager>(get_node("UI/Interface"));
+
+	interfaceManager->SetDMG(damage);
+	interfaceManager->SetHP(HP, max_HP);
+	interfaceManager->SetScore(0);
 }
 
 void Player::_process(float delta)
@@ -66,6 +67,7 @@ void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 			motion.y = hit_impact_y;
 		}
 	}
+	interfaceManager->SetHP(HP, max_HP);
 }
 
 void Player::ShootRight()
