@@ -42,6 +42,8 @@ public:
 	bool facing_right = true;
 
 private:
+	static inline Player* instance;
+
 	Vector2 motion;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
@@ -54,12 +56,16 @@ private:
 	bool dead = false;
 	int HP;
 	int damage;
+	int score = 0;
 
 	//gayplay methods
 public:
 	void DealDamage(Vector2 hitPoint, int dmg, bool commitImpact);
 	void ShootRight();
 	void ShootLeft();
+	void AddScore(int num);
+
+	static Player* GetInstance();
 
 private:
 	void UpdateMotionFromInput();

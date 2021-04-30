@@ -18,6 +18,7 @@ void Robat::_register_methods()
 	register_property("zanos", &Robat::zanos, 0.2f);
 	register_property("HP", &Robat::HP, 15);
 	register_property("damage", &Robat::damage, 10);
+	register_property("score_reward", &Robat::score_reward, 10);
 }
 
 void Robat::_init()
@@ -110,5 +111,6 @@ void Robat::TurnAroundIfNeeded()
 
 void Robat::Die()
 {
+	Player::GetInstance()->AddScore(score_reward);
 	queue_free();
 }

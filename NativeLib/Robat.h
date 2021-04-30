@@ -2,6 +2,7 @@
 
 #include "CommonLib.h"
 #include "BulletManager.h"
+#include "Player.h"
 
 #include <KinematicBody2D.hpp>
 #include <AnimationPlayer.hpp>
@@ -21,6 +22,7 @@ class Robat : public KinematicBody2D
 	float zanos = 0.2f;
 	int HP = 15;
 	int damage = 10;
+	int score_reward = 10;
 
 public:
 	static void _register_methods();

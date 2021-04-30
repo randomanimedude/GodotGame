@@ -26,6 +26,7 @@ void Player::_register_methods()
 
 void Player::_init()
 {
+	instance = this;
 	inp = Input::get_singleton();
 	HP = max_HP;
 	damage = starting_damage;
@@ -144,4 +145,15 @@ void Player::Die()
 {
 	dead = true;
 	animator->play((godot::String)"Death" + (godot::String)(facing_right ? "Right" : "Left"));
+}
+
+void Player::AddScore(int num)
+{
+	score += num;
+	interfaceManager->SetScore(score);
+}
+
+Player* Player::GetInstance()
+{
+	return instance;
 }
