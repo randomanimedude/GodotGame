@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://NativeScripts/Player.gdns" type="Script" id=1]
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=2]
+[ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interface/PauseMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.4224, 45.1163 )
@@ -414,3 +416,9 @@ position = Vector2( 61.7818, -18.4856 )
 
 [node name="BulletSpawnPositionLeft" type="Node2D" parent="."]
 position = Vector2( -62.6291, -17.6288 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="UI" instance=ExtResource( 3 )]
+
+[node name="Pause" parent="UI" instance=ExtResource( 4 )]

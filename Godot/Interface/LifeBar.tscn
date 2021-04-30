@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interface/Textures/health_bar/health_bar_decoration.png" type="Texture" id=1]
+[ext_resource path="res://Interface/Textures/health_bar/health_bar.png" type="Texture" id=2]
+
+[node name="LifeBar" type="TextureProgress"]
+margin_right = 64.0
+margin_bottom = 17.0
+min_value = -17.0
+max_value = 63.0
+value = 63.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
