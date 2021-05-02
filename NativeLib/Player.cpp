@@ -59,7 +59,7 @@ void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 {
 	if (!dead)
 	{
-		if ((HP -= damage) <= 0)
+		if ((HP -= dmg) <= 0)
 			Die();
 		else if (commitImpact)
 		{
@@ -151,6 +151,12 @@ void Player::AddScore(int num)
 {
 	score += num;
 	interfaceManager->SetScore(score);
+}
+
+void Player::IncreaseDamage(int bonus)
+{
+	damage += bonus;
+	interfaceManager->SetDMG(damage);
 }
 
 Player* Player::GetInstance()

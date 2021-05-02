@@ -64,6 +64,7 @@ public:
 	void ShootRight();
 	void ShootLeft();
 	void AddScore(int num);
+	void IncreaseDamage(int bonus);
 
 	static Player* GetInstance();
 
