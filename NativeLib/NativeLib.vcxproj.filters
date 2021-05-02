@@ -81,6 +81,12 @@
     <ClCompile Include="Robat.cpp">
       <Filter>Исходные файлы\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Max_HP_bonus.cpp">
+      <Filter>Исходные файлы\Pickables</Filter>
+    </ClCompile>
+    <ClCompile Include="Heal.cpp">
+      <Filter>Исходные файлы\Pickables</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -127,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="Robat.h">
       <Filter>Файлы заголовков\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Max_HP_bonus.h">
+      <Filter>Файлы заголовков\Pickables</Filter>
+    </ClInclude>
+    <ClInclude Include="Heal.h">
+      <Filter>Файлы заголовков\Pickables</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

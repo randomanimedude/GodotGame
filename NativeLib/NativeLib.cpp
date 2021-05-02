@@ -13,6 +13,8 @@
 #include "Counter.h"
 #include "InterfaceManager.h"
 #include "DMG_bonus.h"
+#include "Max_HP_bonus.h"
+#include "Heal.h"
 
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o) {
@@ -40,4 +42,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Counter>();
 	register_class<InterfaceManager>();
 	register_class<DMG_bonus>();
+	register_class<Max_HP_bonus>();
+	register_class<Heal>();
 }

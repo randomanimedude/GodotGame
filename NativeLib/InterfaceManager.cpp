@@ -19,7 +19,7 @@ void InterfaceManager::_ready()
 
 void InterfaceManager::SetHP(int current, int max)
 {
-	HP->SetValue(String::num_int64(current)+(String)'/'+ String::num_int64(max));
+	HP->SetValue(String::num_int64(current > 0 ? current : 0) + (String)'/' + String::num_int64(max));
 	HPBar->set_value((float)current / max * 63);		//63 is a maximum value set in textureProgress
 }
 

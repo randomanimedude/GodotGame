@@ -165,9 +165,11 @@
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="CommonLib.cpp" />
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="Heal.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="LevelEnd.cpp" />
     <ClCompile Include="LevelManager.cpp" />
+    <ClCompile Include="Max_HP_bonus.cpp" />
     <ClCompile Include="MenuSound.cpp" />
     <ClCompile Include="Menu_buttons.cpp" />
     <ClCompile Include="NativeLib.cpp" />
@@ -183,9 +185,11 @@
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CommonLib.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="Heal.h" />
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="LevelEnd.h" />
     <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="Max_HP_bonus.h" />
     <ClInclude Include="MenuSound.h" />
     <ClInclude Include="Menu_buttons.h" />
     <ClInclude Include="PauseScreen.h" />

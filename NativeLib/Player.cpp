@@ -141,6 +141,12 @@ void Player::UpdateMotionFromInput()
 		motion.x = 0;
 }
 
+void Player::IncreaseHP(int hp, bool full_heal)
+{
+	max_HP += hp;
+	Heal(full_heal ? max_HP : hp);
+}
+
 void Player::Die()
 {
 	dead = true;
@@ -162,4 +168,12 @@ void Player::IncreaseDamage(int bonus)
 Player* Player::GetInstance()
 {
 	return instance;
+}
+
+void Player::Heal(int hp)
+{
+	HP += hp;
+	if (HP > max_HP)
+		HP = max_HP;
+	interfaceManager->SetHP(HP, max_HP);
 }

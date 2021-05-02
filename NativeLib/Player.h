@@ -65,6 +65,8 @@ public:
 	void ShootLeft();
 	void AddScore(int num);
 	void IncreaseDamage(int bonus);
+	void Heal(int hp);
+	void IncreaseHP(int hp, bool heal);
 
 	static Player* GetInstance();
 

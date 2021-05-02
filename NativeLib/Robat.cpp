@@ -76,7 +76,6 @@ void Robat::ShootAtSight()
 	{
 		animator->play((String)"Shoot");
 		isShooting = true;
-		//bulletManager->SpawnNewBullet(bulletSpawnPosition->get_global_position(), facing_right, false);
 	}
 	else
 		isShooting = false;

@@ -81,11 +81,9 @@ void Bullet::DestroyIfEnemy(Ref<KinematicCollision2D> collision)
 	{
 		if (node->get_name().find("Robat") != -1)
 		{
-			cout << "damaging";
 			node->call("DealDamage", damage);
 		}
 	}
 	else if (node->get_name() == "Player")
 		node->call("DealDamage", collision->get_position(), damage, true);
-		//Object::cast_to<Player>(node)->DealDamage(collision->get_position());
 }
