@@ -5,13 +5,13 @@ using namespace std;
 void Robat::_register_methods()
 {
 	register_method("_ready", &Robat::_ready);
-	register_method("_process", &Robat::_process);
 	register_method("_physics_process", &Robat::_physics_process);
 	register_method("DealDamage", &Robat::DealDamage);
 	register_method("ShootLeft", &Robat::ShootLeft);
 	register_method("ShootRight", &Robat::ShootRight);
 
 	register_property("max_speed", &Robat::max_speed, 800);
+	register_property("move", &Robat::move, true);
 	register_property("gravity", &Robat::gravity, 70);
 	register_property("max_fall_speed", &Robat::max_fall_speed, 1200);
 	register_property("acceleration", &Robat::acceleration, 50);
@@ -43,15 +43,14 @@ void Robat::_ready()
 	bulletManager = Node::cast_to<BulletManager>(nodeFinder);
 }
 
-void Robat::_process(float delta)
-{
-	ShootAtSight();
-}
-
 void Robat::_physics_process(float delta)
 {
-	TurnAroundIfNeeded(); 
-	Move();
+	if (move)
+	{
+		TurnAroundIfNeeded();
+		Move();
+	}
+	ShootAtSight();
 }
 
 void Robat::DealDamage(int dmg)

@@ -79,10 +79,8 @@ void Bullet::DestroyIfEnemy(Ref<KinematicCollision2D> collision)
 	Node* node = Node::cast_to<Node>(collision->get_collider());
 	if (byPlayer)
 	{
-		if (node->get_name().find("Robat") != -1)
-		{
+		if (node->get_name().find("Robat") != -1 || node->get_name().find("Rashid") != -1)
 			node->call("DealDamage", damage);
-		}
 	}
 	else if (node->get_name() == "Player")
 		node->call("DealDamage", collision->get_position(), damage, true);

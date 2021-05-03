@@ -16,6 +16,7 @@ class Robat : public KinematicBody2D
 
 	//exposed vars
 	int max_speed = 800;
+	bool move = true;
 	int gravity = 70;
 	int max_fall_speed = 1200;
 	int acceleration = 50;
@@ -29,7 +30,6 @@ public:
 	void _init();
 
 	void _ready();
-	void _process(float delta);
 	void _physics_process(float delta);
 
 
