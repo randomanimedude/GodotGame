@@ -3,9 +3,10 @@
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/BulletManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Prefabs/Robat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Enemies/Robat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Interface/PauseMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/LevelEnd.tscn" type="PackedScene" id=7]
+
 
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

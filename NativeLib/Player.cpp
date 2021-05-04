@@ -20,6 +20,7 @@ void Player::_register_methods()
 	register_property("acceleration", &Player::acceleration, 50); 
 	register_property("hit_impact_x", &Player::hit_impact_x, 300);
 	register_property("hit_impact_y", &Player::hit_impact_y, -300);
+	register_property("damage_cooldown", &Player::damage_cooldown, 1.0f);
 	register_property("max_HP", &Player::max_HP, 100);
 	register_property("starting_damage", &Player::starting_damage, 10);
 }
@@ -47,28 +48,42 @@ void Player::_ready()
 
 void Player::_process(float delta)
 {
+	cout << motion.x << ' '<<animator->get_current_animation().alloc_c_string()<<endl;
 }
 
 void Player::_physics_process(float delta)
 {
+	if (damaged)
+	{
+		damagedFor += delta;
+		if (damagedFor >= damage_cooldown)
+		{
+			damagedFor = 0;
+			damaged = false;
+		}
+	}
 	UpdateMotionFromInput();
 	motion = move_and_slide_with_snap(motion, Vector2(0, jumping ? 0 : 32), UP);
 }
 
 void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 {
-	if (!dead)
+	if (!damaged)
 	{
-		if ((HP -= dmg) <= 0)
-			Die();
-		else if (commitImpact)
+		if (!dead)
 		{
-			jumping = true;
-			motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
-			motion.y = hit_impact_y;
+			if ((HP -= dmg) <= 0)
+				Die();
+			else if (commitImpact)
+			{
+				jumping = true;
+				motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
+				motion.y = hit_impact_y;
+			}
 		}
+		interfaceManager->SetHP(HP, max_HP);
+		damaged = true;
 	}
-	interfaceManager->SetHP(HP, max_HP);
 }
 
 void Player::ShootRight()
@@ -84,7 +99,7 @@ void Player::ShootLeft()
 void Player::UpdateMotionFromInput()
 {
 	motion.y += gravity;
-	motion.y = clamp(motion.y, -jump_force, max_fall_speed);
+	motion.y = clamp(motion.y, -9999999, max_fall_speed);
 
 	if (motion.y > 0)
 		jumping = false;
@@ -115,7 +130,7 @@ void Player::UpdateMotionFromInput()
 		}
 		else if (inp->is_action_pressed("move_right") && !inp->is_action_pressed("move_left"))
 		{
-			if (motion.x < 0) motion.x = lerp((float)motion.x, (float)0, zanos);
+			//if (motion.x < 0) motion.x = lerp((float)motion.x, (float)0, zanos);
 			motion.x += acceleration;
 			facing_right = true;
 			animator->play("RunRight");
@@ -123,9 +138,10 @@ void Player::UpdateMotionFromInput()
 		else if (is_on_floor())
 		{
 			motion.x = lerp((float)motion.x, (float)0, zanos);
-			if (motion.x < 1) motion.x = 0;
+			if (abs(motion.x) < 1) motion.x = 0;
 		}
-		motion.x = clamp(motion.x, -max_speed, max_speed);
+		if(!is_on_floor() && !jumping)
+			motion.x = clamp(motion.x, -max_speed, max_speed);
 
 		// jump/fall animation 
 		if (motion.y > gravity && !is_on_floor())

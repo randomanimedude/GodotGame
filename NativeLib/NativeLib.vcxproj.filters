@@ -90,6 +90,9 @@
     <ClCompile Include="Rashid.cpp">
       <Filter>Исходные файлы\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="DamagingArea.cpp">
+      <Filter>Исходные файлы\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -144,6 +147,9 @@
       <Filter>Файлы заголовков\Pickables</Filter>
     </ClInclude>
     <ClInclude Include="Rashid.h">
+      <Filter>Файлы заголовков\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="DamagingArea.h">
       <Filter>Файлы заголовков\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

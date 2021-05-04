@@ -25,6 +25,7 @@ class Player : public KinematicBody2D
 	float zanos = 0.2f;
 	int hit_impact_x = 300;
 	int hit_impact_y = -300;
+	float damage_cooldown = 1.0f;
 
 public:
 	static void _register_methods();
@@ -52,6 +53,8 @@ private:
 	Node2D* bulletSpawnPositionLeft;
 	InterfaceManager* interfaceManager;
 
+	float damagedFor = 0;
+	bool damaged = false;
 	bool jumping = true;
 	bool dead = false;
 	int HP;

@@ -16,6 +16,7 @@
 #include "Max_HP_bonus.h"
 #include "Heal.h"
 #include "Rashid.h"
+#include "DamagingArea.h"
 
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o) {
@@ -46,4 +47,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Max_HP_bonus>();
 	register_class<Heal>();
 	register_class<Rashid>();
+	register_class<DamagingArea>();
 }
