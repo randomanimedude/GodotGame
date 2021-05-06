@@ -380,12 +380,11 @@ script = ExtResource( 1 )
 zanos = 0.3
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3.02363, 3.0034 )
 scale = Vector2( 2.89111, 2.89111 )
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 8
-frame = 40
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.353447, 1.17754 )

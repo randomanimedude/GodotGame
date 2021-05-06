@@ -180,7 +180,7 @@ position = Vector2( -779.546, 118.801 )
 position = Vector2( -16.5126, -18.6289 )
 scale = Vector2( 1.02048, 1.00454 )
 hit_impact_x = 1000
-hit_impact_y = -1000
+hit_impact_y = -1500
 
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5163.33, 395.413 )

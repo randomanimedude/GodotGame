@@ -48,7 +48,6 @@ void Player::_ready()
 
 void Player::_process(float delta)
 {
-	cout << motion.x << ' '<<animator->get_current_animation().alloc_c_string()<<endl;
 }
 
 void Player::_physics_process(float delta)
@@ -63,7 +62,7 @@ void Player::_physics_process(float delta)
 		}
 	}
 	UpdateMotionFromInput();
-	motion = move_and_slide_with_snap(motion, Vector2(0, jumping ? 0 : 32), UP);
+	motion = (jumping || impact) ? move_and_slide(motion, UP) : move_and_slide_with_snap(motion, Vector2(0, 32), UP);
 }
 
 void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
@@ -80,9 +79,13 @@ void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 				motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
 				motion.y = hit_impact_y;
 			}
+			animator->play((String)"Fall" + (String)((motion.x < 0) ? "Right" : "Left"));
+			facing_right = (motion.x < 0) ? true : false;
 		}
 		interfaceManager->SetHP(HP, max_HP);
 		damaged = true;
+		if(commitImpact)
+			impact = 2;
 	}
 }
 
@@ -101,10 +104,14 @@ void Player::UpdateMotionFromInput()
 	motion.y += gravity;
 	motion.y = clamp(motion.y, -9999999, max_fall_speed);
 
-	if (motion.y > 0)
+	if (is_on_floor())
+	{
+		if(impact > 0)
+			impact -= 1;
 		jumping = false;
+	}
 
-	if (!dead && animator->get_current_animation().find("Shoot") == -1)
+	if (!dead && animator->get_current_animation().find("Shoot") == -1 && !impact)
 	{
 		//jumping part
 		if (is_on_floor())
@@ -117,7 +124,7 @@ void Player::UpdateMotionFromInput()
 			if (motion.x == 0)
 				animator->play((godot::String)"Idle" + (godot::String)(facing_right ? "Right" : "Left"));
 		}
-		if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2)
+		if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2 && jumping)
 			motion.y = -jump_force / 2;
 
 		//moving left-right part
@@ -130,7 +137,7 @@ void Player::UpdateMotionFromInput()
 		}
 		else if (inp->is_action_pressed("move_right") && !inp->is_action_pressed("move_left"))
 		{
-			//if (motion.x < 0) motion.x = lerp((float)motion.x, (float)0, zanos);
+			if (motion.x < 0) motion.x = lerp((float)motion.x, (float)0, zanos);
 			motion.x += acceleration;
 			facing_right = true;
 			animator->play("RunRight");
@@ -140,8 +147,7 @@ void Player::UpdateMotionFromInput()
 			motion.x = lerp((float)motion.x, (float)0, zanos);
 			if (abs(motion.x) < 1) motion.x = 0;
 		}
-		if(!is_on_floor() && !jumping)
-			motion.x = clamp(motion.x, -max_speed, max_speed);
+		motion.x = clamp(motion.x, -max_speed, max_speed);
 
 		// jump/fall animation 
 		if (motion.y > gravity && !is_on_floor())
@@ -153,7 +159,7 @@ void Player::UpdateMotionFromInput()
 		if (inp->is_action_just_pressed("shoot"))
 			animator->play((godot::String)"Shoot" + (godot::String)(facing_right ? "Right" : "Left"));
 	}
-	else if (is_on_floor())
+	else if (is_on_floor() && !impact)
 		motion.x = 0;
 }
 

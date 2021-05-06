@@ -26,7 +26,7 @@ void DamagingArea::_ready()
 void DamagingArea::_physics_process(float delta)
 {
 	if (playerInside)
-		player->DealDamage(player->get_global_position() + Vector2((player->facing_right ? 0 : 10),0), damage, impact);
+		player->DealDamage(get_global_position(), damage, impact);
 	
 }
 

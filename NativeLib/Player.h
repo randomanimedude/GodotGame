@@ -56,6 +56,7 @@ private:
 	float damagedFor = 0;
 	bool damaged = false;
 	bool jumping = true;
+	int  impact = 0;
 	bool dead = false;
 	int HP;
 	int damage;

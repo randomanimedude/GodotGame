@@ -17,7 +17,6 @@ void Platform::_ready()
 {
 	start = get_global_position();
 	end = Node::cast_to<Node2D>(get_node("EndPosition"))->get_global_position();
-	cout << ((end - start) * max_speed / 100).x << ' ' << ((end - start) * max_speed / 100).y;
 	accelerationVector = (end - start) * acceleration / 100;
 	maxSpeedVector = (end - start) * max_speed / 100;
 	motion = Vector2(0, 0);
@@ -47,7 +46,6 @@ void Platform::GoBack()
 	if (toEnd)
 	{
 		dif = end - currentPosition;
-		cout << dif.x * (endIsOnRigh ? 1 : -1) << ' ' << dif.y * (endIsBelow ? 1 : -1) << endl;
 		if (dif.x*(endIsOnRigh?1:-1) <= 0 && dif.y * (endIsBelow ? 1 : -1) <= 0)
 			toEnd = !toEnd;
 	}
