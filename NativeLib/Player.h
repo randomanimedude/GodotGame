@@ -68,6 +68,7 @@ public:
 	void ShootRight();
 	void ShootLeft();
 	void AddScore(int num);
+	int GetScore();
 	void IncreaseDamage(int bonus);
 	void Heal(int hp);
 	void IncreaseHP(int hp, bool heal);

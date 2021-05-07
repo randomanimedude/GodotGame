@@ -4,6 +4,7 @@
 #include <Area2D.hpp>
 
 #include "Player.h"
+#include "Counter.h"
 #include "LevelManager.h"
 
 class LevelEnd :
@@ -13,6 +14,7 @@ class LevelEnd :
 
 	int this_level_id = 0;
 	int next_level_id = 1;
+	int score_to_pass = 100;
 
 public:
 	static void _register_methods();
@@ -22,6 +24,7 @@ public:
 	void _on_body_entered(PhysicsBody2D* body);
 
 private:
+	Counter* label;
 	LevelManager* levelManager;
 };
 

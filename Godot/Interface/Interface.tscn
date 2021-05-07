@@ -4,7 +4,7 @@
 [ext_resource path="res://Interface/Counter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Interface/Textures/P12.png" type="Texture" id=3]
 [ext_resource path="res://Interface/Textures/#1 - Transparent Icons.png" type="Texture" id=4]
-[ext_resource path="res://Interface/Interface.gdns" type="Script" id=5]
+[ext_resource path="res://NativeScripts/Interface.gdns" type="Script" id=5]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -24,9 +24,9 @@ margin_bottom = 66.0
 rect_min_size = Vector2( 100, 0 )
 
 [node name="Value" parent="Score" index="0"]
-margin_left = -1.5306
+margin_left = -112.093
 margin_top = -18.1277
-margin_right = 65.4694
+margin_right = -45.0931
 margin_bottom = 27.8723
 
 [node name="Name" parent="Score" index="1"]
@@ -45,16 +45,16 @@ vframes = 27
 frame = 207
 
 [node name="HP" parent="." instance=ExtResource( 2 )]
-margin_left = 16.4217
-margin_top = 9.00544
-margin_right = 228.422
-margin_bottom = 49.0054
+margin_left = 44.1236
+margin_top = 4.28608
+margin_right = 256.124
+margin_bottom = 44.286
 
 [node name="Value" parent="HP" index="0"]
-margin_left = 92.8809
-margin_top = -19.3729
-margin_right = 216.881
-margin_bottom = 26.6271
+margin_left = -121.119
+margin_top = -18.8729
+margin_right = 2.88101
+margin_bottom = 27.1271
 text = "100/100"
 
 [node name="Name" parent="HP" index="1"]
@@ -72,14 +72,16 @@ margin_bottom = 16.0
 rect_scale = Vector2( 3, 3 )
 
 [node name="Damage" parent="." instance=ExtResource( 2 )]
-margin_left = 16.1225
-margin_top = 75.6634
-margin_right = 181.122
-margin_bottom = 120.663
+margin_left = 43.8244
+margin_top = 70.944
+margin_right = 208.824
+margin_bottom = 115.944
 
 [node name="Value" parent="Damage" index="0"]
-margin_left = 109.429
-margin_right = 176.429
+margin_left = -61.6235
+margin_top = -18.5734
+margin_right = 5.37646
+margin_bottom = 27.4266
 
 [node name="Name" parent="Damage" index="1"]
 margin_left = 6.64865
