@@ -16,6 +16,7 @@ _global_script_class_icons={
 
 config/name="Новый Игровой Проект"
 run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/LVL2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
