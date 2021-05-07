@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=1]
-[ext_resource path="res://NativeScripts/AudioStreamPlayer.gdns" type="Script" id=2]
+[ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=2]
 [ext_resource path="res://Sound/MenuSound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Texture/skyline-a.png" type="Texture" id=4]
 [ext_resource path="res://Texture/skyline-b.png" type="Texture" id=5]
