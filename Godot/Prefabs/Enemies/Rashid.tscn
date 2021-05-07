@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://guardbot1.png" type="Texture" id=1]
 [ext_resource path="res://explosion-6.png" type="Texture" id=2]
 [ext_resource path="res://NativeScripts/Rashid.gdns" type="Script" id=3]
+[ext_resource path="res://Prefabs/Enemies/EnemyHealthBar.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Detect"
@@ -169,3 +170,8 @@ modulate = Color( 1, 0, 0, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer"]
 position = Vector2( -2.01277, -1.73215 )
 shape = SubResource( 5 )
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource( 4 )]
+margin_top = -20.25
+margin_bottom = -10.25
+rect_scale = Vector2( 0.25, 0.2 )

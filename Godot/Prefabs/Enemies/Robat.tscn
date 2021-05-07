@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hoverbot1sheet.png" type="Texture" id=1]
 [ext_resource path="res://NativeScripts/Robat.gdns" type="Script" id=2]
+[ext_resource path="res://Prefabs/Enemies/EnemyHealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.7685, 14.1043 )
@@ -90,3 +91,6 @@ position = Vector2( -14.7316, 7.41817 )
 
 [node name="BulletSpawnPositionRight" type="Node2D" parent="."]
 position = Vector2( 1.41591, 6.63864 )
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource( 3 )]
+rect_scale = Vector2( 0.3, 0.2 )
