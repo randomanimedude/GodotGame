@@ -28,19 +28,16 @@ void Robat::_init()
 
 void Robat::_ready()
 {
+	max_hp = HP;
 	scale = get_scale();
-	nodeFinder = get_node("AnimationPlayer");
-	animator = Node::cast_to<AnimationPlayer>(nodeFinder);
-	nodeFinder = get_node("FloorDetector");
-	floorDetector = Node::cast_to<RayCast2D>(nodeFinder);
-	nodeFinder = get_node("PlayerDetector");
-	playerDetector = Node::cast_to<RayCast2D>(nodeFinder);
-	nodeFinder = get_node("BulletSpawnPositionLeft");
-	bulletSpawnPositionLeft = Node::cast_to<Node2D>(nodeFinder);
-	nodeFinder = get_node("BulletSpawnPositionRight");
-	bulletSpawnPositionRight = Node::cast_to<Node2D>(nodeFinder);
-	nodeFinder = get_node("../BulletManager");
-	bulletManager = Node::cast_to<BulletManager>(nodeFinder);
+	animator = Node::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
+	floorDetector = Node::cast_to<RayCast2D>(get_node("FloorDetector"));
+	playerDetector = Node::cast_to<RayCast2D>(get_node("PlayerDetector"));
+	bulletSpawnPositionLeft = Node::cast_to<Node2D>(get_node("BulletSpawnPositionLeft"));
+	bulletSpawnPositionRight = Node::cast_to<Node2D>(get_node("BulletSpawnPositionRight"));
+	bulletManager = Node::cast_to<BulletManager>(get_node("../BulletManager"));
+	healthBar = Node::cast_to<EnemyHealthBar>(get_node("EnemyHealthBar"));
+	healthBar->SetProgress(HP, HP);
 }
 
 void Robat::_physics_process(float delta)
@@ -55,7 +52,9 @@ void Robat::_physics_process(float delta)
 
 void Robat::DealDamage(int dmg)
 {
-	if ((HP -= dmg) <= 0)
+	HP -= dmg;
+	healthBar->SetProgress(HP, max_hp);
+	if (HP <= 0)
 		Die();
 }
 
@@ -103,8 +102,11 @@ void Robat::Move()
 
 void Robat::TurnAroundIfNeeded()
 {
-	if((is_on_wall() || !floorDetector->is_colliding()) && is_on_floor())
+	if ((is_on_wall() || !floorDetector->is_colliding()) && is_on_floor())
+	{
 		facing_right = !facing_right;
+		healthBar->TurnAround();
+	}
 }
 
 void Robat::Die()

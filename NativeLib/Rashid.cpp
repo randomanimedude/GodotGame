@@ -19,10 +19,14 @@ void Rashid::_init()
 
 void Rashid::_ready()
 {
+	max_hp = health;
+
 	detector = Node::cast_to<Area2D>(get_node("Detector"));
 	damageDealer = Node::cast_to<Area2D>(get_node("DamageDealer"));
 	animator = Node::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
 	animator->play("Idle");
+	healthBar = Node::cast_to<EnemyHealthBar>(get_node("EnemyHealthBar"));
+	healthBar->SetProgress(health, health);
 
 	detector->connect("body_entered", this, "_on_body_entered_detector");
 	damageDealer->connect("body_entered", this, "_on_body_entered_damageDealer");
@@ -51,6 +55,7 @@ void Rashid::_on_body_entered_damageDealer(PhysicsBody2D* body)
 void Rashid::DealDamage(int dmg)
 {
 	health -= dmg;
+	healthBar->SetProgress(health, max_hp);
 	if (health <= 0)
 		Die();
 }

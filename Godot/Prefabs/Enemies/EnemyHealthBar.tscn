@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://greenbar (2) — копия.png" type="Texture" id=1]
+[ext_resource path="res://NativeScripts/EnemyHealthBar.gdns" type="Script" id=2]
+
+[node name="EnemyHealthBar" type="TextureProgress"]
+margin_left = -50.0
+margin_top = -19.2499
+margin_right = 50.0
+margin_bottom = -9.24992
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 50, 0 )
+value = 45.0
+texture_progress = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

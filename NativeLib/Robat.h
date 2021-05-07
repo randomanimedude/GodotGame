@@ -3,6 +3,7 @@
 #include "CommonLib.h"
 #include "BulletManager.h"
 #include "Player.h"
+#include "EnemyHealthBar.h"
 
 #include <KinematicBody2D.hpp>
 #include <AnimationPlayer.hpp>
@@ -42,6 +43,7 @@ private:
 	Vector2 motion;
 	Node2D* bulletSpawnPositionLeft;
 	Node2D* bulletSpawnPositionRight;
+	EnemyHealthBar* healthBar;
 	Node* nodeFinder;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
@@ -49,6 +51,7 @@ private:
 	RayCast2D* playerDetector;
 	bool facing_right = false;
 	bool isShooting = false;
+	int max_hp;
 
 	//gayplay methods
 public:

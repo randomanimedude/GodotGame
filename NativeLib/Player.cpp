@@ -73,14 +73,17 @@ void Player::DealDamage(Vector2 hitPoint, int dmg, bool commitImpact)
 		{
 			if ((HP -= dmg) <= 0)
 				Die();
-			else if (commitImpact)
+			else 
 			{
-				jumping = true;
-				motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
-				motion.y = hit_impact_y;
+				if (commitImpact)
+				{
+					jumping = true;
+					motion.x = (hitPoint.x < get_position().x) ? hit_impact_x : -hit_impact_x;
+					motion.y = hit_impact_y;
+				}
+				animator->play((String)"Fall" + (String)((motion.x < 0) ? "Right" : "Left"));
+				facing_right = (motion.x < 0) ? true : false;
 			}
-			animator->play((String)"Fall" + (String)((motion.x < 0) ? "Right" : "Left"));
-			facing_right = (motion.x < 0) ? true : false;
 		}
 		interfaceManager->SetHP(HP, max_HP);
 		damaged = true;

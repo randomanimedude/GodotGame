@@ -166,6 +166,7 @@
     <ClCompile Include="CommonLib.cpp" />
     <ClCompile Include="Counter.cpp" />
     <ClCompile Include="DamagingArea.cpp" />
+    <ClCompile Include="EnemyHealthBar.cpp" />
     <ClCompile Include="Heal.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="LevelEnd.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="CommonLib.h" />
     <ClInclude Include="Counter.h" />
     <ClInclude Include="DamagingArea.h" />
+    <ClInclude Include="EnemyHealthBar.h" />
     <ClInclude Include="Heal.h" />
     <ClInclude Include="InterfaceManager.h" />
     <ClInclude Include="LevelEnd.h" />

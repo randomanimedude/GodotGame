@@ -2,6 +2,8 @@
 
 #include "CommonLib.h"
 #include "Player.h"
+#include "EnemyHealthBar.h"
+
 #include <KinematicBody2D.hpp>
 #include <Area2D.hpp>
 
@@ -17,7 +19,9 @@ private:
     Area2D* detector;
     Area2D* damageDealer;
     AnimationPlayer* animator;
+    EnemyHealthBar* healthBar;
     bool triggered = false;
+    int max_hp;
 
 public:
     static void _register_methods();
