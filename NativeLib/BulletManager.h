@@ -2,6 +2,7 @@
 
 #include "CommonLib.h"
 #include "Bullet.h"
+#include "BulletBehavior.h"
 
 #include <Node2D.hpp>
 #include <PackedScene.hpp>
@@ -32,6 +33,8 @@ public:
 
 private:
 	std::vector<Bullet*> Bullets;
+	BadBullet bad;
+	GoodBullet good;
 
 	//gayplay methods
 public:

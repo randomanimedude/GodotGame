@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletBehavior.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="CommonLib.cpp" />
     <ClCompile Include="Counter.cpp" />
@@ -186,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletBehavior.h" />
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CommonLib.h" />
     <ClInclude Include="Counter.h" />

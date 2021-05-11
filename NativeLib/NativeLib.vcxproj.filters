@@ -99,6 +99,9 @@
     <ClCompile Include="Volume.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="BulletBehavior.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -162,6 +165,9 @@
       <Filter>Файлы заголовков\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Volume.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletBehavior.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

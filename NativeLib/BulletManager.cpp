@@ -42,6 +42,11 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPl
 			bullet->damage = damage;
 			bullet->Enable();
 			bullet->UpdatePosition(position, facingRight, byPlayer);
+			if(byPlayer)
+				bullet->SetBehavior(&good);
+			else
+				bullet->SetBehavior(&bad);
+
 			succes = true;
 			break; 
 		}
@@ -55,5 +60,9 @@ void BulletManager::SpawnNewBullet(Vector2 position, bool facingRight, bool byPl
 		bullet->damage = damage;
 		bullet->Enable();
 		bullet->UpdatePosition(position, facingRight, byPlayer);
+		if (byPlayer)
+			bullet->SetBehavior(&good);
+		else
+			bullet->SetBehavior(&bad);
 	}
 }

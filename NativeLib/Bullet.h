@@ -6,6 +6,9 @@
 #include <KinematicCollision2D.hpp>
 #include <CollisionShape2D.hpp>
 
+#include "BulletBehavior.h"
+class BulletBehavior;
+
 class Bullet : public KinematicBody2D
 {
 	//godot structure
@@ -24,13 +27,14 @@ public:
 	//gayplay vars
 public:
 	int damage;
+	Vector2 motion;
 
 private:
 	Node2D* parent;
 	CollisionShape2D* collision;
-	Vector2 motion;
 	bool enabled;
 	bool byPlayer;
+	BulletBehavior* _behavior;
 
 	//gayplay methods
 public:
@@ -38,11 +42,7 @@ public:
 	void Disable();
 	void Enable();
 	bool IsEnabled();
-
-
-private:
-	void DestroyIfEnemy(Ref<KinematicCollision2D> collision);
-	void UpdateMotion();
+	void SetBehavior(BulletBehavior* b);
 	
 };
 

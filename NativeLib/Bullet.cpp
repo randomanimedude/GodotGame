@@ -22,7 +22,7 @@ void Bullet::_ready()
 
 void Bullet::_physics_process(float delta)
 {
-	UpdateMotion();
+	_behavior->DoStuff(this);
 }
 
 void Bullet::UpdatePosition(Vector2 position, bool facingRight, bool byPlayer)
@@ -43,8 +43,8 @@ void Bullet::Disable()
 {
 	collision->set_disabled(true);
 	parent->hide();
-	parent->set_process(false);
-	parent->set_physics_process(false);
+	set_process(false);
+	set_physics_process(false);
 	enabled = false;
 }
 
@@ -52,8 +52,8 @@ void Bullet::Enable()
 {
 	collision->set_disabled(false);
 	parent->show();
-	parent->set_process(true);
-	parent->set_physics_process(true);
+	set_process(true);
+	set_physics_process(true);
 	enabled = true;
 }
 
@@ -62,26 +62,7 @@ bool Bullet::IsEnabled()
 	return enabled;
 }
 
-
-void Bullet::UpdateMotion()
+void Bullet::SetBehavior(BulletBehavior* b)
 {
-	Ref<KinematicCollision2D> col = move_and_collide(motion);
-
-	if (col != nullptr)
-	{
-		DestroyIfEnemy(col);
-		Disable();
-	}
-}
-
-void Bullet::DestroyIfEnemy(Ref<KinematicCollision2D> collision)
-{
-	Node* node = Node::cast_to<Node>(collision->get_collider());
-	if (byPlayer)
-	{
-		if (node->get_name().find("Robat") != -1 || node->get_name().find("Rashid") != -1)
-			node->call("DealDamage", damage);
-	}
-	else if (node->get_name() == "Player")
-		node->call("DealDamage", collision->get_position(), damage, true);
+	_behavior = b;
 }
