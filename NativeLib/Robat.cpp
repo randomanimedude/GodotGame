@@ -43,10 +43,8 @@ void Robat::_ready()
 void Robat::_physics_process(float delta)
 {
 	if (move)
-	{
 		TurnAroundIfNeeded();
-		Move();
-	}
+	Move();
 	ShootAtSight();
 }
 
@@ -86,7 +84,7 @@ void Robat::Move()
 	motion.y += gravity;
 	motion.y = clamp(motion.y, 0, max_fall_speed);
 
-	if (!isShooting)
+	if (!isShooting && move)
 	{
 		motion.x += facing_right ? acceleration : -acceleration;
 		animator->play("Move");
@@ -96,8 +94,7 @@ void Robat::Move()
 	motion.x = clamp(motion.x, -max_speed, max_speed);
 
 	set_scale(Vector2(facing_right ? -scale.x : scale.x, scale.y));
-
-	motion = move_and_slide(motion, UP);
+	motion = move_and_slide_with_snap(motion, Vector2(0,32), UP);
 }
 
 void Robat::TurnAroundIfNeeded()
