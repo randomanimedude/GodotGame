@@ -339,4 +339,5 @@ scale = Vector2( 1.44386, 1.58487 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+volume_db = -10.0
 script = ExtResource( 11 )

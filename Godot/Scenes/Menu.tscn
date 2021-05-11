@@ -36,7 +36,7 @@ margin_bottom = 280.0
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Options")
 text = "New game"
-reference_path = "res://Scenes/World.tscn"
+reference_path = "res://Scenes/LvL1.tscn"
 start_focused = true
 
 [node name="Options" parent="." instance=ExtResource( 1 )]
@@ -60,5 +60,5 @@ text = "Exit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -20.526
+volume_db = -10.0
 script = ExtResource( 2 )

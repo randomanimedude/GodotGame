@@ -96,6 +96,9 @@
     <ClCompile Include="EnemyHealthBar.cpp">
       <Filter>Исходные файлы\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Volume.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="EnemyHealthBar.h">
       <Filter>Файлы заголовков\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Volume.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

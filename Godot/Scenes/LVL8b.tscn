@@ -1,0 +1,301 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/BulletManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Enemies/Rashid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Enemies/Robat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/LevelEnd.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Enemies/DamagingArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/MovingPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Pickables/Heal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=12]
+[ext_resource path="res://Sound/lvl456.ogg" type="AudioStream" id=13]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 416, 32, 0, 32, 0, 0, 416, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 32, 0, 32, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "scifi_platformTiles_32x32 (1).png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 416, 416, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "scifi_platformTiles_32x32 (1).png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 416, 416, 64, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "scifi_platformTiles_32x32 (1).png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 416, 416, 64, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 2 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "scifi_platformTiles_32x32 (1).png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 576, 512, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 3 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "scifi_platformTiles_32x32 (1).png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 32, 288, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 4 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
+[node name="World" type="Node2D"]
+position = Vector2( -3.3674, -57.8067 )
+scale = Vector2( 0.998408, 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 5.67374, -34.3295 )
+tile_set = SubResource( 5 )
+format = 1
+tile_data = PoolIntArray( -1245191, 4, 0, -1179655, 4, 0, -1245052, 4, 0, -1114119, 4, 0, -1179516, 4, 0, -1048583, 4, 0, -1113980, 4, 0, -983047, 4, 0, -1048444, 4, 0, -917511, 4, 0, -982908, 4, 0, -851975, 4, 0, -917372, 4, 0, -786439, 4, 0, -851836, 4, 0, -720903, 4, 0, -786300, 4, 0, -655367, 4, 0, -720764, 4, 0, -589831, 4, 0, -589830, 4, 0, -589829, 4, 0, -589828, 4, 0, -589827, 4, 0, -589826, 4, 0, -589825, 4, 0, -655360, 4, 0, -655359, 4, 0, -655358, 4, 0, -655357, 4, 0, -655356, 4, 0, -655355, 4, 0, -655354, 4, 0, -655353, 4, 0, -655352, 4, 0, -655282, 4, 0, -655281, 4, 0, -655280, 4, 0, -655279, 4, 0, -655278, 4, 0, -655277, 4, 0, -655276, 4, 0, -655275, 4, 0, -655258, 4, 0, -655257, 4, 0, -655256, 4, 0, -655255, 4, 0, -655254, 4, 0, -655253, 4, 0, -655252, 4, 0, -655251, 4, 0, -655250, 4, 0, -655249, 4, 0, -655248, 4, 0, -655247, 4, 0, -655246, 4, 0, -655245, 4, 0, -655244, 4, 0, -655243, 4, 0, -655242, 4, 0, -655241, 4, 0, -655240, 4, 0, -655239, 4, 0, -655238, 4, 0, -655237, 4, 0, -655236, 4, 0, -655235, 4, 0, -655234, 4, 0, -655233, 4, 0, -655232, 4, 0, -655231, 4, 0, -655230, 4, 0, -655229, 4, 0, -655228, 4, 0, -589816, 4, 0, -589746, 4, 0, -589739, 4, 0, -589722, 4, 0, -524280, 4, 0, -524210, 4, 0, -524203, 4, 0, -524187, 4, 0, -524186, 4, 0, -458744, 4, 0, -458674, 4, 0, -458667, 4, 0, -458651, 4, 0, -458650, 4, 0, -393208, 4, 0, -393138, 4, 0, -393131, 4, 0, -393115, 4, 0, -393114, 4, 0, -327672, 4, 0, -327602, 4, 0, -327595, 4, 0, -327580, 4, 0, -327579, 4, 0, -327578, 4, 0, -262136, 4, 0, -262066, 4, 0, -262059, 4, 0, -262042, 4, 0, -196600, 4, 0, -196530, 4, 0, -196523, 4, 0, -196506, 4, 0, -131064, 4, 0, -130994, 4, 0, -130987, 4, 0, -130970, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, -65516, 4, 0, -65515, 4, 0, -65514, 4, 0, -65513, 4, 0, -65512, 4, 0, -65511, 4, 0, -65510, 4, 0, -65509, 4, 0, -65508, 4, 0, -65507, 4, 0, -65506, 4, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 4, 0, -65500, 4, 0, -65499, 4, 0, -65498, 4, 0, -65497, 4, 0, -65496, 4, 0, -65495, 4, 0, -65494, 4, 0, -65493, 4, 0, -65492, 4, 0, -65491, 4, 0, -65490, 4, 0, -65489, 4, 0, -65488, 4, 0, -65487, 4, 0, -65486, 4, 0, -65485, 4, 0, -65484, 4, 0, -65483, 4, 0, -65482, 4, 0, -65481, 4, 0, -65480, 4, 0, -65479, 4, 0, -65478, 4, 0, -65477, 4, 0, -65476, 4, 0, -65475, 4, 0, -65474, 4, 0, -65473, 4, 0, -65472, 4, 0, -65471, 4, 0, -65470, 4, 0, -65469, 4, 0, -65468, 4, 0, -65467, 4, 0, -65466, 4, 0, -65465, 4, 0, -65464, 4, 0, -65463, 4, 0, -65462, 4, 0, -65461, 4, 0, -65460, 4, 0, -65459, 4, 0, -65458, 4, 0, -65451, 4, 0, -65450, 4, 0, -65449, 4, 0, -65448, 4, 0, -65447, 4, 0, -65446, 4, 0, -65445, 4, 0, -65444, 4, 0, -65443, 4, 0, -65442, 4, 0, -65441, 4, 0, -65440, 4, 0, -65439, 4, 0, -65438, 4, 0, -65437, 4, 0, -65436, 4, 0, -65435, 4, 0, -65434, 4, 0 )
+
+[node name="Robat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5352.6, -775.573 )
+scale = Vector2( 3.5569, 5.67662 )
+max_speed = 400
+
+[node name="Robat2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7296.49, -765.482 )
+scale = Vector2( 3.5569, 5.67662 )
+max_speed = 400
+move = false
+
+[node name="Platform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1027.4, -653.661 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform2" index="1"]
+position = Vector2( -2.46252, -1.1494 )
+
+[node name="EndPosition" parent="Platform2" index="2"]
+position = Vector2( -258.454, 1.14944 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1528.76, -661.978 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform3" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform3" index="2"]
+position = Vector2( -280.652, 2.01053 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2038.05, -857.791 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform4" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform4" index="2"]
+position = Vector2( -257.068, 88.7541 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2367.77, -994.851 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform5" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform5" index="2"]
+position = Vector2( 3.48828, 108.786 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2651.17, -806.05 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform6" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform6" index="2"]
+position = Vector2( 282.867, 81.6089 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3308.49, -647.751 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform7" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform7" index="2"]
+position = Vector2( -305.811, 1.14945 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3771.08, -649.721 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform8" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform8" index="2"]
+position = Vector2( -305.811, 1.14945 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6129.37, -655.027 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform10" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform10" index="2"]
+position = Vector2( -305.811, 1.14945 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Platform9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4693.28, -724.427 )
+scale = Vector2( 1.37327, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform9" index="1"]
+position = Vector2( 1.97217, -1.1494 )
+
+[node name="EndPosition" parent="Platform9" index="2"]
+position = Vector2( -292.276, 3.57761 )
+scale = Vector2( 58.0424, 2.28166 )
+
+[node name="Heal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6624.7, -750.693 )
+scale = Vector2( 1.9879, 2.19419 )
+
+[node name="BulletManager" parent="." instance=ExtResource( 3 )]
+position = Vector2( -779.546, 118.801 )
+
+[node name="LevelEnd" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8292.15, -884.316 )
+scale = Vector2( 0.500411, 0.521511 )
+this_level_id = 3
+next_level_id = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -10.0
+script = ExtResource( 12 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 130.19, -757.168 )
+
+[node name="DamagingArea" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2807.78, -119.626 )
+scale = Vector2( 28.6711, 1.78742 )
+damage = 250
+
+[node name="Rashid" parent="." instance=ExtResource( 4 )]
+position = Vector2( 7990.33, -765.52 )
+
+[node name="Rashid2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6426.12, -174.097 )
+
+[node name="Rashid3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6231.79, -171.578 )
+
+[node name="Rashid4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6028.83, -174.097 )
+
+[node name="Rashid5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5613.36, -176.617 )
+scale = Vector2( -7, 5 )
+
+[node name="Rashid6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5817.87, -173.578 )
+scale = Vector2( -7, 5 )
+
+[editable path="Platform2"]
+[editable path="Platform3"]
+[editable path="Platform4"]
+[editable path="Platform5"]
+[editable path="Platform6"]
+[editable path="Platform7"]
+[editable path="Platform8"]
+[editable path="Platform10"]
+[editable path="Platform9"]
