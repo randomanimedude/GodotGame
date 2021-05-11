@@ -244,8 +244,6 @@ position = Vector2( -779.546, 118.801 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -16.5126, -18.6289 )
 scale = Vector2( 1.02048, 1.00454 )
-hit_impact_x = 3000
-hit_impact_y = -1000
 
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 12098.4, 1225.42 )

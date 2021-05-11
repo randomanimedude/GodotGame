@@ -10,7 +10,7 @@ resource_name = "Detect"
 length = 1.1
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Rashid/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:scale")
+tracks/1/path = NodePath("../Rashid/Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.109, 0.967 ), Vector2( 0.984, 1.074 ), Vector2( 1.005, 1.095 ), Vector2( 1.051, 1.187 ), Vector2( 1.247, 1.187 ), Vector2( 1.344, 1.395 ), Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/path = NodePath("../Rashid/Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0, 0.0, -8.8, 8.8, -8.8, 8.8, -8.8, 8.8, 0.0, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Explosion:scale")
+tracks/3/path = NodePath("../Rashid/Explosion:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -58,7 +58,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ), Vector2( 2.5, 2.5 ), Vector2( 2.5, 2.5 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Explosion:frame")
+tracks/4/path = NodePath("../Rashid/Explosion:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -70,7 +70,7 @@ tracks/4/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:visible")
+tracks/5/path = NodePath("../Rashid/Sprite:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -82,7 +82,7 @@ tracks/5/keys = {
 "values": [ true, true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("DamageDealer/CollisionShape2D:shape:radius")
+tracks/6/path = NodePath("../Rashid/DamageDealer/CollisionShape2D:shape:radius")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -113,7 +113,7 @@ resource_name = "Idle"
 length = 0.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("../Rashid/Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -135,6 +135,7 @@ extents = Vector2( 43.7502, 40.5431 )
 radius = 0.01
 
 [node name="Rashid" type="KinematicBody2D"]
+scale = Vector2( 7, 5 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
