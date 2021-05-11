@@ -107,6 +107,9 @@ void Player::UpdateMotionFromInput()
 	motion.y += gravity;
 	motion.y = clamp(motion.y, -9999999, max_fall_speed);
 
+	if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2 && jumping && !impact)
+		motion.y = -jump_force / 2;
+
 	if (is_on_floor())
 	{
 		if(impact > 0)
@@ -127,8 +130,6 @@ void Player::UpdateMotionFromInput()
 			if (motion.x == 0)
 				animator->play((godot::String)"Idle" + (godot::String)(facing_right ? "Right" : "Left"));
 		}
-		if (inp->is_action_just_released("jump") && motion.y <= -jump_force / 2 && jumping)
-			motion.y = -jump_force / 2;
 
 		//moving left-right part
 		if (inp->is_action_pressed("move_left") && !inp->is_action_pressed("move_right"))
