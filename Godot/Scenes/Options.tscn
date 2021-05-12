@@ -10,7 +10,7 @@
 [node name="Options" type="Node2D"]
 
 [node name="Window" type="Sprite" parent="."]
-position = Vector2( 510.697, 301.578 )
+position = Vector2( 509.856, 301.578 )
 scale = Vector2( 1.08751, 0.553279 )
 texture = ExtResource( 1 )
 
@@ -33,14 +33,58 @@ volume_db = -10.0
 script = ExtResource( 4 )
 
 [node name="HSlider" type="HSlider" parent="."]
-margin_left = 664.084
-margin_top = 501.274
-margin_right = 814.084
-margin_bottom = 517.274
+margin_left = 386.883
+margin_top = 197.65
+margin_right = 536.883
+margin_bottom = 213.65
 rect_scale = Vector2( 1.9585, 1.80444 )
 min_value = -50.0
 max_value = 0.0
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 228.941
+margin_top = 199.502
+margin_right = 274.941
+margin_bottom = 213.502
+rect_scale = Vector2( 2, 2 )
+text = "MUSIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SOUN" type="Label" parent="."]
+margin_left = 230.065
+margin_top = 263.929
+margin_right = 281.065
+margin_bottom = 277.929
+rect_scale = Vector2( 2, 2 )
+text = "SOUND"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SOUN2" type="Label" parent="."]
+margin_left = 442.329
+margin_top = 134.103
+margin_right = 497.329
+margin_bottom = 148.103
+rect_scale = Vector2( 3, 2 )
+text = "VOLUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 380.75
+margin_top = 25.7622
+margin_right = 440.75
+margin_bottom = 39.7622
+rect_scale = Vector2( 5, 3 )
+text = "OPTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
 }

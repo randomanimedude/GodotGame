@@ -313,7 +313,7 @@ damage = 1000
 position = Vector2( -779.546, 118.801 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2234.9, -44.9562 )
+position = Vector2( 48.5254, -39.2995 )
 scale = Vector2( 1.02048, 1.00454 )
 
 [node name="DMG_bonus" parent="." instance=ExtResource( 4 )]
@@ -339,10 +339,14 @@ position = Vector2( 7057.7, -3632.09 )
 
 [node name="LevelEnd2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 7225, -3930.97 )
+this_level_id = 6
+next_level_id = 8
 score_to_pass = 10
 
 [node name="LevelEnd3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 20687.7, -347.234 )
+this_level_id = 6
+next_level_id = 7
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
