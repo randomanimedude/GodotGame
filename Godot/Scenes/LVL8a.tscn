@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://Prefabs/Enemies/Robat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sound/lvl123.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Prefabs/LevelEnd.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Pickables/Max_HP_bonus.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefabs/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Prefabs/Pickables/Heal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Prefabs/Pickables/DMG_bonus.tscn" type="PackedScene" id=11]
 [ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=12]
+[ext_resource path="res://Prefabs/Enemies/DamagingArea.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 416, 32, 0, 32, 0, 0, 416, 0 )
@@ -129,33 +131,75 @@ position = Vector2( -3.3674, -57.8067 )
 scale = Vector2( 0.998408, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 5.67374, -34.3295 )
+position = Vector2( -17.0147, 14.0703 )
 tile_set = SubResource( 5 )
 format = 1
-tile_data = PoolIntArray( -1376263, 4, 0, -1310727, 4, 0, -1245191, 4, 0, -1179655, 4, 0, -1114119, 4, 0, -1048583, 4, 0, -983047, 4, 0, -917511, 4, 0, -851975, 4, 0, -786439, 4, 0, -720903, 4, 0, -655367, 4, 0, -589831, 4, 0, -589830, 4, 0, -589829, 4, 0, -589828, 4, 0, -589827, 4, 0, -589826, 4, 0, -589825, 4, 0, -655360, 4, 0, -655359, 4, 0, -655358, 4, 0, -655357, 4, 0, -655356, 4, 0, -655355, 4, 0, -655354, 4, 0, -655353, 4, 0, -655352, 4, 0, -589816, 4, 0, -524280, 4, 0, -458744, 4, 0, -393208, 4, 0, -327672, 4, 0, -262136, 4, 0, -196600, 4, 0, -131064, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, -65516, 4, 0, -65515, 4, 0, -65514, 4, 0, -65513, 4, 0, -65512, 4, 0, -65511, 4, 0, -65510, 4, 0, -65509, 4, 0, -65508, 4, 0, -65507, 4, 0, -65506, 4, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 4, 0, -65500, 4, 0, -65499, 4, 0, -65498, 4, 0, -65497, 4, 0, -65496, 4, 0, -65495, 4, 0, -65494, 4, 0, -65493, 4, 0, -65492, 4, 0, -65491, 4, 0, -65490, 4, 0, -65489, 4, 0, -65488, 4, 0, -65487, 4, 0, -65486, 4, 0, -65485, 4, 0, -65484, 4, 0, -65483, 4, 0, -65482, 4, 0, -65481, 4, 0, -65480, 4, 0, -65479, 4, 0, -65478, 4, 0, -65477, 4, 0, -65476, 4, 0, -65475, 4, 0, -65474, 4, 0, -65473, 4, 0, -65472, 4, 0, -65471, 4, 0, -65470, 4, 0, -65469, 4, 0, -65468, 4, 0, -65467, 4, 0 )
+tile_data = PoolIntArray( -1376263, 4, 0, -1310727, 4, 0, -1245191, 4, 0, -1179655, 4, 0, -1245125, 4, 0, -1114119, 4, 0, -1179589, 4, 0, -1048583, 4, 0, -1114053, 4, 0, -983047, 4, 0, -1048517, 4, 0, -917511, 4, 0, -982981, 4, 0, -851975, 4, 0, -917445, 4, 0, -917362, 4, 0, -786439, 4, 0, -851909, 4, 0, -851826, 4, 0, -720903, 4, 0, -786373, 4, 0, -786290, 4, 0, -655367, 4, 0, -720837, 4, 0, -720754, 4, 0, -589831, 4, 0, -589830, 4, 0, -589829, 4, 0, -589828, 4, 0, -589827, 4, 0, -589826, 4, 0, -589825, 4, 0, -655360, 4, 0, -655359, 4, 0, -655358, 4, 0, -655357, 4, 0, -655352, 4, 0, -655351, 4, 0, -655350, 4, 0, -655328, 4, 0, -655327, 4, 0, -655326, 4, 0, -655325, 4, 0, -655324, 4, 0, -655323, 4, 0, -655322, 4, 0, -655321, 4, 0, -655320, 4, 0, -655319, 4, 0, -655318, 4, 0, -655317, 4, 0, -655316, 4, 0, -655315, 4, 0, -655314, 4, 0, -655313, 4, 0, -655301, 4, 0, -655218, 4, 0, -589821, 4, 0, -589816, 4, 0, -589814, 4, 0, -589777, 4, 0, -589682, 4, 0, -524285, 4, 0, -524280, 4, 0, -524278, 4, 0, -524241, 4, 0, -524146, 4, 0, -458749, 4, 0, -458744, 4, 0, -458742, 4, 0, -458610, 4, 0, -393213, 4, 0, -393208, 4, 0, -393206, 4, 0, -393074, 4, 0, -327677, 4, 0, -327672, 4, 0, -327670, 4, 0, -327538, 4, 0, -262141, 4, 0, -262136, 4, 0, -262134, 4, 0, -262002, 4, 0, -196605, 4, 0, -196600, 4, 0, -196598, 4, 0, -196466, 4, 0, -131069, 4, 0, -131064, 4, 0, -131062, 4, 0, -131043, 4, 0, -131042, 4, 0, -131041, 4, 0, -131040, 4, 0, -131039, 4, 0, -131038, 4, 0, -131037, 4, 0, -131036, 4, 0, -131035, 4, 0, -131034, 4, 0, -131033, 4, 0, -131032, 4, 0, -131031, 4, 0, -131030, 4, 0, -131029, 4, 0, -131028, 4, 0, -130930, 4, 0, -65533, 4, 0, -65528, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, -65516, 4, 0, -65515, 4, 0, -65514, 4, 0, -65513, 4, 0, -65512, 4, 0, -65511, 4, 0, -65510, 4, 0, -65509, 4, 0, -65508, 4, 0, -65507, 4, 0, -65506, 4, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 4, 0, -65500, 4, 0, -65499, 4, 0, -65498, 4, 0, -65497, 4, 0, -65496, 4, 0, -65495, 4, 0, -65494, 4, 0, -65493, 4, 0, -65492, 4, 0, -65491, 4, 0, -65490, 4, 0, -65489, 4, 0, -65488, 4, 0, -65487, 4, 0, -65486, 4, 0, -65485, 4, 0, -65484, 4, 0, -65483, 4, 0, -65482, 4, 0, -65481, 4, 0, -65480, 4, 0, -65479, 4, 0, -65478, 4, 0, -65477, 4, 0, -65476, 4, 0, -65475, 4, 0, -65474, 4, 0, -65473, 4, 0, -65472, 4, 0, -65471, 4, 0, -65470, 4, 0, -65469, 4, 0, -65468, 4, 0, -65467, 4, 0, -65466, 4, 0, -65465, 4, 0, -65464, 4, 0, -65463, 4, 0, -65462, 4, 0, -65461, 4, 0, -65460, 4, 0, -65459, 4, 0, -65458, 4, 0, -65457, 4, 0, -65456, 4, 0, -65455, 4, 0, -65454, 4, 0, -65438, 4, 0, -65437, 4, 0, -65436, 4, 0, -65435, 4, 0, -65434, 4, 0, -65433, 4, 0, -65432, 4, 0, -65431, 4, 0, -65430, 4, 0, -65429, 4, 0, -65428, 4, 0, -65427, 4, 0, -65426, 4, 0, -65425, 4, 0, -65424, 4, 0, -65423, 4, 0, -65422, 4, 0, -65421, 4, 0, -65420, 4, 0, -65419, 4, 0, -65418, 4, 0, -65417, 4, 0, -65416, 4, 0, -65415, 4, 0, -65414, 4, 0, -65413, 4, 0, -65412, 4, 0, -65411, 4, 0, -65410, 4, 0, -65409, 4, 0, -65408, 4, 0, -65407, 4, 0, -65406, 4, 0, -65405, 4, 0, -65404, 4, 0, -65403, 4, 0, -65402, 4, 0, -65401, 4, 0, -65400, 4, 0, -65399, 4, 0, -65398, 4, 0, -65397, 4, 0, -65396, 4, 0, -65395, 4, 0, -65394, 4, 0, 3, 4, 0, 8, 4, 0, 82, 4, 0, 98, 4, 0, 65539, 4, 0, 65544, 4, 0, 65618, 4, 0, 65619, 4, 0, 65620, 4, 0, 65621, 4, 0, 65622, 4, 0, 65623, 4, 0, 65624, 4, 0, 65625, 4, 0, 65626, 4, 0, 65627, 4, 0, 65628, 4, 0, 65629, 4, 0, 65630, 4, 0, 65631, 4, 0, 65632, 4, 0, 65633, 4, 0, 65634, 4, 0, 131075, 4, 0, 131080, 4, 0, 196611, 4, 0, 196616, 4, 0, 262147, 4, 0, 262152, 4, 0, 327683, 4, 0, 327688, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0 )
 
 [node name="Robat" parent="." instance=ExtResource( 5 )]
-position = Vector2( 64.1504, -1614.62 )
+position = Vector2( 2529.59, -219.685 )
+scale = Vector2( 3.5569, 5.67662 )
+max_speed = 400
+score_reward = 100
+
+[node name="Robat2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6518.37, -140.489 )
+scale = Vector2( 3.5569, 5.67662 )
+max_speed = 400
+score_reward = 20
+
+[node name="Robat3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7317.26, -146.146 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
 
+[node name="DMB_bonus" parent="." instance=ExtResource( 8 )]
+position = Vector2( 8002.99, -81.3803 )
+scale = Vector2( 1.32899, 1.65684 )
+
 [node name="Platform" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1.47765, -1175.77 )
+position = Vector2( 1047.95, -658.527 )
 scale = Vector2( 0.717043, 1.23037 )
 
+[node name="CollisionShape2D" parent="Platform" index="1"]
+position = Vector2( 3.729, 0 )
+
+[node name="EndPosition" parent="Platform" index="2"]
+position = Vector2( 275.955, 2.16986 )
+
+[node name="Platform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1597.61, -665.654 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform2" index="1"]
+position = Vector2( 3.729, 0 )
+
+[node name="EndPosition" parent="Platform2" index="2"]
+position = Vector2( 275.955, 2.16986 )
+
+[node name="Platform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5512.37, -189.818 )
+scale = Vector2( 0.717043, 1.23037 )
+
+[node name="CollisionShape2D" parent="Platform3" index="1"]
+position = Vector2( 3.729, 0 )
+
+[node name="EndPosition" parent="Platform3" index="2"]
+position = Vector2( 795.579, -121.37 )
+
 [node name="Heal" parent="." instance=ExtResource( 10 )]
-position = Vector2( -152.462, -1353.35 )
+position = Vector2( 4146.02, -220.925 )
 scale = Vector2( 2.22414, 2.88196 )
 
 [node name="DMG_bonus" parent="." instance=ExtResource( 11 )]
-position = Vector2( 164.248, -1291.11 )
+position = Vector2( 4408.36, -155.891 )
 scale = Vector2( 1.47941, 2.45463 )
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 position = Vector2( -779.546, 118.801 )
 
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
-position = Vector2( 158.38, -1729.36 )
+position = Vector2( 8848.68, -258.7 )
 scale = Vector2( 0.500411, 0.521511 )
 this_level_id = 3
 next_level_id = 4
@@ -168,5 +212,24 @@ script = ExtResource( 12 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 13.834, -758.978 )
 
+[node name="DamagingArea" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5784.34, 110.362 )
+scale = Vector2( 6.21419, 1.05883 )
+damage = 5
+
+[node name="DamagingArea2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 361.623, 346.041 )
+scale = Vector2( 2.40171, -1.8054 )
+damage = 100
+
 [node name="Rashid" parent="." instance=ExtResource( 4 )]
-position = Vector2( -203.476, -1610.57 )
+position = Vector2( 1215.64, -131.628 )
+
+[node name="Explosion" parent="Rashid" index="3"]
+scale = Vector2( 1e-05, 1e-05 )
+frame = 0
+
+[editable path="Platform"]
+[editable path="Platform2"]
+[editable path="Platform3"]
+[editable path="Rashid"]

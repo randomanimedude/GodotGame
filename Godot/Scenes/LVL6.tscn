@@ -259,8 +259,8 @@ scale = Vector2( 0.500411, 0.521511 )
 next_level_id = -1
 
 [node name="DamagingArea" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3201.12, 689.392 )
-scale = Vector2( 28.8377, 2.74537 )
+position = Vector2( 2891.53, 772.453 )
+scale = Vector2( 25.7847, 1.20414 )
 
 [node name="DamagingArea2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 6697.12, 1777.21 )

@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Continue" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 397.475
+margin_top = 248.909
+margin_right = 621.475
+margin_bottom = 311.909
+__meta__ = {
+"_edit_use_anchors_": false
+}
