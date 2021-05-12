@@ -420,6 +420,7 @@ focus_neighbour_bottom = NodePath("../Options")
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 icon = SubResource( 2 )
+reference_path = "res://Scenes/Continue.tscn"
 
 [node name="Options" parent="." instance=ExtResource( 1 )]
 margin_left = 101.122
@@ -455,18 +456,6 @@ margin_bottom = 65.4073
 rect_scale = Vector2( 6, 5 )
 custom_fonts/font = SubResource( 6 )
 text = "AVENGER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 949.423
-margin_top = 567.476
-margin_right = 983.423
-margin_bottom = 586.476
-rect_scale = Vector2( 2, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "v.1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonLib.h"
+#include "DataLoader.h"
 #include <Node.hpp>
 #include <SceneTree.hpp>
 #include <Viewport.hpp>

@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 LevelManager="*res://NativeScripts/LevelManager.gdns"
+DataLoader="*res://NativeScripts/DataLoader.gdns"
 
 [display]
 
