@@ -407,6 +407,7 @@ focus_neighbour_bottom = NodePath("../Options")
 custom_fonts/font = SubResource( 1 )
 text = "New game"
 icon = SubResource( 2 )
+reference_path = "res://Scenes/LvL1.tscn"
 
 [node name="Continue" parent="." instance=ExtResource( 1 )]
 margin_left = 101.122
@@ -418,6 +419,7 @@ focus_neighbour_bottom = NodePath("../Options")
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 icon = SubResource( 2 )
+reference_path = "res://Scenes/Continue.tscn"
 
 [node name="Options" parent="." instance=ExtResource( 1 )]
 margin_left = 101.122
