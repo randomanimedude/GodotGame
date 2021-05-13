@@ -8,15 +8,16 @@ void DataLoader::_register_methods()
 void DataLoader::_init()
 {
 	instance = this;
-	for(bool &status: LevelAvailability)
-		status = false;
-	LevelAvailability[0] = true;
+
+	Ref<File> file = File::_new();
+	if (file->file_exists(ProgressFile))
+		LoadLevelData();
+	else
+		ResetLevelAvailability();
 }
 
 void DataLoader::_ready()
 {
-	Save();
-	Load();
 }
 
 DataLoader* DataLoader::GetSingletone()
@@ -24,34 +25,49 @@ DataLoader* DataLoader::GetSingletone()
 	return instance;
 }
 
-void DataLoader::Load()
+void DataLoader::LoadLevelData()
 {
-	
+	Ref<File> file = File::_new();
+	if (file->file_exists(ProgressFile))
+	{
+		file->open(ProgressFile, file->READ);
+		//load and parse json string
+		Dictionary rez = JSON::get_singleton()->parse(file->get_as_text())->get_result();
+		for (int i = 0; i < numberOfLevels; ++i)
+			LevelAvailability[i] = rez[(String)"Level#" + String::num_int64(i)];
+	}
 }
 
-void DataLoader::Save()
+void DataLoader::SaveLevelData()
 {
-	File file;
-	file.open(ProgressFile, File::ModeFlags::WRITE);
-	//Dictionary dict;
-	//dict.make<String, bool[]>("lvls", LevelAvailability);
-	//file.store_string(dict.to_json());
-	file.close();
-	//file.open(ProgressFile, File::ModeFlags::READ);
-	//
-	//Dictionary rez = JSON::get_singleton()->parse(file.get_as_text())->get_result();
-	//bool i[11] = { (bool)rez["lvls"] };
-	//cout << i[0] << endl << i[1] << endl;
+	Ref<File> file = File::_new();
+	file->open(ProgressFile, file->WRITE);
+
+	//create dictionary with data and save it as json
+	Dictionary dict;
+	for (int i = 0; i < numberOfLevels; ++i)
+		dict[(String)"Level#" + String::num_int64(i)] = LevelAvailability[i];
+	file->store_string(dict.to_json());
+	file->close();
 }
 
-void DataLoader::SetLevelComplitionStatus(int index, bool status)
+void DataLoader::SetLevelAvailable(int index, bool status)
 {
 	if (index >= 0 && index < numberOfLevels)
 		LevelAvailability[index] = status;
+	SaveLevelData();
 }
 
-bool DataLoader::GetLevelComplitionStatus(int index)
+bool DataLoader::GetLevelAvailable(int index)
 {
 	if (index >= 0 && index < numberOfLevels)
 		return LevelAvailability[index];
+	else return false;
+}
+
+ void DataLoader::ResetLevelAvailability()
+{
+	 for (bool& status : LevelAvailability)
+		 status = false;
+	 LevelAvailability[0] = true;
 }

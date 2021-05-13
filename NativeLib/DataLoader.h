@@ -18,10 +18,11 @@ public:
 	void _ready();
 	static DataLoader* GetSingletone();
 
-	void Load();
-	void Save();
-	void SetLevelComplitionStatus(int index, bool status);
-	bool GetLevelComplitionStatus(int index);
+	void LoadLevelData();
+	void SaveLevelData();
+	void SetLevelAvailable(int index, bool status);
+	bool GetLevelAvailable(int index);
+	void ResetLevelAvailability();
 
 private:
 	static inline DataLoader* instance;

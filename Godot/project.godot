@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Новый Игровой Проект"
-run/main_scene="res://Scenes/LVL8a.tscn"
+run/main_scene="res://Scenes/Continue.tscn"
 config/icon="res://icon.png"
 
 [autoload]

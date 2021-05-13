@@ -20,6 +20,7 @@
 #include "EnemyHealthBar.h"
 #include "Volume.h"
 #include "DataLoader.h"
+#include "SelectLevelButton.h"
 
 
 extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options * o) {
@@ -54,4 +55,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<EnemyHealthBar>();
 	register_class<Volume>();
 	register_class<DataLoader>();
+	register_class<SelectLevelButton>();
 }

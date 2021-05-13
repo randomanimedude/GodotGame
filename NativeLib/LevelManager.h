@@ -18,7 +18,7 @@ public:
 
     void _ready();
 
-    void CompleteLevel(int id);
+    void CompleteLevel(int completed, int opened);
     void LoadLevel(int id);
 
 private:

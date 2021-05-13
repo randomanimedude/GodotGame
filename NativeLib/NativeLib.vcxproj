@@ -184,6 +184,7 @@
     <ClCompile Include="Rashid.cpp" />
     <ClCompile Include="ResumeButton.cpp" />
     <ClCompile Include="Robat.cpp" />
+    <ClCompile Include="SelectLevelButton.cpp" />
     <ClCompile Include="Volume.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +210,7 @@
     <ClInclude Include="Rashid.h" />
     <ClInclude Include="ResumeButton.h" />
     <ClInclude Include="Robat.h" />
+    <ClInclude Include="SelectLevelButton.h" />
     <ClInclude Include="Volume.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
