@@ -139,44 +139,36 @@ tile_data = PoolIntArray( -1376263, 4, 0, -1310727, 4, 0, -1245191, 4, 0, -11796
 [node name="Robat" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2529.59, -214.028 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-score_reward = 100
 
 [node name="Robat4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 4379.5, -154.631 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-score_reward = 100
 
 [node name="Robat2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 6518.37, -140.489 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-score_reward = 20
 
 [node name="Robat3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7264.85, 167.805 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
 
 [node name="Robat5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7192.74, 797.126 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
 
 [node name="Robat6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9406.75, 2473.68 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
 
 [node name="Robat7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 11647.9, 2291.46 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
 
 [node name="Platform" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1047.95, -658.527 )
 scale = Vector2( 0.717043, 1.23037 )
+Acceleration(%) = 1.0
+"Max speed(%)" = 1.0
 
 [node name="CollisionShape2D" parent="Platform" index="1"]
 position = Vector2( 3.729, 0 )
@@ -187,6 +179,8 @@ position = Vector2( 275.955, 2.16986 )
 [node name="Platform2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1597.61, -665.654 )
 scale = Vector2( 0.717043, 1.23037 )
+Acceleration(%) = 1.0
+"Max speed(%)" = 1.0
 
 [node name="CollisionShape2D" parent="Platform2" index="1"]
 position = Vector2( 3.729, 0 )
@@ -197,6 +191,8 @@ position = Vector2( 275.955, 2.16986 )
 [node name="Platform3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 5512.37, -189.818 )
 scale = Vector2( 0.717043, 1.23037 )
+Acceleration(%) = 1.0
+"Max speed(%)" = 1.0
 
 [node name="CollisionShape2D" parent="Platform3" index="1"]
 position = Vector2( 3.729, 0 )
@@ -211,16 +207,14 @@ scale = Vector2( 1.13221, 1.44504 )
 [node name="DMG_bonus" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2646.36, -667.451 )
 scale = Vector2( 0.785444, 1.15214 )
-damage_bonus = 10
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 position = Vector2( -779.546, 118.801 )
+bullet_prefab = null
 
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 11897, 2170.71 )
 scale = Vector2( 0.500411, 0.521511 )
-this_level_id = 7
-next_level_id = 9
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -229,21 +223,20 @@ script = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 13.834, -758.978 )
+zanos = 0.2
+damage_cooldown = 1.0
 
 [node name="DamagingArea" parent="." instance=ExtResource( 13 )]
 position = Vector2( 5784.34, 110.362 )
 scale = Vector2( 6.21419, 1.05883 )
-damage = 5
 
 [node name="DamagingArea3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 8709.69, 781.075 )
 scale = Vector2( 2.39924, 1.33448 )
-damage = 300
 
 [node name="DamagingArea4" parent="." instance=ExtResource( 13 )]
 position = Vector2( 9876.86, 3151.3 )
 scale = Vector2( 2.39924, 1.33448 )
-damage = 300
 
 [node name="DamagingArea7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 11577.5, 2449.17 )
@@ -260,7 +253,6 @@ scale = Vector2( -0.20297, 0.501995 )
 [node name="DamagingArea2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 361.623, 346.041 )
 scale = Vector2( 2.40171, -1.8054 )
-damage = 100
 
 [node name="Rashid" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1269.7, -131.628 )
@@ -276,11 +268,9 @@ position = Vector2( 1832.53, -131.628 )
 
 [node name="DMB_bonus2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 9079.34, -98.5078 )
-health_bonus = 60
 
 [node name="DMB_bonus3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 10306.3, 2196.18 )
-health_bonus = 100
 
 [node name="Heal2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 8082.13, -121.635 )
