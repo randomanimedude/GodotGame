@@ -108,6 +108,9 @@
     <ClCompile Include="SelectLevelButton.cpp">
       <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="ResetButton.cpp">
+      <Filter>Исходные файлы\UI/Buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -180,6 +183,9 @@
       <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="SelectLevelButton.h">
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="ResetButton.h">
       <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
   </ItemGroup>

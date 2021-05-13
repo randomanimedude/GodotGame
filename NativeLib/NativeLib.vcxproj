@@ -182,6 +182,7 @@
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rashid.cpp" />
+    <ClCompile Include="ResetButton.cpp" />
     <ClCompile Include="ResumeButton.cpp" />
     <ClCompile Include="Robat.cpp" />
     <ClCompile Include="SelectLevelButton.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rashid.h" />
+    <ClInclude Include="ResetButton.h" />
     <ClInclude Include="ResumeButton.h" />
     <ClInclude Include="Robat.h" />
     <ClInclude Include="SelectLevelButton.h" />

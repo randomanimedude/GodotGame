@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://NativeScripts/Pause.gdns" type="Script" id=1]
 [ext_resource path="res://NativeScripts/Resume.gdns" type="Script" id=2]
 [ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NativeScripts/Restart.gdns" type="Script" id=4]
+[ext_resource path="res://Interface/SelectLevelButton.theme" type="Theme" id=5]
 
 [node name="Pause" type="CanvasLayer"]
 layer = 10
@@ -29,11 +31,26 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -103.5
-margin_top = 209.9
-margin_right = 103.5
-margin_bottom = 247.9
+margin_top = 178.402
+margin_right = 110.5
+margin_bottom = 241.402
+theme = ExtResource( 5 )
 text = "Resume"
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="Pause"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -103.0
+margin_top = 275.0
+margin_right = 114.0
+margin_bottom = 338.0
+theme = ExtResource( 5 )
+text = "Restart"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,9 +58,11 @@ __meta__ = {
 [node name="Button" parent="Pause" instance=ExtResource( 3 )]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -75.8647
+margin_left = -73.3448
 margin_top = 435.082
-margin_right = 74.1353
-margin_bottom = 475.082
+margin_right = 231.655
+margin_bottom = 498.082
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 5 )
 text = "Main menu"
 reference_path = "res://Scenes/Menu.tscn"
