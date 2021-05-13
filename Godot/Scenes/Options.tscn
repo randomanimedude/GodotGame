@@ -88,5 +88,3 @@ text = "OPTIONS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="value_changed" from="HSlider" to="TextureButton" method="_on_HSlider_value_changed"]

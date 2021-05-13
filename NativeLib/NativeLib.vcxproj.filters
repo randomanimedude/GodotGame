@@ -19,17 +19,17 @@
     <Filter Include="Файлы заголовков\Pickables">
       <UniqueIdentifier>{e370c3c0-4ddf-4e4b-9d91-accd5b60c67d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\UI">
-      <UniqueIdentifier>{e2d1a594-57b3-499a-9d5a-fd22cfb3f2be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\UI">
-      <UniqueIdentifier>{f01e8489-6c99-4f25-99a1-b3e04bb32862}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Enemies">
       <UniqueIdentifier>{02240e51-83b2-47f2-b7c0-3be535fb2ecc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Enemies">
       <UniqueIdentifier>{18612605-2930-4f37-aff6-b412e7ac3734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UI/Buttons">
+      <UniqueIdentifier>{f01e8489-6c99-4f25-99a1-b3e04bb32862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\UI/Buttons">
+      <UniqueIdentifier>{e2d1a594-57b3-499a-9d5a-fd22cfb3f2be}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,22 +61,22 @@
       <Filter>Исходные файлы\Pickables</Filter>
     </ClCompile>
     <ClCompile Include="Counter.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceManager.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Menu_buttons.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="MenuSound.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="PauseScreen.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="ResumeButton.cpp">
-      <Filter>Исходные файлы\UI</Filter>
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Robat.cpp">
       <Filter>Исходные файлы\Enemies</Filter>
@@ -96,11 +96,20 @@
     <ClCompile Include="EnemyHealthBar.cpp">
       <Filter>Исходные файлы\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Volume.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="BulletBehavior.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DataLoader.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Volume.cpp">
+      <Filter>Исходные файлы\UI/Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectLevelButton.cpp">
+      <Filter>Исходные файлы\UI/Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="ResetButton.cpp">
+      <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,29 +131,26 @@
     <ClInclude Include="LevelManager.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="DMG_bonus.h">
       <Filter>Файлы заголовков\Pickables</Filter>
     </ClInclude>
     <ClInclude Include="Counter.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceManager.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="MenuSound.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="PauseScreen.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="ResumeButton.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Menu_buttons.h">
-      <Filter>Файлы заголовков\UI</Filter>
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Robat.h">
       <Filter>Файлы заголовков\Enemies</Filter>
@@ -164,11 +170,23 @@
     <ClInclude Include="EnemyHealthBar.h">
       <Filter>Файлы заголовков\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Volume.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="BulletBehavior.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLoader.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Volume.h">
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectLevelButton.h">
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="ResetButton.h">
+      <Filter>Файлы заголовков\UI/Buttons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

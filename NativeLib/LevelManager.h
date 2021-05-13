@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonLib.h"
+#include "DataLoader.h"
 #include <Node.hpp>
 #include <SceneTree.hpp>
 #include <Viewport.hpp>
@@ -17,7 +18,7 @@ public:
 
     void _ready();
 
-    void CompleteLevel(int id);
+    void CompleteLevel(int completed, int opened);
     void LoadLevel(int id);
 
 private:

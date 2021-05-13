@@ -26,7 +26,7 @@ void LevelEnd::_on_body_entered(PhysicsBody2D* body)
 {
 	if (body->get_name() == "Player" && Player::GetInstance()->GetScore() >= score_to_pass)
 	{
-		levelManager->CompleteLevel(this_level_id);
+		levelManager->CompleteLevel(this_level_id, next_level_id);
 		levelManager->LoadLevel(next_level_id);
 	}
 }
