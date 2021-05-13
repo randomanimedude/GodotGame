@@ -15,13 +15,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Новый Игровой Проект"
-run/main_scene="res://Scenes/Continue.tscn"
+run/main_scene="res://Scenes/LvL1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 LevelManager="*res://NativeScripts/LevelManager.gdns"
-DataLoader="*res://NativeScripts/DataLoader.gdns"
 
 [display]
 
