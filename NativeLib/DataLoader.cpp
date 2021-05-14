@@ -97,4 +97,5 @@ bool DataLoader::GetLevelAvailable(int index)
 	 for (bool& status : LevelAvailability)
 		 status = false;
 	 LevelAvailability[0] = true;
+	 SaveLevelData();
 }
