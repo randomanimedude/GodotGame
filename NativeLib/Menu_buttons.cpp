@@ -9,6 +9,7 @@ void Menu_buttons::_register_methods()
 
 	register_property("reference_path", &Menu_buttons::reference_path, (String)"");
 	register_property("start_focused", &Menu_buttons::start_focused, false);
+	register_property("load_scene", &Menu_buttons::load_scene, true);
 }
 
 void Menu_buttons::_init()
@@ -33,10 +34,18 @@ void Menu_buttons::_on_Button_mouse_entered()
 
 void Menu_buttons::_on_Button_Pressed()
 {
-	if (reference_path != "")
+	if (load_scene)
 	{
-		get_tree()->change_scene(reference_path);
+		if (reference_path != "")
+		{
+			get_tree()->change_scene(reference_path);
+		}
+		else
+			get_tree()->quit();
 	}
 	else
-		get_tree()->quit();
+	{
+		Node::cast_to<Node2D>(get_parent())->set_visible(false);
+		Node::cast_to<Node2D>(get_node((NodePath)reference_path))->set_visible(true);
+	}
 }

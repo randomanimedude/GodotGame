@@ -4,6 +4,7 @@
 
 #include <Button.hpp>
 #include <SceneTree.hpp>
+#include <Node2D.hpp>
 
 class Menu_buttons :
     public Button
@@ -12,6 +13,7 @@ class Menu_buttons :
 
 	String reference_path = "";
 	bool start_focused = false;
+	bool load_scene = true;
 
 public:
 	static void _register_methods();
