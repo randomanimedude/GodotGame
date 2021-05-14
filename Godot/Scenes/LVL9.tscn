@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texture/Tiles/Tileset for 4-7 lvls.tres" type="TileSet" id=2]
@@ -7,11 +7,13 @@
 [ext_resource path="res://Prefabs/Enemies/Robat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Prefabs/Enemies/DamagingArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/LevelEnd.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Texture/toxic.png" type="Texture" id=8]
 [ext_resource path="res://Prefabs/MovingPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Prefabs/Pickables/Heal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Prefabs/Pickables/DMG_bonus.tscn" type="PackedScene" id=11]
 [ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=12]
 [ext_resource path="res://Sound/lvl456.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Prefabs/Enemies/Spikes.tscn" type="PackedScene" id=14]
 
 [node name="World" type="Node2D"]
 position = Vector2( -3.3674, -57.8067 )
@@ -77,8 +79,14 @@ scale = Vector2( 1.74524, 1.94823 )
 heal = 50
 
 [node name="Heal2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 3380.8, 60.7389 )
+position = Vector2( 3385.56, 86.9014 )
 scale = Vector2( 1.55243, 1.62674 )
+
+[node name="toxic" type="Sprite" parent="Heal2"]
+modulate = Color( 1, 1, 1, 0.403922 )
+position = Vector2( 482.234, -93.4476 )
+scale = Vector2( 0.335263, 0.693466 )
+texture = ExtResource( 8 )
 
 [node name="DMG_bonus" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1988.71, -1261.81 )
@@ -105,7 +113,7 @@ volume_db = -10.0
 script = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -5.0736, -607.958 )
+position = Vector2( 3.08825, -162.061 )
 
 [node name="Rashid2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 875.806, -1269.34 )
@@ -139,16 +147,16 @@ position = Vector2( 1204.09, -1273.83 )
 position = Vector2( 1500.89, -1273.83 )
 
 [node name="DamagingArea" parent="." instance=ExtResource( 6 )]
-position = Vector2( 507.176, 153.661 )
+position = Vector2( 513.929, 83.8153 )
 scale = Vector2( 1.66686, 1.42337 )
 damage = 200
 
 [node name="DamagingArea2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4138.5, -79.2243 )
+position = Vector2( 4137.08, -65.0822 )
 scale = Vector2( 2.72775, 0.861958 )
 
 [node name="DamagingArea3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6247.6, -635.966 )
+position = Vector2( 6250.27, -682.685 )
 scale = Vector2( 2.36198, 1.76706 )
 damage = 200
 
@@ -158,11 +166,35 @@ scale = Vector2( 11.7678, 1.38022 )
 damage = 200
 
 [node name="DamagingArea5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 11073.2, -405.506 )
+position = Vector2( 11078.3, -489.596 )
 scale = Vector2( 2.64568, 1.80835 )
 damage = 200
 
 [node name="DamagingArea6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 12588.6, -210.565 )
-scale = Vector2( 2.64568, 1.80835 )
+position = Vector2( 12590, -199.786 )
+scale = Vector2( 2.43685, 0.748907 )
 damage = 30
+
+[node name="Spikes" parent="." instance=ExtResource( 14 )]
+position = Vector2( 519.671, 99.6227 )
+scale = Vector2( 1.60888, 1.71172 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 6243.36, -675.687 )
+scale = Vector2( 1.98399, 1.89568 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 11080.9, -478.125 )
+scale = Vector2( 1.60888, 1.71172 )
+
+[node name="toxic" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.403922 )
+position = Vector2( 9191.85, -579.421 )
+scale = Vector2( 2.73267, 1.07547 )
+texture = ExtResource( 8 )
+
+[node name="toxic2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 12582.9, -200.429 )
+scale = Vector2( 0.504739, 1 )
+texture = ExtResource( 8 )

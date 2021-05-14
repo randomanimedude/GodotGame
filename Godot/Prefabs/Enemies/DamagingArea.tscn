@@ -7,6 +7,7 @@ extents = Vector2( 79.459, 46.6708 )
 
 [node name="DamagingArea" type="Area2D"]
 script = ExtResource( 1 )
+damage = 999
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

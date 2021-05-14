@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scifi_platformTiles_32x32 (1).png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=12]
 [ext_resource path="res://Sound/lvl123.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Texture/Tiles/Dark_lvl2.png" type="Texture" id=14]
+[ext_resource path="res://Texture/toxic.png" type="Texture" id=15]
+[ext_resource path="res://Prefabs/Enemies/Spikes.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 416, 32, 0, 32, 0, 0, 416, 0 )
@@ -376,9 +378,45 @@ position = Vector2( 14688.1, -417.394 )
 scale = Vector2( 0.8, 1 )
 
 [node name="DamagingArea6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4092.87, -3067.37 )
-scale = Vector2( 24.9053, 2.054 )
+position = Vector2( 4071.51, -3072.71 )
+scale = Vector2( 24.0451, 2.63609 )
 damage = 1000
+
+[node name="Spikes3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2798.64, -3097.76 )
+scale = Vector2( 7.81512, 3.35209 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1257.75, 1383.17 )
+scale = Vector2( 1.91997, 3.35209 )
+
+[node name="Spikes7" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2181.4, 1412.55 )
+scale = Vector2( 4.8293, 2.36541 )
+
+[node name="Spikes8" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2981.56, 1414.84 )
+scale = Vector2( 5.2941, 2.25464 )
+
+[node name="Spikes9" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3778.12, 1411.93 )
+scale = Vector2( 4.88578, 2.36541 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4029.51, -3103.1 )
+scale = Vector2( 7.81512, 3.35209 )
+
+[node name="Spikes" parent="." instance=ExtResource( 16 )]
+position = Vector2( 5090.91, 1008.93 )
+scale = Vector2( 2.79241, 3.00628 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 6246.23, 1021.91 )
+scale = Vector2( 2.72864, 2.72461 )
+
+[node name="Spikes5" parent="." instance=ExtResource( 16 )]
+position = Vector2( 5268.11, -3104.48 )
+scale = Vector2( 7.81512, 3.35209 )
 
 [node name="Robat17" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1669.65, -3645.49 )
@@ -513,32 +551,44 @@ position = Vector2( 6422.81, -385.283 )
 scale = Vector2( 0.8, 1 )
 
 [node name="DamagingArea" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1255.5, 1452.46 )
-scale = Vector2( 1.95601, 1.11217 )
+position = Vector2( 1255.25, 1384.68 )
+scale = Vector2( 2.0608, 2.40391 )
 damage = 1000
 impact = true
 
 [node name="DamagingArea3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5099.43, 1037.32 )
+position = Vector2( 5096.76, 979.922 )
 scale = Vector2( 3.0268, 2.50399 )
 damage = 1000
 impact = true
 
 [node name="DamagingArea4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6240.14, 1052.43 )
+position = Vector2( 6241.55, 995.862 )
 scale = Vector2( 3.05865, -2.58061 )
 damage = 1000
 impact = true
 
+[node name="toxic" type="Sprite" parent="DamagingArea4"]
+modulate = Color( 1, 1, 1, 0.423529 )
+position = Vector2( 1339.72, 138.278 )
+scale = Vector2( 0.629421, 0.458222 )
+texture = ExtResource( 15 )
+
+[node name="toxic2" type="Sprite" parent="DamagingArea4"]
+modulate = Color( 1, 1, 1, 0.423529 )
+position = Vector2( 1842.77, 138.278 )
+scale = Vector2( 0.629421, 0.458222 )
+texture = ExtResource( 15 )
+
 [node name="DamagingArea5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 11129.3, 685.521 )
+position = Vector2( 11199.5, 674.445 )
 scale = Vector2( 19.0214, -1.65911 )
 damage = 10
 impact = true
 
 [node name="DamagingArea2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2980.19, 1413.83 )
-scale = Vector2( 15.9796, 4.00667 )
+position = Vector2( 2990.69, 1408.09 )
+scale = Vector2( 15.4563, 2.49256 )
 damage = 1000
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
