@@ -11,6 +11,7 @@ void Player::_register_methods()
 	register_method("DealDamage", &Player::DealDamage);
 	register_method("ShootRight", &Player::ShootRight);
 	register_method("ShootLeft", &Player::ShootLeft);
+	register_method("StopGame", &Player::StopGame);
 
 	register_property("max_speed", &Player::max_speed, 800);
 	register_property("zanos", &Player::zanos, 0.2f);
@@ -171,6 +172,12 @@ void Player::IncreaseHP(int hp, bool full_heal)
 {
 	max_HP += hp;
 	Heal(full_heal ? max_HP : hp);
+}
+
+void Player::StopGame()
+{
+	get_tree()->set_pause(true);
+	Node::cast_to<Control>(get_node("UI/GameOver/GameOver"))->set_visible(true);
 }
 
 int Player::GetScore()

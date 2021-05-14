@@ -44,6 +44,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+bus_name = "Master"
 
 [node name="Label" type="Label" parent="."]
 margin_left = 228.941

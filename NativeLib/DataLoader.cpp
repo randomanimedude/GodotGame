@@ -18,9 +18,10 @@ void DataLoader::_init()
 
 void DataLoader::_ready()
 {
+	LoadSettingsData();
 }
 
-DataLoader* DataLoader::GetSingletone()
+DataLoader* DataLoader::GetSingleton()
 {
 	return instance;
 }
@@ -47,6 +48,32 @@ void DataLoader::SaveLevelData()
 	Dictionary dict;
 	for (int i = 0; i < numberOfLevels; ++i)
 		dict[(String)"Level#" + String::num_int64(i)] = LevelAvailability[i];
+	file->store_string(dict.to_json());
+	file->close();
+}
+
+void DataLoader::LoadSettingsData()
+{
+	Ref<File> file = File::_new();
+	if (file->file_exists(SettingsFile))
+	{
+		file->open(SettingsFile, file->READ);
+		//load and parse json string
+		Dictionary rez = JSON::get_singleton()->parse(file->get_as_text())->get_result();
+		for (String& bus : buses)
+			audioServer->set_bus_volume_db(audioServer->get_bus_index(bus), (float)rez[bus]);
+	}
+}
+
+void DataLoader::SaveSettingsData()
+{
+	Ref<File> file = File::_new();
+	file->open(SettingsFile, file->WRITE);
+
+	//create dictionary with data and save it as json
+	Dictionary dict;
+	for(String  &bus:buses)
+		dict[bus] = audioServer->get_bus_volume_db(audioServer->get_bus_index(bus));
 	file->store_string(dict.to_json());
 	file->close();
 }

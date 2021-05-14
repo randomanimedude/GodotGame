@@ -6,6 +6,7 @@
 #include <JSONParseResult.hpp>
 #include <Dictionary.hpp>
 #include <Variant.hpp>
+#include <AudioServer.hpp>
 
 class DataLoader : public Node
 {
@@ -16,19 +17,23 @@ public:
 	void _init();
 
 	void _ready();
-	static DataLoader* GetSingletone();
+	static DataLoader* GetSingleton();
 
 	void LoadLevelData();
 	void SaveLevelData();
+	void LoadSettingsData();
+	void SaveSettingsData();
 	void SetLevelAvailable(int index, bool status);
 	bool GetLevelAvailable(int index);
 	void ResetLevelAvailability();
 
 private:
 	static inline DataLoader* instance;
-
+	
+	AudioServer* audioServer = AudioServer::get_singleton();
 	const String ProgressFile = "user://progress.save";
 	const String SettingsFile = "user://settings.save";
+	String buses[1] = { "Master" };
 
 	int numberOfLevels = 11;
 	bool LevelAvailability[11];
