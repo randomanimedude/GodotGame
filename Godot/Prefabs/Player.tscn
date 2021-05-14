@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://NativeScripts/Player.gdns" type="Script" id=1]
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=2]
 [ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Interface/PauseMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interface/GameOver.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.4224, 45.1163 )
@@ -35,6 +36,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "StopGame"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "DeathRight"
@@ -62,6 +77,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "StopGame"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -385,7 +414,7 @@ scale = Vector2( 2.89111, 2.89111 )
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 8
-frame = 48
+frame = 56
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.353447, 1.17754 )
@@ -422,3 +451,5 @@ position = Vector2( -62.6291, -17.6288 )
 [node name="Interface" parent="UI" instance=ExtResource( 3 )]
 
 [node name="Pause" parent="UI" instance=ExtResource( 4 )]
+
+[node name="GameOver" parent="UI" instance=ExtResource( 5 )]

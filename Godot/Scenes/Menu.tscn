@@ -1,8 +1,6 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=1]
-[ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=2]
-[ext_resource path="res://Sound/MenuSound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Texture/skyline-a.png" type="Texture" id=4]
 [ext_resource path="res://Interface/Font/Comfortaa-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=6]
@@ -419,7 +417,8 @@ focus_neighbour_bottom = NodePath("../Options")
 custom_fonts/font = SubResource( 3 )
 text = "Continue"
 icon = SubResource( 2 )
-reference_path = "res://Scenes/Continue.tscn"
+reference_path = "../../Continue"
+load_scene = false
 
 [node name="Options" parent="." instance=ExtResource( 1 )]
 margin_left = 101.122
@@ -430,7 +429,8 @@ focus_neighbour_top = NodePath("../New game")
 focus_neighbour_bottom = NodePath("../Exit")
 custom_fonts/font = SubResource( 4 )
 text = "Options"
-reference_path = "res://Scenes/Options.tscn"
+reference_path = "/root/MainMenu/Options"
+load_scene = false
 
 [node name="Exit" parent="." instance=ExtResource( 1 )]
 margin_left = 100.0
@@ -441,11 +441,6 @@ focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../New game")
 custom_fonts/font = SubResource( 5 )
 text = "Exit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -10.0
-script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 418.268

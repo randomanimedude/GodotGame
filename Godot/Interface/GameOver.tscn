@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Interface/Font/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NativeScripts/Restart.gdns" type="Script" id=4]
+[ext_resource path="res://Interface/SelectLevelButton.theme" type="Theme" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="GameOver" type="CanvasLayer"]
+layer = 10
+
+[node name="GameOver" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.572549 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -129.87
+margin_top = 354.196
+margin_right = 132.13
+margin_bottom = 417.196
+theme = ExtResource( 5 )
+text = "Try again"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" parent="GameOver" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 298.593
+margin_top = 514.278
+margin_right = 603.593
+margin_bottom = 577.278
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 5 )
+text = "Main menu"
+reference_path = "res://Scenes/Menu.tscn"
+
+[node name="Label" type="Label" parent="GameOver"]
+margin_left = 74.9534
+margin_top = 93.3381
+margin_right = 368.953
+margin_bottom = 150.338
+rect_scale = Vector2( 3, 3 )
+theme = SubResource( 2 )
+text = "Game Over"

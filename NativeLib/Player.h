@@ -7,6 +7,7 @@
 #include <KinematicBody2D.hpp>
 #include <Input.hpp>
 #include <AnimationPlayer.hpp>
+#include <SceneTree.hpp>
 
 
 class Player : public KinematicBody2D
@@ -72,6 +73,7 @@ public:
 	void IncreaseDamage(int bonus);
 	void Heal(int hp);
 	void IncreaseHP(int hp, bool heal);
+	void StopGame();
 
 	static Player* GetInstance();
 

@@ -19,7 +19,7 @@ void SelectLevelButton::_ready()
 		grab_focus();
 
 	levelManager = Node::cast_to<LevelManager>(get_node("/root/LevelManager"));
-	dataLoader = DataLoader::GetSingletone();
+	dataLoader = DataLoader::GetSingleton();
 	if (!dataLoader->GetLevelAvailable(level_index))
 	{
 		set_disabled(true);

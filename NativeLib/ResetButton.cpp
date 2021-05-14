@@ -24,5 +24,6 @@ void ResetButton::_on_Button_mouse_entered()
 
 void ResetButton::_on_Button_Pressed()
 {
+	get_tree()->set_pause(true);
 	get_tree()->reload_current_scene();
 }
