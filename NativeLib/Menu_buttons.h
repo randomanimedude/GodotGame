@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CommonLib.h"
+#include "DataLoader.h"
 
 #include <Button.hpp>
 #include <SceneTree.hpp>

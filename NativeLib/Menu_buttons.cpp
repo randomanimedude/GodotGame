@@ -38,6 +38,8 @@ void Menu_buttons::_on_Button_Pressed()
 	{
 		if (reference_path != "")
 		{
+			if (reference_path == "res://Scenes/LvL1.tscn")
+				DataLoader::GetSingleton()->ResetLevelAvailability();
 			get_tree()->change_scene(reference_path);
 		}
 		else

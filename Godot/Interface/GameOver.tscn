@@ -56,7 +56,7 @@ margin_bottom = 577.278
 rect_scale = Vector2( 0.5, 0.5 )
 theme = ExtResource( 5 )
 text = "Main menu"
-reference_path = "res://Scenes/Menu.tscn"
+reference_path = "res://Scenes/MainMenu.tscn"
 
 [node name="Label" type="Label" parent="GameOver"]
 margin_left = 74.9534
