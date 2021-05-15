@@ -38,7 +38,7 @@ void Menu_buttons::_on_Button_Pressed()
 	{
 		if (reference_path != "")
 		{
-			if (reference_path == "res://Scenes/LvL1.tscn")
+			if (reference_path == "res://Scenes/LVL1.tscn")
 				DataLoader::GetSingleton()->ResetLevelAvailability();
 			get_tree()->change_scene(reference_path);
 		}
@@ -47,7 +47,9 @@ void Menu_buttons::_on_Button_Pressed()
 	}
 	else
 	{
-		Node::cast_to<Node2D>(get_parent())->set_visible(false);
-		Node::cast_to<Node2D>(get_node((NodePath)reference_path))->set_visible(true);
+		get_parent()->call("set_visible", false);
+		get_node((NodePath)reference_path)->call("set_visible", true);
+		/*Node::cast_to<Node2D>(get_parent())->set_visible(false);
+		Node::cast_to<Node2D>(get_node((NodePath)reference_path))->set_visible(true);*/
 	}
 }
