@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texture/Tiles/Tileset for 4-7 lvls.tres" type="TileSet" id=2]
@@ -14,10 +14,74 @@
 [ext_resource path="res://NativeScripts/MenuSound.gdns" type="Script" id=12]
 [ext_resource path="res://Sound/lvl456.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Prefabs/Enemies/Spikes.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Texture/Tiles/universal tileset.tres" type="TileSet" id=15]
+[ext_resource path="res://Texture/skyline-a.png" type="Texture" id=16]
 
 [node name="World" type="Node2D"]
 position = Vector2( -3.3674, -57.8067 )
 scale = Vector2( 0.998408, 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="skyline-a" type="Sprite" parent="Background"]
+position = Vector2( 681.557, -472.608 )
+scale = Vector2( 17.2876, 5.59894 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a6" type="Sprite" parent="Background"]
+position = Vector2( 976.849, -1616.62 )
+scale = Vector2( 22.8484, -4.88504 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a7" type="Sprite" parent="Background"]
+position = Vector2( 4860.65, -1649.58 )
+scale = Vector2( 22.8484, -4.51047 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a8" type="Sprite" parent="Background"]
+position = Vector2( 7737.85, -2762.37 )
+scale = Vector2( 22.8484, -13.6997 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a9" type="Sprite" parent="Background"]
+position = Vector2( 12423.6, -3600.72 )
+scale = Vector2( 22.8484, -20.5508 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a10" type="Sprite" parent="Background"]
+position = Vector2( 10148.2, -3600.72 )
+scale = Vector2( 22.8484, -20.5508 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a2" type="Sprite" parent="Background"]
+position = Vector2( 2892.99, -468.37 )
+scale = Vector2( 17.2876, 5.59894 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a3" type="Sprite" parent="Background"]
+position = Vector2( 5105.3, -481.952 )
+rotation = 3.14159
+scale = Vector2( 17.288, -5.599 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a4" type="Sprite" parent="Background"]
+position = Vector2( 8086.08, -486.637 )
+rotation = 3.14159
+scale = Vector2( 29.8639, -5.599 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a5" type="Sprite" parent="Background"]
+position = Vector2( 11335.8, -124.599 )
+rotation = 3.14159
+scale = Vector2( 22.1236, -8.61599 )
+texture = ExtResource( 16 )
+
+[node name="TileMap2" type="TileMap" parent="Background"]
+position = Vector2( 11335.8, -124.599 )
+rotation = 3.14159
+tile_set = ExtResource( 15 )
+format = 1
+tile_data = PoolIntArray( -327558, 1610612774, 0, -327557, 1610612774, 0, -327556, 1610612774, 0, -327555, 1610612774, 0, -327554, 1610612774, 0, -327553, 1610612774, 0, -327552, 1610612774, 0, -327514, 1610612774, 0, -327513, 1610612774, 0, -327512, 1610612774, 0, -327511, 1610612774, 0, -327510, 1610612774, 0, -327509, 1610612774, 0, -262022, 38, 0, -262021, 38, 0, -262020, 38, 0, -262019, 38, 0, -262018, 38, 0, -262017, 38, 0, -262016, 38, 0, -262015, 1610612774, 0, -261978, 38, 0, -261977, 38, 0, -261976, 38, 0, -261975, 38, 0, -261974, 38, 0, -261973, 38, 0, -196486, 1610612774, 0, -196485, 1610612774, 0, -196484, 1610612774, 0, -196483, 1610612774, 0, -196482, 1610612774, 0, -196481, 1610612774, 0, -196480, 1610612774, 0, -196479, 1610612774, 0, -196441, 1610612774, 0, -196440, 1610612774, 0, -196439, 1610612774, 0, -196438, 1610612774, 0, -196437, 1610612774, 0, -130947, 38, 0, -130946, 38, 0, -130945, 38, 0, -130944, 38, 0, -130943, 38, 0, -130905, 38, 0, -130904, 38, 0, -130903, 38, 0, -130902, 38, 0, -130901, 1610612774, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 5.67374, -34.3295 )
