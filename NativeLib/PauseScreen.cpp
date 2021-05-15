@@ -18,10 +18,19 @@ void PauseScreen::_input(InputEvent* e)
 
 void PauseScreen::Pause()
 {
-	SceneTree* tree = get_tree();
-	bool displaying = !tree->is_paused();
-	tree->set_pause(displaying);
-	set_visible(displaying);
+	Control* options = Node::cast_to<Control>(get_node("../InGameOptions"));
+	if (!options->is_visible())
+	{
+		SceneTree* tree = get_tree();
+		bool displaying = !tree->is_paused();
+		tree->set_pause(displaying);
+		set_visible(displaying);
+	}
+	else
+	{
+		options->set_visible(false);
+		set_visible(true);
+	}
 }
 
 PauseScreen* PauseScreen::getInstance()
