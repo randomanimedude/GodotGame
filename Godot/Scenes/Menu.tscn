@@ -10,10 +10,10 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="LargeTexture" id=2]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -67,7 +67,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -94,7 +94,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -121,7 +121,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -149,7 +149,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -177,7 +177,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=10]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -204,7 +204,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=11]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame_coords")
@@ -231,7 +231,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=12]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -259,7 +259,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=13]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -287,7 +287,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=14]
 length = 0.125
 step = 0.025
 tracks/0/type = "value"
@@ -329,7 +329,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=15]
 length = 0.125
 step = 0.025
 tracks/0/type = "value"
@@ -430,7 +430,7 @@ margin_top = 46.4073
 margin_right = 498.268
 margin_bottom = 65.4073
 rect_scale = Vector2( 6, 5 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 text = "AVENGER"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -442,18 +442,18 @@ position = Vector2( 698.957, 364.456 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 playback_process_mode = 0
 method_call_mode = 1
-anims/DeathLeft = SubResource( 7 )
-anims/DeathRight = SubResource( 8 )
-anims/FallLeft = SubResource( 9 )
-anims/FallRight = SubResource( 10 )
-anims/IdleLeft = SubResource( 11 )
-anims/IdleRight = SubResource( 12 )
-anims/JumpLeft = SubResource( 13 )
-anims/JumpRight = SubResource( 14 )
-anims/RunLeft = SubResource( 15 )
-anims/RunRight = SubResource( 16 )
-anims/ShootLeft = SubResource( 17 )
-anims/ShootRight = SubResource( 18 )
+anims/DeathLeft = SubResource( 4 )
+anims/DeathRight = SubResource( 5 )
+anims/FallLeft = SubResource( 6 )
+anims/FallRight = SubResource( 7 )
+anims/IdleLeft = SubResource( 8 )
+anims/IdleRight = SubResource( 9 )
+anims/JumpLeft = SubResource( 10 )
+anims/JumpRight = SubResource( 11 )
+anims/RunLeft = SubResource( 12 )
+anims/RunRight = SubResource( 13 )
+anims/ShootLeft = SubResource( 14 )
+anims/ShootRight = SubResource( 15 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Node2D"]

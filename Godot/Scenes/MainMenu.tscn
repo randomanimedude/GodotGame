@@ -14,22 +14,22 @@ position = Vector2( 236.629, 268.961 )
 scale = Vector2( 2.824, 2.01022 )
 
 [node name="b" type="Sprite" parent="BackGround"]
-position = Vector2( 99.1471, 122.136 )
+position = Vector2( 93.5825, 121.019 )
 scale = Vector2( 2.84206, 1.58591 )
 texture = ExtResource( 6 )
 
 [node name="b2" type="Sprite" parent="BackGround"]
-position = Vector2( 460.563, 122.136 )
+position = Vector2( 453.409, 122.136 )
 scale = Vector2( -2.842, 1.586 )
 texture = ExtResource( 6 )
 
 [node name="b3" type="Sprite" parent="BackGround"]
-position = Vector2( 99.1471, 53.4983 )
+position = Vector2( 92.0569, 53.4983 )
 scale = Vector2( 2.84206, 1.58591 )
 texture = ExtResource( 6 )
 
 [node name="b4" type="Sprite" parent="BackGround"]
-position = Vector2( 460.563, 53.4983 )
+position = Vector2( 454.223, 53.4983 )
 scale = Vector2( -2.842, 1.586 )
 texture = ExtResource( 6 )
 
