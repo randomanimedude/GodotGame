@@ -21,7 +21,6 @@ void LevelManager::CompleteLevel(int completed, int opened)
 
 void LevelManager::LoadLevel(int id)
 {
-	//call_deferred("DeferredLoadLevel", id);
 	if(id==-1)
 		get_tree()->change_scene(mainMenuPath);
 	else

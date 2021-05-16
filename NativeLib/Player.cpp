@@ -30,7 +30,6 @@ void Player::_init()
 {
 	instance = this;
 	inp = Input::get_singleton();
-	cout << 'a';
 }
 
 void Player::_ready()
@@ -46,7 +45,6 @@ void Player::_ready()
 	interfaceManager->SetDMG(damage);
 	interfaceManager->SetHP(HP, max_HP);
 	interfaceManager->SetScore(0);
-	cout << 'b';
 }
 
 void Player::_process(float delta)

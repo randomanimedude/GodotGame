@@ -33,7 +33,6 @@ void Platform::_physics_process(float delta)
 
 void Platform::Move()
 {
-	//cout << maxSpeedVector.x << ' ' << maxSpeedVector.y << endl;
 	motion += toEnd ? accelerationVector : -accelerationVector;
 	motion.x = clamp(motion.x, -abs(maxSpeedVector.x), abs(maxSpeedVector.x));
 	motion.y = clamp(motion.y, -abs(maxSpeedVector.y), abs(maxSpeedVector.y));

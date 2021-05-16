@@ -10,10 +10,6 @@ class Platform :
 {
     GODOT_CLASS(Platform, KinematicBody2D);
 
-    /*int max_speed_x = 100;
-    int max_speed_y = 100;
-    int acceleration_x = 10;
-    int acceleration_y = 10;*/
     float acceleration = 1;
     float max_speed = 1;
 
