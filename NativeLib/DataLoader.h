@@ -35,7 +35,7 @@ private:
 	const String SettingsFile = "user://settings.save";
 	String buses[3] = { "Master", "Music", "SFX" };
 
-	int numberOfLevels = 11;
-	bool LevelAvailability[11];
+	int numberOfLevels = 10;
+	bool LevelAvailability[10];
 };
 
