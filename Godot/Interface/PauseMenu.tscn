@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://NativeScripts/Pause.gdns" type="Script" id=1]
 [ext_resource path="res://NativeScripts/Resume.gdns" type="Script" id=2]
 [ext_resource path="res://Prefabs/Menu_buttons.tscn" type="PackedScene" id=3]
 [ext_resource path="res://NativeScripts/Restart.gdns" type="Script" id=4]
 [ext_resource path="res://Interface/SelectLevelButton.theme" type="Theme" id=5]
-[ext_resource path="res://Texture/back.png" type="Texture" id=6]
 [ext_resource path="res://NativeScripts/HSlider.gdns" type="Script" id=7]
 [ext_resource path="res://NativeScripts/Menu_buttons.gdns" type="Script" id=8]
 
@@ -103,25 +102,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="InGameOptions"]
-margin_left = 42.8373
-margin_top = 107.093
-margin_right = 252.837
-margin_bottom = 317.093
+[node name="TextureButton" type="Button" parent="InGameOptions"]
+margin_left = 43.0
+margin_top = 107.0
+margin_right = 334.0
+margin_bottom = 222.0
 rect_scale = Vector2( 0.3, 0.3 )
-texture_normal = ExtResource( 6 )
+theme = ExtResource( 5 )
+text = "Back"
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 reference_path = "../../Pause"
 load_scene = false
 
 [node name="HSlider" type="HSlider" parent="InGameOptions"]
 margin_left = 386.883
-margin_top = 197.65
+margin_top = 292.671
 margin_right = 536.883
-margin_bottom = 213.65
+margin_bottom = 308.671
+rect_scale = Vector2( 1.9585, 1.80444 )
+min_value = -50.0
+max_value = 0.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+bus_name = "Music"
+
+[node name="HSlider2" type="HSlider" parent="InGameOptions"]
+margin_left = 386.883
+margin_top = 355.409
+margin_right = 536.883
+margin_bottom = 371.409
+rect_scale = Vector2( 1.9585, 1.80444 )
+min_value = -50.0
+max_value = 0.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="InGameOptions"]
+margin_left = 228.941
+margin_top = 294.523
+margin_right = 274.941
+margin_bottom = 308.523
+rect_scale = Vector2( 2, 2 )
+text = "MUSIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider3" type="HSlider" parent="InGameOptions"]
+margin_left = 386.883
+margin_top = 227.922
+margin_right = 536.883
+margin_bottom = 243.922
 rect_scale = Vector2( 1.9585, 1.80444 )
 min_value = -50.0
 max_value = 0.0
@@ -131,22 +167,22 @@ __meta__ = {
 }
 bus_name = "Master"
 
-[node name="Label" type="Label" parent="InGameOptions"]
+[node name="Label3" type="Label" parent="InGameOptions"]
 margin_left = 228.941
-margin_top = 199.502
+margin_top = 229.774
 margin_right = 274.941
-margin_bottom = 213.502
+margin_bottom = 243.774
 rect_scale = Vector2( 2, 2 )
-text = "MUSIC"
+text = "MASTER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SOUN" type="Label" parent="InGameOptions"]
 margin_left = 230.065
-margin_top = 263.929
+margin_top = 358.95
 margin_right = 281.065
-margin_bottom = 277.929
+margin_bottom = 372.95
 rect_scale = Vector2( 2, 2 )
 text = "SOUND"
 __meta__ = {

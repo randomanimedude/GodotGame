@@ -16,6 +16,7 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
+bus = "Music"
 script = ExtResource( 3 )
 
 [node name="Continue" parent="." instance=ExtResource( 5 )]

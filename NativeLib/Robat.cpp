@@ -46,6 +46,8 @@ void Robat::_physics_process(float delta)
 		TurnAroundIfNeeded();
 	Move();
 	ShootAtSight();
+	if (!isShooting)
+		animator->play("Move");
 }
 
 void Robat::DealDamage(int dmg)
@@ -86,8 +88,8 @@ void Robat::Move()
 
 	if (!isShooting && move)
 	{
-		motion.x += facing_right ? acceleration : -acceleration;
 		animator->play("Move");
+		motion.x += facing_right ? acceleration : -acceleration;
 	}
 	else
 		motion.x = lerp((float)motion.x, (float)0, zanos);

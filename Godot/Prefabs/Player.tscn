@@ -1,10 +1,14 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://NativeScripts/Player.gdns" type="Script" id=1]
 [ext_resource path="res://pixel_character_pale_blue_original.png" type="Texture" id=2]
 [ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Interface/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Interface/GameOver.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sound/jump.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sound/shot.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Sound/run.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Sound/pick-up-bust.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.4224, 45.1163 )
@@ -232,6 +236,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("SFX/Jump")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.2 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "JumpRight"
@@ -259,6 +277,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("SFX/Jump")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.2 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -288,6 +320,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("SFX/Step")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=11]
 length = 0.8
@@ -315,6 +364,23 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("SFX/Step")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -356,6 +422,20 @@ tracks/2/keys = {
 "values": [ {
 "args": [  ],
 "method": "ShootLeft"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("SFX/Shot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.025 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -400,6 +480,20 @@ tracks/2/keys = {
 "method": "ShootRight"
 } ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath("SFX/Shot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.025 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1.49832, -50.9425 )
@@ -410,11 +504,12 @@ zanos = 0.3
 damage_cooldown = 0.3
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.66968, 3.0034 )
 scale = Vector2( 2.89111, 2.89111 )
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 8
-frame = 56
+frame = 40
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.353447, 1.17754 )
@@ -453,3 +548,21 @@ position = Vector2( -62.6291, -17.6288 )
 [node name="Pause" parent="UI" instance=ExtResource( 4 )]
 
 [node name="GameOver" parent="UI" instance=ExtResource( 5 )]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="PickUpBoost" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="Step" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="Shot" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+bus = "SFX"

@@ -583,6 +583,7 @@ heal = 50
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -10.0
+bus = "Music"
 script = ExtResource( 12 )
 
 [editable path="Platform"]

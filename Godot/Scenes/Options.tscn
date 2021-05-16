@@ -28,9 +28,48 @@ load_scene = false
 
 [node name="HSlider" type="HSlider" parent="."]
 margin_left = 386.883
-margin_top = 197.65
+margin_top = 270.65
 margin_right = 536.883
-margin_bottom = 213.65
+margin_bottom = 286.65
+rect_scale = Vector2( 1.9585, 1.80444 )
+min_value = -50.0
+max_value = 0.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+bus_name = "Music"
+
+[node name="HSlider2" type="HSlider" parent="."]
+margin_left = 386.883
+margin_top = 329.65
+margin_right = 536.883
+margin_bottom = 345.65
+rect_scale = Vector2( 1.9585, 1.80444 )
+min_value = -50.0
+max_value = 0.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 228.941
+margin_top = 272.502
+margin_right = 274.941
+margin_bottom = 286.502
+rect_scale = Vector2( 2, 2 )
+text = "MUSIC"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider3" type="HSlider" parent="."]
+margin_left = 386.883
+margin_top = 206.65
+margin_right = 536.883
+margin_bottom = 222.65
 rect_scale = Vector2( 1.9585, 1.80444 )
 min_value = -50.0
 max_value = 0.0
@@ -40,22 +79,22 @@ __meta__ = {
 }
 bus_name = "Master"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label3" type="Label" parent="."]
 margin_left = 228.941
-margin_top = 199.502
+margin_top = 208.502
 margin_right = 274.941
-margin_bottom = 213.502
+margin_bottom = 222.502
 rect_scale = Vector2( 2, 2 )
-text = "MUSIC"
+text = "MASTER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SOUN" type="Label" parent="."]
 margin_left = 230.065
-margin_top = 263.929
+margin_top = 336.929
 margin_right = 281.065
-margin_bottom = 277.929
+margin_bottom = 350.929
 rect_scale = Vector2( 2, 2 )
 text = "SOUND"
 __meta__ = {

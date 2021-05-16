@@ -7,10 +7,10 @@
 [node name="Continue" type="Node2D"]
 
 [node name="Back" parent="." instance=ExtResource( 2 )]
-margin_left = 799.0
-margin_top = 519.0
-margin_right = 966.0
-margin_bottom = 582.0
+margin_left = 746.027
+margin_top = 497.811
+margin_right = 913.027
+margin_bottom = 560.811
 theme = ExtResource( 3 )
 text = "Back"
 reference_path = "../../Menu"
@@ -71,42 +71,26 @@ text = "Level 7"
 level_index = 6
 
 [node name="SelectLevelButton8" parent="." instance=ExtResource( 1 )]
-margin_left = 397.699
-margin_top = 424.34
-margin_right = 621.699
-margin_bottom = 487.34
+margin_left = 703.884
+margin_top = 49.2899
+margin_right = 927.884
+margin_bottom = 112.29
 text = "Level 8"
 level_index = 7
 
 [node name="SelectLevelButton9" parent="." instance=ExtResource( 1 )]
-margin_left = 737.876
-margin_top = 49.5738
-margin_right = 961.876
-margin_bottom = 112.574
+margin_left = 708.211
+margin_top = 297.488
+margin_right = 932.211
+margin_bottom = 360.488
 text = "Level 9"
 level_index = 9
 
-[node name="SelectLevelButton10" parent="." instance=ExtResource( 1 )]
-margin_left = 737.876
-margin_top = 166.954
-margin_right = 961.876
-margin_bottom = 229.954
-text = "Level 10"
-level_index = 10
-
-[node name="SelectLevelButton11" parent="." instance=ExtResource( 1 )]
-margin_left = 737.876
-margin_top = 292.819
-margin_right = 961.876
-margin_bottom = 355.819
-text = "Level 11"
-level_index = 11
-
 [node name="SelectLevelButton12" parent="." instance=ExtResource( 1 )]
-margin_left = 737.876
-margin_top = 424.34
-margin_right = 965.876
-margin_bottom = 487.34
+margin_left = 707.151
+margin_top = 174.307
+margin_right = 935.151
+margin_bottom = 237.307
 text = "Level 8B"
 level_index = 8
 secret_level = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://hoverbot1sheet.png" type="Texture" id=1]
 [ext_resource path="res://NativeScripts/Robat.gdns" type="Script" id=2]
 [ext_resource path="res://Prefabs/Enemies/EnemyHealthBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sound/shot.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.7685, 14.1043 )
@@ -26,8 +27,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Shoot"
-length = 0.2
+length = 0.3
 loop = true
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -35,7 +37,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 0.15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 2 ]
@@ -47,7 +49,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 0.15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -55,6 +57,23 @@ tracks/1/keys = {
 }, {
 "args": [  ],
 "method": "ShootRight"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -67,6 +86,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.931465, 0.185413 )
@@ -95,3 +115,7 @@ position = Vector2( 1.41591, 6.63864 )
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource( 3 )]
 rect_scale = Vector2( 0.3, 0.2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"

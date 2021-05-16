@@ -1186,4 +1186,5 @@ health_bonus = 20
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -10.0
+bus = "Music"
 script = ExtResource( 11 )
