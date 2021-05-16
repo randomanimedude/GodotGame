@@ -15,8 +15,8 @@ void LevelManager::_ready()
 
 void LevelManager::CompleteLevel(int completed, int opened)
 {
-	DataLoader::GetSingleton()->SetLevelAvailable(opened, true);
-	//cout << "level " << id << " completed" << endl;
+	if(opened >= 0)
+		DataLoader::GetSingleton()->SetLevelAvailable(opened, true);
 }
 
 void LevelManager::LoadLevel(int id)

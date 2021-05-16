@@ -8,6 +8,7 @@
 #include <Input.hpp>
 #include <AnimationPlayer.hpp>
 #include <SceneTree.hpp>
+#include <AudioStreamPlayer.hpp>
 
 
 class Player : public KinematicBody2D

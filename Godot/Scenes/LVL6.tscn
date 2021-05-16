@@ -244,6 +244,7 @@ scale = Vector2( 0.8, 1 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -10.0
+bus = "Music"
 script = ExtResource( 12 )
 
 [node name="toxic" type="Sprite" parent="."]

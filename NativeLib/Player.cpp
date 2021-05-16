@@ -157,8 +157,10 @@ void Player::UpdateMotionFromInput()
 		// jump/fall animation 
 		if (motion.y > gravity && !is_on_floor())
 			animator->play("Fall" + (godot::String)(facing_right ? "Right" : "Left"));
-		else if (motion.y < gravity)
+		else if (motion.y < gravity && !Node::cast_to<AudioStreamPlayer>(get_node("SFX/Jump"))->is_playing())
 			animator->play("Jump" + (godot::String)(facing_right ? "Right" : "Left"));
+		if (!jumping)
+			Node::cast_to<AudioStreamPlayer>(get_node("SFX/Jump"))->stop();
 
 		//shooting part
 		if (inp->is_action_just_pressed("shoot"))
@@ -172,6 +174,7 @@ void Player::IncreaseHP(int hp, bool full_heal)
 {
 	max_HP += hp;
 	Heal(full_heal ? max_HP : hp);
+	Node::cast_to<AudioStreamPlayer>(get_node("SFX/PickUpBoost"))->play();
 }
 
 void Player::StopGame()
@@ -201,6 +204,7 @@ void Player::IncreaseDamage(int bonus)
 {
 	damage += bonus;
 	interfaceManager->SetDMG(damage);
+	Node::cast_to<AudioStreamPlayer>(get_node("SFX/PickUpBoost"))->play();
 }
 
 Player* Player::GetInstance()
@@ -214,4 +218,5 @@ void Player::Heal(int hp)
 	if (HP > max_HP)
 		HP = max_HP;
 	interfaceManager->SetHP(HP, max_HP);
+	Node::cast_to<AudioStreamPlayer>(get_node("SFX/PickUpBoost"))->play();
 }

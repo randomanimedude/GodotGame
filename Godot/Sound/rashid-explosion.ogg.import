@@ -11,5 +11,5 @@ dest_files=[ "res://.import/rashid-explosion.ogg-046fca8b762600d81c6fcc66dd15fc2
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

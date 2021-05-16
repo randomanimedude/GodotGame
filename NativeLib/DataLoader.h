@@ -33,7 +33,7 @@ private:
 	AudioServer* audioServer = AudioServer::get_singleton();
 	const String ProgressFile = "user://progress.save";
 	const String SettingsFile = "user://settings.save";
-	String buses[1] = { "Master" };
+	String buses[3] = { "Master", "Music", "SFX" };
 
 	int numberOfLevels = 11;
 	bool LevelAvailability[11];
