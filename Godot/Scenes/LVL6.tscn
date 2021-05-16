@@ -273,11 +273,11 @@ position = Vector2( 0.950197, -0.999687 )
 [node name="EndPosition" parent="Platform2" index="2"]
 position = Vector2( 207.315, -1.58695 )
 
-[node name="Platform" parent="Platform2" instance=ExtResource( 4 )]
-position = Vector2( 2003.02, 86.8095 )
-scale = Vector2( 0.872191, 1 )
+[node name="Platform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6513.13, 346.33 )
+scale = Vector2( 1.42923, 2.11956 )
 
-[node name="EndPosition" parent="Platform2/Platform" index="2"]
+[node name="EndPosition" parent="Platform4" index="2"]
 position = Vector2( 282.34, 1.83942 )
 
 [node name="Heal2" parent="." instance=ExtResource( 10 )]
@@ -288,7 +288,6 @@ heal = 50
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -10.0
-bus = "Music"
 script = ExtResource( 12 )
 
 [node name="toxic" type="Sprite" parent="."]
@@ -304,4 +303,4 @@ scale = Vector2( 7.18312, 5.47766 )
 [editable path="Platform"]
 [editable path="Platform3"]
 [editable path="Platform2"]
-[editable path="Platform2/Platform"]
+[editable path="Platform4"]

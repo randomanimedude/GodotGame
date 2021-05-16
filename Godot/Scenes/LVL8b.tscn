@@ -81,29 +81,43 @@ tile_data = PoolIntArray( -1179661, 10, 0, -1179660, 10, 0, -1179659, 10, 0, -11
 position = Vector2( 5352.6, -775.573 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+HP = 200
+damage = 15
+score_reward = 30
 
 [node name="Robat2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7323.5, -765.482 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+HP = 80
+damage = 20
+score_reward = 20
 
 [node name="Robat3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 10601.4, -385.397 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
 move = false
+HP = 100
+score_reward = 20
 
 [node name="Robat5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9280.8, -506.559 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
 move = false
+HP = 80
+damage = 15
+score_reward = 15
 
 [node name="Robat4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 12409, -60.7041 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
 move = false
+HP = 80
+damage = 15
+score_reward = 30
 
 [node name="Platform2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1027.4, -653.661 )
@@ -207,12 +221,12 @@ scale = Vector2( 58.0424, 2.28166 )
 [node name="Heal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 6624.7, -750.693 )
 scale = Vector2( 1.9879, 2.19419 )
-heal = 50
+heal = 100
 
 [node name="Heal2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 11501.2, 8.08459 )
 scale = Vector2( 1.9879, 2.19419 )
-heal = 50
+heal = 80
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 position = Vector2( -779.546, 118.801 )
@@ -226,16 +240,17 @@ next_level_id = 9
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -10.0
-bus = "Music"
 script = ExtResource( 12 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 130.19, -757.168 )
+max_HP = 200
+starting_damage = 25
 
 [node name="DamagingArea" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2801.77, -175.947 )
 scale = Vector2( 28.6711, 1.78742 )
-damage = 250
+damage = 500
 
 [node name="DamagingArea2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 10706.6, 251.491 )
@@ -245,7 +260,7 @@ damage = 15
 [node name="DamagingArea3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 12121.5, 124.944 )
 scale = Vector2( 2.98611, 0.904816 )
-damage = 30
+damage = 40
 
 [node name="DamagingArea4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 12830.7, 122.424 )
@@ -254,34 +269,47 @@ damage = 30
 
 [node name="Rashid" parent="." instance=ExtResource( 4 )]
 position = Vector2( 8595.13, -626.401 )
+damage = 50
+score_reward = 20
+health = 40
 
 [node name="Rashid7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 10530.5, 140.949 )
+damage = 45
+score_reward = 20
+health = 40
 
 [node name="Rashid2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6426.12, -174.097 )
+damage = 25
 
 [node name="Rashid3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6231.79, -171.578 )
+damage = 25
 
 [node name="Rashid4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6028.83, -174.097 )
+damage = 25
 
 [node name="Rashid5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5613.36, -176.617 )
 scale = Vector2( -7, 5 )
+damage = 25
 
 [node name="Rashid6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5817.87, -173.578 )
 scale = Vector2( -7, 5 )
+damage = 25
 
 [node name="DMG_bonus" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1524.35, -747.013 )
 scale = Vector2( 0.596608, 0.823643 )
+damage_bonus = 10
 
 [node name="DMG_bonus2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2362.37, -1048.99 )
 scale = Vector2( 0.552597, 0.819577 )
+damage_bonus = 10
 
 [node name="Spikes" parent="." instance=ExtResource( 14 )]
 position = Vector2( 837.121, -157.296 )
