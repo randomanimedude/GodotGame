@@ -169,7 +169,7 @@ position = Vector2( -779.546, 118.801 )
 position = Vector2( 13532.6, -2485.54 )
 scale = Vector2( 0.500411, 0.521511 )
 this_level_id = 3
-next_level_id = 4
+next_level_id = -1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )

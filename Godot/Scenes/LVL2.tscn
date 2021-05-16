@@ -55,10 +55,12 @@ tile_data = PoolIntArray( -3145731, 37, 0, -3145730, 37, 0, -3145729, 37, 0, -32
 [node name="Heal2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 12116.5, 605.959 )
 scale = Vector2( 0.8, 1 )
+heal = 50
 
 [node name="Heal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 4212.45, -229.739 )
 scale = Vector2( 0.8, 1 )
+heal = 40
 
 [node name="Platform" parent="." instance=ExtResource( 10 )]
 position = Vector2( 13474.9, -237.271 )
@@ -67,100 +69,141 @@ position = Vector2( 13474.9, -237.271 )
 position = Vector2( -261.519, -1.68179 )
 
 [node name="Robat" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1595.32, -182.715 )
+position = Vector2( 1588.59, -184.889 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 20
 
 [node name="Robat3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3747.26, 3.75388 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
 
 [node name="Robat4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 5158.38, 64.2299 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 25
 
 [node name="Robat5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7460.25, -530.325 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 45
 
 [node name="Robat18" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5938.73, 171.865 )
+position = Vector2( 5938.73, 195.865 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 45
 
 [node name="Robat19" parent="." instance=ExtResource( 5 )]
 position = Vector2( 4098.72, -2297.48 )
 scale = Vector2( -3.557, 5.677 )
 max_speed = 150
 move = false
+acceleration = 200
+HP = 20
 
 [node name="Robat6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3519.26, -2312.39 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 20
 
 [node name="Robat7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2547.5, -2312.39 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 30
 
 [node name="Robat8" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1207.32, -2120.17 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+damage = 5
 
 [node name="Robat9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9166.32, -573.918 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 45
 
 [node name="Robat10" parent="." instance=ExtResource( 5 )]
 position = Vector2( 10095.3, 127.289 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 45
 
 [node name="Robat11" parent="." instance=ExtResource( 5 )]
 position = Vector2( 11467.6, 941.277 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 50
 
 [node name="Robat12" parent="." instance=ExtResource( 5 )]
 position = Vector2( 12961, 1284.36 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 40
+score_reward = 20
 
 [node name="Robat13" parent="." instance=ExtResource( 5 )]
 position = Vector2( 14656.3, 1089.27 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 50
+damage = 5
 
 [node name="Robat14" parent="." instance=ExtResource( 5 )]
 position = Vector2( 15995, 840.37 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 50
+damage = 5
+score_reward = 20
 
 [node name="Robat17" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13929.8, 1277.64 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 30
+damage = 5
 
 [node name="Robat15" parent="." instance=ExtResource( 5 )]
 position = Vector2( 13479, 120.562 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
 
 [node name="Robat16" parent="." instance=ExtResource( 5 )]
-position = Vector2( 13479, 120.562 )
+position = Vector2( 13479, 122.807 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
+HP = 45
+score_reward = 20
 
 [node name="Robat2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2588.14, 8.79318 )
 scale = Vector2( 3.5569, 5.67662 )
 max_speed = 400
+acceleration = 200
 
 [node name="BulletManager" parent="." instance=ExtResource( 3 )]
 position = Vector2( -779.546, 118.801 )
@@ -170,8 +213,9 @@ position = Vector2( -16.5126, -18.6289 )
 scale = Vector2( 1.02048, 1.00454 )
 
 [node name="DMB_bonus" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1165.34, -1346.92 )
+position = Vector2( 1167.58, -1364.88 )
 scale = Vector2( 0.8, 1 )
+health_bonus = 50
 
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 17160.2, 660.544 )
@@ -180,11 +224,12 @@ this_level_id = 1
 next_level_id = 2
 
 [node name="DMG_bonus" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1395.92, -1719.79 )
+position = Vector2( 1402.65, -1757.95 )
 scale = Vector2( 0.8, 1 )
+damage_bonus = 10
 
 [node name="DMG_bonus2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1409.27, -1009.66 )
+position = Vector2( 1409.27, -1032.11 )
 scale = Vector2( 0.8, 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
