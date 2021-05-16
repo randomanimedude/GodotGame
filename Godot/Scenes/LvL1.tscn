@@ -1030,9 +1030,8 @@ scale = Vector2( 19.2711, 6.85158 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a2" type="Sprite" parent="Background"]
-position = Vector2( 3345.89, -391.822 )
-rotation = 3.14159
-scale = Vector2( 19.271, -6.85193 )
+position = Vector2( 3341.51, -402.421 )
+scale = Vector2( -19.271, 6.852 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a3" type="Sprite" parent="Background"]
@@ -1042,13 +1041,13 @@ scale = Vector2( 19.271, -7.13068 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a4" type="Sprite" parent="Background"]
-position = Vector2( 8245.71, -331.509 )
+position = Vector2( 8242.71, -351.509 )
 rotation = 3.14159
 scale = Vector2( 19.271, -6.86612 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a5" type="Sprite" parent="Background"]
-position = Vector2( 10421.3, -298.887 )
+position = Vector2( 10427.2, -345.222 )
 rotation = 3.14159
 scale = Vector2( 14.8722, -6.5543 )
 texture = ExtResource( 16 )
