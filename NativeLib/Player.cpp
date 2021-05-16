@@ -30,8 +30,6 @@ void Player::_init()
 {
 	instance = this;
 	inp = Input::get_singleton();
-	HP = max_HP;
-	damage = starting_damage;
 }
 
 void Player::_ready()
@@ -42,6 +40,8 @@ void Player::_ready()
 	bulletSpawnPositionLeft = Node::cast_to<Node2D>(get_node("BulletSpawnPositionLeft"));
 	interfaceManager = Node::cast_to<InterfaceManager>(get_node("UI/Interface"));
 
+	HP = max_HP;
+	damage = starting_damage;
 	interfaceManager->SetDMG(damage);
 	interfaceManager->SetHP(HP, max_HP);
 	interfaceManager->SetScore(0);

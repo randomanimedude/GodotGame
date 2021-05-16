@@ -49,7 +49,5 @@ void Menu_buttons::_on_Button_Pressed()
 	{
 		get_parent()->call("set_visible", false);
 		get_node((NodePath)reference_path)->call("set_visible", true);
-		/*Node::cast_to<Node2D>(get_parent())->set_visible(false);
-		Node::cast_to<Node2D>(get_node((NodePath)reference_path))->set_visible(true);*/
 	}
 }

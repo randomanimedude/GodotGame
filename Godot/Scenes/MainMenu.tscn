@@ -10,12 +10,27 @@
 [node name="MainMenu" type="Node2D"]
 
 [node name="BackGround" type="Sprite" parent="."]
-position = Vector2( 796.025, 268.961 )
-scale = Vector2( -2.824, 2.01 )
+position = Vector2( 236.629, 268.961 )
+scale = Vector2( 2.824, 2.01022 )
 
 [node name="b" type="Sprite" parent="BackGround"]
+position = Vector2( 99.1471, 122.136 )
+scale = Vector2( 2.84206, 1.58591 )
+texture = ExtResource( 6 )
+
+[node name="b2" type="Sprite" parent="BackGround"]
+position = Vector2( 460.563, 122.136 )
+scale = Vector2( -2.842, 1.586 )
+texture = ExtResource( 6 )
+
+[node name="b3" type="Sprite" parent="BackGround"]
 position = Vector2( 99.1471, 53.4983 )
 scale = Vector2( 2.84206, 1.58591 )
+texture = ExtResource( 6 )
+
+[node name="b4" type="Sprite" parent="BackGround"]
+position = Vector2( 460.563, 53.4983 )
+scale = Vector2( -2.842, 1.586 )
 texture = ExtResource( 6 )
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
