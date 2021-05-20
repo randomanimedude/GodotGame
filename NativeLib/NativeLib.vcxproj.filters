@@ -111,6 +111,9 @@
     <ClCompile Include="ResetButton.cpp">
       <Filter>Исходные файлы\UI/Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Исходные файлы\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="ResetButton.h">
       <Filter>Файлы заголовков\UI/Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Файлы заголовков\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,7 +8,6 @@
 #include <PackedScene.hpp>
 #include <ResourceLoader.hpp>
 #include <vector>
-#include <memory>
 
 
 class BulletManager : public Node2D

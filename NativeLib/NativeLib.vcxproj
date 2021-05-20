@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletBehavior.cpp" />
     <ClCompile Include="BulletManager.cpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="Volume.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletBehavior.h" />
     <ClInclude Include="BulletManager.h" />
