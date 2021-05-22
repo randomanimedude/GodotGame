@@ -60,6 +60,11 @@ void Rashid::DealDamage(int dmg)
 		Die();
 }
 
+void Rashid::SetReward(int reward)
+{
+	score_reward = reward;
+}
+
 void Rashid::Die()
 {
 	Player::GetInstance()->AddScore(score_reward);

@@ -34,6 +34,7 @@ public:
 
 
     void DealDamage(int dmg);
+    void SetReward(int reward);
 
 private:
     void Die();

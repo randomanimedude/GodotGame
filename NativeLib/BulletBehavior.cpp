@@ -7,7 +7,7 @@ void GoodBullet::DoStuff(Bullet* bullet)
 	if (col != nullptr)
 	{
 		Node* node = Node::cast_to<Node>(col->get_collider());
-		if (node->get_name().find("Robat") != -1 || node->get_name().find("Rashid") != -1)
+		if (node->get_name().find("Robat") != -1 || node->get_name().find("Rashid") != -1 || node->get_name().find("Boss") != -1)
 			node->call("DealDamage", bullet->damage);
 
 		bullet->Disable();

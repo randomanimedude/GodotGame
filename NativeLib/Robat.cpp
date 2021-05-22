@@ -68,6 +68,11 @@ void Robat::ShootRight()
 	bulletManager->SpawnNewBullet(bulletSpawnPositionRight->get_global_position(), facing_right, false, damage);
 }
 
+void Robat::SetReward(int reward)
+{
+	score_reward = reward;
+}
+
 void Robat::ShootAtSight()
 {
 	if (playerDetector->is_colliding())

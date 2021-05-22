@@ -5,10 +5,10 @@
 [ext_resource path="res://Prefabs/Enemies/EnemyHealthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sound/shot.ogg" type="AudioStream" id=4]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 6.68586
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Call"
 length = 0.72
 step = 0.08
@@ -37,28 +37,14 @@ tracks/1/keys = {
 "values": [ Vector2( -34.0815, 1.27051 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.72 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ "Idle", -1, 1.0, false ],
-"method": "play"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.08, 0.32, 0.56 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.08, 0.32, 0.56, 0.72 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
 "args": [ 0 ],
 "method": "SpawnEnemy"
@@ -68,10 +54,13 @@ tracks/3/keys = {
 }, {
 "args": [ 2 ],
 "method": "SpawnEnemy"
+}, {
+"args": [  ],
+"method": "OpenWindow"
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "Idle"
 length = 0.5
 loop = true
@@ -101,8 +90,7 @@ tracks/1/keys = {
 "values": [ Vector2( -34.2302, -0.364647 ), Vector2( -33.0409, 0.0813022 ), Vector2( -32.8923, 0.378608 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Roll"
+[sub_resource type="Animation" id=4]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -125,8 +113,22 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ Vector2( -34.0815, 1.27051 ), Vector2( -34.6761, -0.661953 ), Vector2( -34.6336, -0.523921 ), Vector2( -26.1181, 1.24927 ), Vector2( -12.2139, 2.2916 ), Vector2( 3.19029, 1.90147 ), Vector2( 18.9364, 1.83838 ), Vector2( 36.9783, 1.77528 ), Vector2( 40.4338, 1.11758 ), Vector2( 42.5728, 0.842127 ), Vector2( 44.9594, 1.35948 ), Vector2( -34.174, 0.00382304 ), Vector2( -33.9329, -0.067349 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OpenWindow"
+} ]
 }
 
 [node name="Boss" type="KinematicBody2D"]
@@ -138,25 +140,58 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 50
-frame = 15
+frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -34.0815, 1.27051 )
-shape = SubResource( 4 )
+position = Vector2( -33.9329, -0.067349 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D"]
+position = Vector2( 33.9329, 0.0673485 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Area2D"]
+position = Vector2( -33.9329, -0.0673485 )
+shape = SubResource( 1 )
+
+[node name="EnemyHealthBar" parent="CollisionShape2D" instance=ExtResource( 3 )]
+margin_left = -50.0198
+margin_top = -12.9322
+margin_right = 49.9802
+margin_bottom = -2.93217
+rect_scale = Vector2( -0.3, 0.2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Call = SubResource( 3 )
-anims/Idle = SubResource( 5 )
-anims/Roll = SubResource( 2 )
+anims/Call = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+anims/Roll = SubResource( 4 )
 
 [node name="PlayerDetector" type="RayCast2D" parent="."]
-position = Vector2( 0, 7.25 )
+position = Vector2( -32.4059, 1.52242 )
+rotation = 3.14159
 enabled = true
-cast_to = Vector2( -100, 0 )
+cast_to = Vector2( -75.906, 0 )
 collision_mask = 2
 
-[node name="EnemyHealthBar" parent="." instance=ExtResource( 3 )]
-rect_scale = Vector2( 0.3, 0.2 )
+[node name="MinionDetector1" type="RayCast2D" parent="."]
+position = Vector2( 31.7343, -2.41521 )
+rotation = 3.14159
+enabled = true
+cast_to = Vector2( -75.906, 0 )
+collision_mask = 8
+
+[node name="MinionDetector2" type="RayCast2D" parent="."]
+position = Vector2( -130.614, -5.07841 )
+rotation = 3.14159
+enabled = true
+cast_to = Vector2( -75.906, 0 )
+collision_mask = 8
+
+[node name="MinionDetector3" type="RayCast2D" parent="."]
+position = Vector2( -74.1187, -0.203094 )
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( -75.906, 0 )
+collision_mask = 8
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 36.1542, -45.292 )

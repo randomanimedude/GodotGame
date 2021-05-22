@@ -44,7 +44,6 @@ private:
 	Node2D* bulletSpawnPositionLeft;
 	Node2D* bulletSpawnPositionRight;
 	EnemyHealthBar* healthBar;
-	Node* nodeFinder;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
 	RayCast2D* floorDetector;
@@ -58,6 +57,7 @@ public:
 	void DealDamage(int damage);
 	void ShootLeft();
 	void ShootRight();
+	void SetReward(int reward);
 
 private:
 	void ShootAtSight();

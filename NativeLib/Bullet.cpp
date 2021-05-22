@@ -35,7 +35,8 @@ void Bullet::UpdatePosition(Vector2 position, bool facingRight, bool byPlayer)
 	set_collision_mask_bit(4, byPlayer ? false : true);
 
 
-	set_collision_mask_bit(3, byPlayer ? true : false);		//enable and disable collision with player(1) or enemy(3) depending on who's bullet this is
+	set_collision_mask_bit(3, byPlayer ? true : false);		//enable and disable collision with player(1), enemy(3) and boss(5) depending on who's bullet this is
+	set_collision_mask_bit(5, byPlayer ? true : false);
 	set_collision_mask_bit(1, byPlayer ? false : true);
 }
 
