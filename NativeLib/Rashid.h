@@ -11,6 +11,7 @@ class Rashid :
     public KinematicBody2D
 {
     GODOT_CLASS(Rashid, KinematicBody2D);
+public:
     int damage = 10;
     int health = 30;
     int score_reward = 10;

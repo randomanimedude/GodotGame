@@ -29,6 +29,8 @@ void Boss::_ready()
 	minionDetector1 = Node::cast_to<RayCast2D>(get_node("MinionDetector1"));
 	minionDetector2 = Node::cast_to<RayCast2D>(get_node("MinionDetector2"));
 	minionDetector3 = Node::cast_to<RayCast2D>(get_node("MinionDetector3"));
+	minionDetector4 = Node::cast_to<RayCast2D>(get_node("MinionDetector4"));
+	minionDetector5 = Node::cast_to<RayCast2D>(get_node("MinionDetector5"));
 
 	animator = Node::cast_to<AnimationPlayer>(get_node("AnimationPlayer"));
 
@@ -72,7 +74,7 @@ void Boss::SpawnEnemy(int index)
 			Spawn(spawnPosition2);
 		break;
 	case 2:
-		if (!minionDetector3->is_colliding())
+		if (!(minionDetector3->is_colliding() || minionDetector4->is_colliding() || minionDetector5->is_colliding()))
 			Spawn(spawnPosition3);
 	}
 }
@@ -80,7 +82,6 @@ void Boss::SpawnEnemy(int index)
 void Boss::DealDamage(int damage)
 {
 	HP -= damage;
-	cout << HP << endl;
 	healthBar->SetProgress(HP, maxHP);
 	if (HP <= 0)
 		Die();
@@ -88,18 +89,18 @@ void Boss::DealDamage(int damage)
 
 void Boss::OpenWindow()
 {
-	waitTime = rand() % 3 + 2;			//2-4 sec window between atacks
+	waitTime = (float)(rand() % 201) / 100.0;			//0-2 sec window between atacks
 	animator->play("Idle");
 }
 
 void Boss::RandomAtack()
 {
-	switch (rand() % 2)
+	switch (rand() % 3)
 	{
 	case 0:
 		animator->play("Call");
 		break;
-	case 1:
+	case 1: case 2:
 		animator->play("Roll");
 	}
 }
@@ -118,16 +119,28 @@ void Boss::_on_body_entered(PhysicsBody2D* body)
 void Boss::Spawn(Vector2 position)
 {
 	Node2D* temp;
-	if (rand() % 2)
+	if (rand() % 3)
 	{
 		temp = Node::cast_to<Node2D>(robat->instance());
-		Node::cast_to<Robat>(temp)->SetReward(0);
+		Robat* newRobat = Node::cast_to<Robat>(temp);
+		newRobat->SetReward(0);
+		newRobat->max_speed = 200;
+		newRobat->gravity = 70;
+		newRobat->max_fall_speed = 1200;
+		newRobat->acceleration = 25;
+		newRobat->zanos = 0.2;
+		newRobat->HP = 110;
+		newRobat->damage = 20;
+		newRobat->move = rand()%2;
 		temp->set_global_scale(robatScale);
 	}
 	else
 	{
 		temp = Node::cast_to<Node2D>(rashid->instance());
-		Node::cast_to<Rashid>(temp)->SetReward(0);
+		Rashid* newRashid = Node::cast_to<Rashid>(temp);
+		newRashid->SetReward(0);
+		newRashid->damage = 30;
+		newRashid->health = 110;
 		temp->set_global_scale(rashidScale);
 	}
 	get_parent()->add_child(temp);

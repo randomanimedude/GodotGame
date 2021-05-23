@@ -16,6 +16,7 @@ class Robat : public KinematicBody2D
 	GODOT_CLASS(Robat, KinematicBody2D);
 
 	//exposed vars
+public:
 	int max_speed = 800;
 	bool move = true;
 	int gravity = 70;
@@ -38,17 +39,17 @@ public:
 public:
 	const Vector2 UP = Vector2(0, -1);
 	Vector2 scale;
+	bool facing_right = false;
+	EnemyHealthBar* healthBar;
 
 private:
 	Vector2 motion;
 	Node2D* bulletSpawnPositionLeft;
 	Node2D* bulletSpawnPositionRight;
-	EnemyHealthBar* healthBar;
 	AnimationPlayer* animator;
 	BulletManager* bulletManager;
 	RayCast2D* floorDetector;
 	RayCast2D* playerDetector;
-	bool facing_right = false;
 	bool isShooting = false;
 	int max_hp;
 

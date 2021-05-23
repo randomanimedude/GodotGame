@@ -23,13 +23,18 @@ position = Vector2( -3.3674, -57.8067 )
 scale = Vector2( 0.998408, 1 )
 
 [node name="skyline-a" type="Sprite" parent="."]
-position = Vector2( 2846.79, 262.675 )
-scale = Vector2( 10.1504, 6.94957 )
+position = Vector2( 2867.03, 232 )
+scale = Vector2( 9.966, 7.175 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a5" type="Sprite" parent="."]
-position = Vector2( 1046.45, 30.8498 )
-scale = Vector2( 18.1687, 9.09144 )
+position = Vector2( 1599.69, 30.8498 )
+scale = Vector2( -9.966, 7.175 )
+texture = ExtResource( 16 )
+
+[node name="skyline-a8" type="Sprite" parent="."]
+position = Vector2( 336.661, 30.8498 )
+scale = Vector2( 9.966, 7.175 )
 texture = ExtResource( 16 )
 
 [node name="skyline-a6" type="Sprite" parent="."]
@@ -157,32 +162,44 @@ shape = SubResource( 1 )
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5339.2, 767.985 )
 scale = Vector2( -7, 7 )
-HP = 1500
-damage = 50
+HP = 2000
+damage = 70
 score_reward = 250
 
 [node name="PlayerDetector" parent="Boss" index="3"]
-position = Vector2( -34.1229, 0.0938263 )
+rotation = -3.14159
+cast_to = Vector2( -105, 0 )
 
 [node name="MinionDetector1" parent="Boss" index="4"]
 position = Vector2( 53.2992, -5.61508 )
-scale = Vector2( 1.25183, 1 )
+cast_to = Vector2( -88.977, 0 )
 
 [node name="MinionDetector2" parent="Boss" index="5"]
 position = Vector2( -132.617, -5.0784 )
-scale = Vector2( 1.21541, -1.05258 )
+cast_to = Vector2( -83.691, 0 )
 
 [node name="MinionDetector3" parent="Boss" index="6"]
-position = Vector2( 2.12823, -5.08667 )
+position = Vector2( 2.128, -5 )
 rotation = 1.5708
+cast_to = Vector2( -105, 0 )
 
-[node name="SpawnPos1" parent="Boss" index="8"]
-position = Vector2( 102.37, -23.0632 )
+[node name="MinionDetector4" parent="Boss" index="7"]
+position = Vector2( -7.2887, -5 )
+rotation = 1.5708
+cast_to = Vector2( -105, 0 )
 
-[node name="SpawnPos2" parent="Boss" index="9"]
-position = Vector2( -96.0221, -24.9509 )
+[node name="MinionDetector5" parent="Boss" index="8"]
+position = Vector2( 11.7148, -5 )
+rotation = 1.5708
+cast_to = Vector2( -105, 0 )
 
-[node name="SpawnPos3" parent="Boss" index="10"]
+[node name="SpawnPos1" parent="Boss" index="10"]
+position = Vector2( 71.4985, -23.4913 )
+
+[node name="SpawnPos2" parent="Boss" index="11"]
+position = Vector2( -68.5808, -23.0245 )
+
+[node name="SpawnPos3" parent="Boss" index="12"]
 position = Vector2( 2.82337, -97.435 )
 
 [editable path="Platform"]

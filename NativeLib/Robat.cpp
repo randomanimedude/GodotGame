@@ -98,7 +98,7 @@ void Robat::Move()
 	}
 	else
 		motion.x = lerp((float)motion.x, (float)0, zanos);
-	motion.x = clamp(motion.x, -max_speed, max_speed);
+	motion.x = clamp(motion.x, -max_speed, max_speed) * is_on_floor();
 
 	set_scale(Vector2(facing_right ? -scale.x : scale.x, scale.y));
 	motion = move_and_slide_with_snap(motion, Vector2(0,32), UP);

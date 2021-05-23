@@ -54,6 +54,8 @@ private:
     RayCast2D* minionDetector1;
     RayCast2D* minionDetector2;
     RayCast2D* minionDetector3;
+    RayCast2D* minionDetector4;
+    RayCast2D* minionDetector5;
 
     Ref<PackedScene> robat;
     Ref<PackedScene> rashid;

@@ -86,7 +86,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
-frame = 2
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.931465, 0.185413 )
@@ -99,6 +99,7 @@ anims/Shoot = SubResource( 3 )
 [node name="FloorDetector" type="RayCast2D" parent="."]
 position = Vector2( -24.25, -33.75 )
 enabled = true
+collision_mask = 17
 collide_with_areas = true
 
 [node name="PlayerDetector" type="RayCast2D" parent="."]

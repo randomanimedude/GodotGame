@@ -8,9 +8,9 @@
 
 [node name="Back" parent="." instance=ExtResource( 2 )]
 margin_left = 746.027
-margin_top = 497.811
+margin_top = 511.584
 margin_right = 913.027
-margin_bottom = 560.811
+margin_bottom = 574.584
 theme = ExtResource( 3 )
 text = "Back"
 reference_path = "../../Menu"
@@ -40,9 +40,9 @@ level_index = 2
 
 [node name="SelectLevelButton4" parent="." instance=ExtResource( 1 )]
 margin_left = 46.669
-margin_top = 424.34
+margin_top = 405.0
 margin_right = 270.669
-margin_bottom = 487.34
+margin_bottom = 468.0
 text = "Level 4"
 level_index = 3
 
@@ -85,6 +85,14 @@ margin_right = 932.211
 margin_bottom = 360.488
 text = "Level 9"
 level_index = 9
+
+[node name="SelectLevelButton10" parent="." instance=ExtResource( 1 )]
+margin_left = 708.211
+margin_top = 405.0
+margin_right = 932.211
+margin_bottom = 468.0
+text = "Level 10"
+level_index = 10
 
 [node name="SelectLevelButton12" parent="." instance=ExtResource( 1 )]
 margin_left = 707.151
