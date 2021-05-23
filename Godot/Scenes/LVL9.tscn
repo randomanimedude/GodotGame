@@ -158,6 +158,9 @@ score_reward = 20
 position = Vector2( 8731.34, -1004.15 )
 scale = Vector2( 0.717043, 1.23037 )
 
+[node name="EndPosition" parent="Platform" index="2"]
+position = Vector2( 771.637, 0 )
+
 [node name="Heal" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1749.02, -1311.25 )
 scale = Vector2( 1.74524, 1.94823 )
@@ -313,3 +316,5 @@ modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 12582.9, -200.429 )
 scale = Vector2( 0.504739, 1 )
 texture = ExtResource( 8 )
+
+[editable path="Platform"]
