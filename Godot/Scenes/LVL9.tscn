@@ -193,8 +193,8 @@ position = Vector2( -779.546, 118.801 )
 [node name="LevelEnd" parent="." instance=ExtResource( 7 )]
 position = Vector2( 13532.6, -2470.86 )
 scale = Vector2( 0.500411, 0.521511 )
-this_level_id = 10
-next_level_id = 11
+this_level_id = 9
+next_level_id = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
