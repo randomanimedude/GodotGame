@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Avenger"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/LVL1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
