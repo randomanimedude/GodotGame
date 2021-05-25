@@ -57,213 +57,186 @@ tile_data = PoolIntArray( -2555961, 10, 0, -2555960, 10, 0, -2555959, 10, 0, -25
 [node name="Robat" parent="." instance=ExtResource( 5 )]
 position = Vector2( -74.6083, 383.149 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat2" parent="." instance=ExtResource( 5 )]
 position = Vector2( -306.579, -387.515 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat3" parent="." instance=ExtResource( 5 )]
 position = Vector2( -723.049, 899.271 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 291.429, 829.859 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 958.849, 893.932 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1423.37, 197.146 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat8" parent="." instance=ExtResource( 5 )]
 position = Vector2( 857.402, -571.722 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 415.516, -1020.74 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat10" parent="." instance=ExtResource( 5 )]
 position = Vector2( -568.036, -1024.3 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 30
 score_reward = 5
 
 [node name="Robat11" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1665.62, -821.174 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 30
 score_reward = 5
 
 [node name="Robat12" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1423.3, -325.834 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat13" parent="." instance=ExtResource( 5 )]
 position = Vector2( -301.475, 1342.95 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat16" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1499.44, 1539.28 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat17" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2122.39, 889.895 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat18" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1709.21, 191.89 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 30
 score_reward = 5
 
 [node name="Robat19" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2179.03, -574.998 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 40
 
 [node name="Robat20" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2167.7, -1092.24 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 40
 
 [node name="Robat21" parent="." instance=ExtResource( 5 )]
 position = Vector2( 366.788, -1526.42 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 45
 
 [node name="Robat22" parent="." instance=ExtResource( 5 )]
 position = Vector2( -656.371, -1794.48 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 45
 score_reward = 5
 
 [node name="Robat23" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1502.08, -1541.53 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 45
 score_reward = 5
 
 [node name="Robat24" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2249.63, -1734.08 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 45
 score_reward = 5
 
 [node name="Robat25" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2328.92, -582.55 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 45
 score_reward = 5
 
 [node name="Robat26" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2011.77, 244.284 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 50
 score_reward = 5
 
 [node name="Robat27" parent="." instance=ExtResource( 5 )]
 position = Vector2( -2543.77, 1656.28 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat14" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1430.43, 572.18 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat15" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1437.98, 1339.25 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 
 [node name="Robat7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 897.447, -67.1526 )
 scale = Vector2( 3.5569, 5.67662 )
-max_speed = 400
-acceleration = 400
+max_speed = 300
 HP = 20
 score_reward = 5
 

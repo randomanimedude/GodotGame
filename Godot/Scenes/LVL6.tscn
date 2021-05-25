@@ -62,11 +62,14 @@ tile_data = PoolIntArray( -2883605, 10, 0, -2883604, 10, 0, -2883603, 10, 0, -28
 position = Vector2( 1261.59, 57.1101 )
 scale = Vector2( 1.56112, 1.96786 )
 
+[node name="Sprite" parent="Platform" index="0"]
+position = Vector2( 81.9672, 0 )
+
 [node name="CollisionShape2D" parent="Platform" index="1"]
-position = Vector2( 3.42023, -1.35664 )
+position = Vector2( 81.0734, -0.215856 )
 
 [node name="EndPosition" parent="Platform" index="2"]
-position = Vector2( 302.689, 2.71328 )
+position = Vector2( 296.937, 2.71328 )
 
 [node name="DMG_bonus2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 9652.99, 2346.04 )
