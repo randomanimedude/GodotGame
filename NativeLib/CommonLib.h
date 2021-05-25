@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Godot.hpp>
+#include <ctime>
 
 using namespace godot;
 using namespace std;

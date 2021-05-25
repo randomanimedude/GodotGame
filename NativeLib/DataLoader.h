@@ -7,6 +7,7 @@
 #include <Dictionary.hpp>
 #include <Variant.hpp>
 #include <AudioServer.hpp>
+#include <Input.hpp>
 
 class DataLoader : public Node
 {
@@ -17,6 +18,7 @@ public:
 	void _init();
 
 	void _ready();
+	void _process(float delta);
 	static DataLoader* GetSingleton();
 
 	void LoadLevelData();
@@ -30,6 +32,7 @@ public:
 private:
 	static inline DataLoader* instance;
 	
+	Input* inp;
 	AudioServer* audioServer = AudioServer::get_singleton();
 	const String ProgressFile = "user://progress.save";
 	const String SettingsFile = "user://settings.save";

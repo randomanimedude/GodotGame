@@ -22,6 +22,5 @@ public:
 	void _ready();
 	void  _on_Button_mouse_entered();
 	void _on_Button_Pressed();
-
 };
 

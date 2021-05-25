@@ -3,6 +3,7 @@
 void DataLoader::_register_methods()
 {
 	register_method("_ready", &DataLoader::_ready);
+	register_method("_process", &DataLoader::_process);
 }
 
 void DataLoader::_init()
@@ -16,8 +17,20 @@ void DataLoader::_init()
 		ResetLevelAvailability();
 }
 
+void DataLoader::_process(float delta)
+{
+	if (inp->is_action_pressed("HAX3") && inp->is_action_pressed("HAX1"))
+	{
+		for (bool& av : LevelAvailability)
+			av = true;
+		SaveLevelData();
+		LoadLevelData();
+	}
+}
+
 void DataLoader::_ready()
 {
+	inp = Input::get_singleton();
 	LoadSettingsData();
 }
 
