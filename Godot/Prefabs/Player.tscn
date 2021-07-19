@@ -501,7 +501,7 @@ collision_layer = 2
 collision_mask = 17
 script = ExtResource( 1 )
 zanos = 0.3
-damage_cooldown = 0.3
+damage_cooldown = 0.4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2.66968, 3.0034 )
@@ -517,7 +517,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.2, 1.2 )
+zoom = Vector2( 2, 2 )
 process_mode = 0
 smoothing_enabled = true
 

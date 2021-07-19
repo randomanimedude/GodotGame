@@ -38,6 +38,9 @@ void Robat::_ready()
 	bulletManager = Node::cast_to<BulletManager>(get_node("../BulletManager"));
 	healthBar = Node::cast_to<EnemyHealthBar>(get_node("EnemyHealthBar"));
 	healthBar->SetProgress(HP, HP);
+
+	facing_right = get_scale().x < 0;
+	if (facing_right) healthBar->TurnAround();
 }
 
 void Robat::_physics_process(float delta)
@@ -100,7 +103,7 @@ void Robat::Move()
 		motion.x = lerp((float)motion.x, (float)0, zanos);
 	motion.x = clamp(motion.x, -max_speed, max_speed) * is_on_floor();
 
-	set_scale(Vector2(facing_right ? -scale.x : scale.x, scale.y));
+	set_scale(Vector2(facing_right ? -abs(scale.x) : abs(scale.x), scale.y));
 	motion = move_and_slide_with_snap(motion, Vector2(0,32), UP);
 }
 
